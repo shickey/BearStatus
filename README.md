@@ -5,6 +5,7 @@
 ## Contributors
 
 ### Frontend
+Allison Eastham
 
 ### Backend
 Kevin Hayes
