@@ -14,11 +14,13 @@ Laura DeMane
 
 ### Integration
 
+Noah Abramovitz
+
 Yona Cooperman
 
 Ben Weinshel
-Brynne Swearingen
 
+Brynne Swearingen
 
 ### Project Management
 
