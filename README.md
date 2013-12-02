@@ -8,6 +8,7 @@
 
 ### Backend
 Kevin Hayes
+Laura DeMane
 
 ### Integration
 Ben Weinshel
