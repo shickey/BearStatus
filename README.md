@@ -10,6 +10,7 @@
 Kevin Hayes
 
 ### Integration
+Yona Cooperman
 
 ### Project Management
 
