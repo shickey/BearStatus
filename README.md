@@ -10,7 +10,14 @@
 Kevin Hayes
 
 ### Integration
+
 Noah Abramovitz
+
+Yona Cooperman
+
+Ben Weinshel
+
+Brynne Swearingen
 
 ### Project Management
 
