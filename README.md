@@ -10,8 +10,12 @@
 Kevin Hayes
 
 ### Integration
+
+Yona Cooperman
+
 Ben Weinshel
 Brynne Swearingen
+
 
 ### Project Management
 
