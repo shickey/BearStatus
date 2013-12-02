@@ -6,6 +6,7 @@
 
 ### Frontend
 Allison Eastham
+Jason Shu
 
 ### Backend
 Kevin Hayes
