@@ -6,6 +6,8 @@
 
 ### Frontend
 
+Teddy Ankeny
+
 ### Backend
 Kevin Hayes
 
