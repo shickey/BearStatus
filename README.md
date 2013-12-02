@@ -11,6 +11,7 @@ Kevin Hayes
 
 ### Integration
 Ben Weinshel
+Brynne Swearingen
 
 ### Project Management
 
