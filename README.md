@@ -7,6 +7,7 @@
 ### Frontend
 
 ### Backend
+Kevin Hayes
 
 ### Integration
 
