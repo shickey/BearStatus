@@ -5,18 +5,24 @@
 ## Contributors
 
 ### Frontend
+Allison Eastham
+Jason Shu
 
 Teddy Ankeny
 
 ### Backend
 Kevin Hayes
+Laura DeMane
 
 ### Integration
+
+Noah Abramovitz
 
 Yona Cooperman
 
 Ben Weinshel
 
+Brynne Swearingen
 
 ### Project Management
 
