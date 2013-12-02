@@ -35,7 +35,7 @@ def createTime(hour, minute):
 def now(sTime, eTime):
     current = datetime.datetime.now
     if sTime <= current:
-        if eTime => current:
+        if eTime >= current:
             return True
         return False
     else:
