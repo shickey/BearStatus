@@ -13,3 +13,4 @@
 ### Project Management
 
 ### Resource Management
+Sean Hickey
