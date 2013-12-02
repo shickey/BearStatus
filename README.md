@@ -11,7 +11,12 @@ Kevin Hayes
 Laura DeMane
 
 ### Integration
+
+Yona Cooperman
+
 Ben Weinshel
+Brynne Swearingen
+
 
 ### Project Management
 
