@@ -9,6 +9,7 @@ Allison Eastham
 
 ### Backend
 Kevin Hayes
+Laura DeMane
 
 ### Integration
 
