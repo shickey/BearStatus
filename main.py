@@ -19,17 +19,28 @@
 
 import webapp2
 
-# imports jinja2
+# import the date module
+from datetime import date
+
+# imports jinja2 and sets it up
 import jinja2
 import os
 
 jinja_environment = jinja2.Environment(autoescape=True,
     loader=jinja2.FileSystemLoader(os.path.join(os.path.dirname(__file__), 'templates')))
 
+# hardcode in the current block
 current_block = '7'
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
+      
+        # determine the current week day
+        today = date.today()
+        current_weekday = today.isoweekday()
+        # one thing I'm not sure about is whether the above code needs to go in the request handler (calculated at very page load)
+        
+        # write variables to template
         template_values = {
             'block': current_block,
         }
