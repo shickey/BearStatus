@@ -15,10 +15,11 @@ from google.appengine.ext import db
 
 
 # Model for entering blocks into the datastore
-class Entry(ndb.Model):
-    block = ndb.StringProperty(indexed=False)
-    sTime = ndb.TimeProperty()
-    eTime = ndb.TimeProperty()
+class Entry(db.Model):
+    block = db.StringProperty(indexed=False)
+    sTime = db.TimeProperty()
+    eTime = db.TimeProperty()
+    day = db.IntegerProperty()
     
 # Model for checking whether to add the hardcoded blocks to the datastore
 class doRun(db.Model):
@@ -61,9 +62,10 @@ if not result:
     sTime = datetime.time(8, 00)
     eTime = datetime.time(8, 45)
     # Store the instance of the class Entry in entries, with entered data
-    entries = Entry (block = "Mon_Block 1",
+    entries = Entry (block = "Block 1",
                     sTime = sTime,
-                    eTime = eTime)
+                    eTime = eTime,
+                    day = 1)
     # Stores the data that entries contains into the datastore
     entries.put()
 
@@ -71,63 +73,70 @@ if not result:
 
     sTime = datetime.time(8, 50)
     eTime = datetime.time(9, 35)
-    entries = Entry (block = "Mon_Block 2",
+    entries = Entry (block = "Block 2",
                     sTime = sTime,
-                    eTime = eTime)
+                    eTime = eTime,
+                    day = 1)
     entries.put()
     
     
     
     sTime = datetime.time(9, 40)
     eTime = datetime.time(10, 15)
-    entries = Entry (block = "Mon_Tutorial",
+    entries = Entry (block = "Tutorial",
                     sTime = sTime,
-                    eTime = eTime)
+                    eTime = eTime,
+                    day = 1)
     entries.put()
 
 
 
     sTime = datetime.time(10, 20)
     eTime = datetime.time(11, 05)
-    entries = Entry (block = "Mon_Block 3",
+    entries = Entry (block = "Block 3",
                     sTime = sTime,
-                    eTime = eTime)
+                    eTime = eTime,
+                    day = 1)
     entries.put()
 
 
 
     sTime = datetime.time(11, 10)
     eTime = datetime.time(12, 30)
-    entries = Entry (block = "Mon_Block 4/Lunch",
+    entries = Entry (block = "Block 4/Lunch",
                     sTime = sTime,
-                    eTime = eTime)
+                    eTime = eTime,
+                    day = 1)
     entries.put()
 
 
 
     sTime = datetime.time(12, 35)
     eTime = datetime.time(13, 20)
-    entries = Entry (block = "Mon_Block 5",
+    entries = Entry (block = "Block 5",
                     sTime = sTime,
-                    eTime = eTime)
+                    eTime = eTime,
+                    day = 1)
     entries.put()
 
 
 
     sTime = datetime.time(13, 25)
     eTime = datetime.time(14, 10)
-    entries = Entry (block = "Mon_Block 6",
+    entries = Entry (block = "Block 6",
                     sTime = sTime,
-                    eTime = eTime)
+                    eTime = eTime,
+                    day = 1)
     entries.put()
 
 
 
     sTime = datetime.time(14, 15)
     eTime = datetime.time(15, 00)
-    entries = Entry (block = "Mon_Block 7",
+    entries = Entry (block = "Block 7",
                     sTime = sTime,
-                    eTime = eTime)
+                    eTime = eTime,
+                    day = 1)
 
 
 
@@ -135,54 +144,60 @@ if not result:
 
     sTime = datetime.time(8, 00)
     eTime = datetime.time(9, 05)
-    entries = Entry (block = "Tues_Block 2",
+    entries = Entry (block = "Block 2",
                     sTime = sTime,
-                    eTime = eTime)
+                    eTime = eTime,
+                    day = 2)
     entries.put()
 
 
 
     sTime = datetime.time(9, 10)
     eTime = datetime.time(9, 45)
-    entries = Entry (block = "Tues_Assembly",
+    entries = Entry (block = "Assembly",
                     sTime = sTime,
-                    eTime = eTime)
+                    eTime = eTime,
+                    day = 2)
     entries.put()
 
 
 
     sTime = datetime.time(9, 50)
     eTime = datetime.time(10, 55)
-    entries = Entry (block = "Tues_Block 4",
+    entries = Entry (block = "Block 4",
                     sTime = sTime,
-                    eTime = eTime)
+                    eTime = eTime,
+                    day = 2)
     entries.put()
 
 
 
     sTime = datetime.time(11, 00)
     eTime = datetime.time(12, 40)
-    entries = Entry (block = "Tues_Block 3/Lunch",
+    entries = Entry (block = "Block 3/Lunch",
                     sTime = sTime,
-                    eTime = eTime)
+                    eTime = eTime,
+                    day = 2)
     entries.put()
 
 
 
     sTime = datetime.time(12, 45)
     eTime = datetime.time(13, 50)
-    entries = Entry (block = "Tues_Block 7",
+    entries = Entry (block = "Block 7",
                     sTime = sTime,
-                    eTime = eTime)
+                    eTime = eTime,
+                    day = 2)
     entries.put()
 
 
 
     sTime = datetime.time(13, 55)
     eTime = datetime.time(15, 00)
-    entries = Entry (block = "Tues_Block 6",
+    entries = Entry (block = "Block 6",
                     sTime = sTime,
-                    eTime = eTime)
+                    eTime = eTime,
+                    day = 2)
     entries.put()
 
 
@@ -191,54 +206,60 @@ if not result:
 
     sTime = datetime.time(8, 30)
     eTime = datetime.time(9, 35)
-    entries = Entry (block = "Wed_Block 1",
+    entries = Entry (block = "Block 1",
                     sTime = sTime,
-                    eTime = eTime)
+                    eTime = eTime,
+                    day = 3)
     entries.put()
     
     
 
     sTime = datetime.time(9, 40)
     eTime = datetime.time(10, 10)
-    entries = Entry (block = "Wed_Advisory/Grade Meeting",
+    entries = Entry (block = "Advisory/Grade Meeting",
                     sTime = sTime,
-                    eTime = eTime)
+                    eTime = eTime,
+                    day = 3)
     entries.put()
 
 
 
     sTime = datetime.time(10, 15)
     eTime = datetime.time(11, 20)
-    entries = Entry (block = "Wed_Block 2",
+    entries = Entry (block = "Block 2",
                     sTime = sTime,
-                    eTime = eTime)
+                    eTime = eTime,
+                    day = 3)
     entries.put()
 
 
 
     sTime = datetime.time(11, 25)
     eTime = datetime.time(13, 05)
-    entries = Entry (block = "Wed_Block 5/Lunch",
+    entries = Entry (block = "Block 5/Lunch",
                     sTime = sTime,
-                    eTime = eTime)
+                    eTime = eTime,
+                    day = 3)
     entries.put()
 
 
 
     sTime = datetime.time(13, 10)
     eTime = datetime.time(13, 50)
-    entries = Entry (block = "Wed_TASC/Symposium",
+    entries = Entry (block = "TASC/Symposium",
                     sTime = sTime,
-                    eTime = eTime)
+                    eTime = eTime,
+                    day = 3)
     entries.put()
 
 
 
     sTime = datetime.time(13, 55)
     eTime = datetime.time(15, 00)
-    entries = Entry (block = "Wed_Block 6",
+    entries = Entry (block = "Block 6",
                     sTime = sTime,
-                    eTime = eTime)
+                    eTime = eTime,
+                    day = 3)
     entries.put()
 
 
@@ -247,54 +268,60 @@ if not result:
 
     sTime = datetime.time(8, 00)
     eTime = datetime.time(9, 05)
-    entries = Entry (block = "Thurs_Block 3",
+    entries = Entry (block = "Block 3",
                     sTime = sTime,
-                    eTime = eTime)
+                    eTime = eTime,
+                    day = 4)
     entries.put()
 
 
 
     sTime = datetime.time(9, 10)
     eTime = datetime.time(9, 45)
-    entries = Entry (block = "Thurs_Assembly",
+    entries = Entry (block = "Assembly",
                     sTime = sTime,
-                    eTime = eTime)
+                    eTime = eTime,
+                    day = 4)
     entries.put()
 
 
 
     sTime = datetime.time(9, 50)
     eTime = datetime.time(10, 55)
-    entries = Entry (block = "Thurs_Block 1",
+    entries = Entry (block = "Block 1",
                     sTime = sTime,
-                    eTime = eTime)
+                    eTime = eTime,
+                    day = 4)
     entries.put()
 
 
 
     sTime = datetime.time(11, 00)
     eTime = datetime.time(12, 40)
-    entries = Entry (block = "Thurs_Block 4/Lunch",
+    entries = Entry (block = "Block 4/Lunch",
                     sTime = sTime,
-                    eTime = eTime)
+                    eTime = eTime,
+                    day = 4)
     entries.put()
 
 
 
     sTime = datetime.time(12, 45)
     eTime = datetime.time(13, 50)
-    entries = Entry (block = "Thurs_Block 5",
+    entries = Entry (block = "Block 5",
                     sTime = sTime,
-                    eTime = eTime)
+                    eTime = eTime,
+                    day = 4)
     entries.put()
 
 
 
     sTime = datetime.time(13, 55)
     eTime = datetime.time(15, 00)
-    entries = Entry (block = "Thurs_Block 7",
+    entries = Entry (block = "Block 7",
                     sTime = sTime,
-                    eTime = eTime)
+                    eTime = eTime,
+                    day = 4)
     entries.put()
 
 
@@ -303,61 +330,68 @@ if not result:
 
     sTime = datetime.time(8, 30)
     eTime = datetime.time(9, 15)
-    entries = Entry (block = "Fri_Block 2",
+    entries = Entry (block = "Block 2",
                     sTime = sTime,
-                    eTime = eTime)
+                    eTime = eTime,
+                    day = 5)
     entries.put()
 
 
 
     sTime = datetime.time(9, 20)
     eTime = datetime.time(10, 05)
-    entries = Entry (block = "Fri_Block 1",
+    entries = Entry (block = "Block 1",
                     sTime = sTime,
-                    eTime = eTime)
+                    eTime = eTime,
+                    day = 5)
     entries.put()
 
 
 
     sTime = datetime.time(10, 10)
     eTime = datetime.time(10, 55)
-    entries = Entry (block = "Fri_Block 3",
+    entries = Entry (block = "Block 3",
                     sTime = sTime,
-                    eTime = eTime)
+                    eTime = eTime,
+                    day = 5)
     entries.put()
 
 
 
     sTime = datetime.time(11, 00)
     eTime = datetime.time(12, 30)
-    entries = Entry (block = "Fri_Block 4/Lunch",
+    entries = Entry (block = "Block 4/Lunch",
                     sTime = sTime,
-                    eTime = eTime)
+                    eTime = eTime,
+                    day = 5)
     entries.put()
     
     
 
     sTime = datetime.time(12, 35)
     eTime = datetime.time(13, 20)
-    entries = Entry (block = "Fri_Block 6",
+    entries = Entry (block = "Block 6",
                     sTime = sTime,
-                    eTime = eTime)
+                    eTime = eTime,
+                    day = 5)
     entries.put()
 
 
 
     sTime = datetime.time(13, 25)
     eTime = datetime.time(14, 10)
-    entries = Entry (block = "Fri_Block 7",
+    entries = Entry (block = "Block 7",
                     sTime = sTime,
-                    eTime = eTime)
+                    eTime = eTime,
+                    day = 5)
     entries.put()
 
 
 
     sTime = datetime.time(14, 15)
     eTime = datetime.time(15, 00)
-    entries = Entry (block = "Fri_Block 5",
+    entries = Entry (block = "Block 5",
                     sTime = sTime,
-                    eTime = eTime)
+                    eTime = eTime,
+                    day = 5)
     entries.put()
