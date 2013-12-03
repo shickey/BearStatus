@@ -27,7 +27,12 @@ jinja_environment = jinja2.Environment(autoescape=True,
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
+        template_values = {
+            'block': '2',
+        }
+
+        template = jinja_environment.get_template('frontendproto.html')
+        self.response.out.write(template.render(template_values))
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
