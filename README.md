@@ -29,5 +29,12 @@ Brynne Swearingen
 
 ### Project Management
 
+Walker Bond
+
+Quinn Ellis
+
+Carolyn Nye
+
+Meghna Kaul
 ### Resource Management
 Sean Hickey
