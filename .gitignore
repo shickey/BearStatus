@@ -1,0 +1,5 @@
+# This file defines files (or file types) that should not
+# be inlcuded in our git repository.
+
+# Compiled Python Scripts
+*.pyc
