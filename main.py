@@ -26,7 +26,7 @@ import os
 jinja_environment = jinja2.Environment(autoescape=True,
     loader=jinja2.FileSystemLoader(os.path.join(os.path.dirname(__file__), 'templates')))
 
-current_block = '2'
+current_block = '4'
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
