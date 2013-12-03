@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /*Gives background color*/
+      body {
+        background-color: #a7d3ff; 
+      }
+      /*H1 color*/
+      h1 {
+        color: #787575;
+        text-align: center;
+      }
+      /*Paragraph formatting*/
+      p {
+        font-family: Times;
+        font-size: 20px;
+      }
+      /*H2 formatting*/
+      h2 {
+        color: blue;
+      }
+      /*paragraphs inside h2 blocks*/
+      h2 p {
+        font-size: 14px;
+      }
+      /*h3 formatting*/
+      h3 {
+        text-align: right;
+        color: purple;
+      }
+      h3 p {
+        font-size: 14px;
+      }
+      a:link {
+        text-decoration: none;
+        color: black;
+      }
+      a:visited {
+        text-decoration: none;
+        color: blue;
+      }
+      a:hover {
+        text-decoration: underline;
+        color: red;
+      }
+      
+      .time {
+        display: inline-block;
+        float: left;
+      }
+      
+      .assignments {
+        display: inline-block;
+        float: right;
+      }
+      #diffcolor {
+        color: black;
+        float: right;
+        text-align: right;
+      }
+    </style>
+    <title>
+      Front End Day 1 Tester (Debugged...Kinda)
+    </title>
+  </head>
+  <body>
+    <h1>BearTime 2.0</h1>
+    <!--<div class="time">
+      <h2 class="time">
+        The local time is - {{localtime}}
+      </h2>
+      <br />-->
+      <h2 class="time">
+        The current block is: Block {{block}}
+      </h2>
+      <!--<br />
+      <h2 class="time">
+        Time remaining- {{tremain}}
+      </h2>-->
+    </div>
+    <!--<div class="assignments">
+      <h3 class="assignments">
+        <u>Current Assignments</u>
+      </h3>
+      <br /> <br />
+      <h3 class="assignments" id="diffcolor">
+        --
+      </h3>
+      <br /> <br />
+      <h3 class="assignments" id="diffcolor">
+        --
+      </h3>
+      <br /> 
+      <h3 class="assignments" id="diffcolor">
+        --
+      </h3>
+      <br />
+      <h3 class="assignments" id="diffcolor">
+        --
+      </h3>
+      <br />
+      <h3 class="assignments" id="diffcolor">
+        --
+      </h3>
+    </div>-->
+    <h4>
+      <!--Link to homepage here-->
+      <a href="#">HOME</a>
+  </body>
+</html>

@@ -7,8 +7,13 @@
 ### Frontend
 Allison Eastham
 
+Jason Shu
+
+Teddy Ankeny
+
 ### Backend
 Kevin Hayes
+
 Laura DeMane
 Anthony Hu
 
