@@ -15,6 +15,7 @@ Teddy Ankeny
 Kevin Hayes
 
 Laura DeMane
+Anthony Hu
 
 ### Integration
 
@@ -28,5 +29,12 @@ Brynne Swearingen
 
 ### Project Management
 
+Walker Bond
+
+Quinn Ellis
+
+Carolyn Nye
+
+Meghna Kaul
 ### Resource Management
 Sean Hickey
