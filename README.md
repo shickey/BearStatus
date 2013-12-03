@@ -10,6 +10,7 @@ Allison Eastham
 ### Backend
 Kevin Hayes
 Laura DeMane
+Anthony Hu
 
 ### Integration
 
