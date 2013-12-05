@@ -36,7 +36,7 @@ class MainHandler(webapp2.RequestHandler):
             'schedule': schedule,
         }
 
-        template = jinja_environment.get_template('frontendproto.html')
+        template = jinja_environment.get_template('Prototype1.html')
         self.response.out.write(template.render(template_values))
 
 app = webapp2.WSGIApplication([
