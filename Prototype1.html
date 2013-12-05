@@ -60,51 +60,53 @@
         float: right;
         text-align: right;
       }
-    </style--!>
+    </style-->
     <title>
       Front End Day 1 Tester (Debugged...Kinda)
     </title>
   </head>
   <body>
+    {%for i in schedule%}
     <h1>BoringTime 0.1</h1>
-    <!--<div class="time">
+    <div class="time">
       <h2 class="time">
         The local time is - {{localtime}}
       </h2>
-      <br />-->
+      <br />
       <h2 class="time">
-        The current block is: Block {{block}}
+        The current block is: Block {{i.name}}
       </h2>
-      <!--<br />
+      <br />
       <h2 class="time">
-        Time remaining- {{tremain}}
-      </h2>-->
+        Time start- {{i.stime}}
+        Time end- {{i.etime}}
+      </h2>
     </div>
-    <!--<div class="assignments">
+    <div class="assignments">
       <h3 class="assignments">
         <u>Current Assignments</u>
       </h3>
       <br /> <br />
       <h3 class="assignments" id="diffcolor">
-        --
+        
       </h3>
       <br /> <br />
       <h3 class="assignments" id="diffcolor">
-        --
+        
       </h3>
       <br /> 
       <h3 class="assignments" id="diffcolor">
-        --
+        
       </h3>
       <br />
       <h3 class="assignments" id="diffcolor">
-        --
+        
       </h3>
       <br />
       <h3 class="assignments" id="diffcolor">
-        --
+        
       </h3>
-    </div>-->
+    </div>
     <h4>
       <!--Link to homepage here-->
       <a href="#">HOME</a>

@@ -16,6 +16,7 @@ Kevin Hayes
 
 Laura DeMane
 Anthony Hu
+Marcus Berg
 
 ### Integration
 
