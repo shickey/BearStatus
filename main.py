@@ -15,8 +15,10 @@
 # limitations under the License.
 #
 
-# this is some template "hello world" code
+# Import blockmodels file
+import BlockModels
 
+# this is some template "hello world" code
 import webapp2
 
 # imports jinja2
@@ -26,12 +28,12 @@ import os
 jinja_environment = jinja2.Environment(autoescape=True,
     loader=jinja2.FileSystemLoader(os.path.join(os.path.dirname(__file__), 'templates')))
 
-current_block = '7'
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
+      schedule = schedule()
         template_values = {
-            'block': current_block,
+            'schedule': schedule,
         }
 
         template = jinja_environment.get_template('frontendproto.html')
@@ -40,3 +42,5 @@ class MainHandler(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
 ], debug=True)
+
+
