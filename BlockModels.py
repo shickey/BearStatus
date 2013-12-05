@@ -68,3 +68,15 @@ if not result:
                          day = doc['treeroot'][x]['day'])
         # Store the data that entries contains into the datastore
         entries.put()
+
+
+today = date.today()
+current_weekday = today.isoweekday()
+
+def schedule():
+    blocklist = []
+    q = Entry.all()
+    q.filter("day =", current_weekday).order("sTime")
+    for block in q.run():
+        blocklist.append(block)
+    return blocklist
