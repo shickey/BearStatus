@@ -1,42 +1,35 @@
-#!/usr/bin/env python
-#
-# Copyright 2007 Google Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
-
 # Import blockmodels file
 import BlockModels
-
-# this is some template "hello world" code
-import webapp2
-
-# imports jinja2
-import jinja2
-import os
+import webapp2, jinja2, os
+from datetime import *
 
 jinja_environment = jinja2.Environment(autoescape=True,
     loader=jinja2.FileSystemLoader(os.path.join(os.path.dirname(__file__), 'templates')))
 
+class CST(tzinfo):
+    def utcoffset(self, dt):
+        return timedelta(hours=-6)
+
+    def tzname(self, dt):
+        return "US/Central"
+
+    def dst(self, dt):
+        return timedelta(0)
+        
+cst = CST()
+
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-      schedule = BlockModels.schedule()
-      template_values = {
-        'schedule': schedule,
-      }
+        schedule = BlockModels.schedule()
+        tlocal = datetime.now(cst)
+        formNow = datetime.strftime(tlocal, "%A, %b %d %I:%M:%S %p")
+        template_values = {
+            'schedule': schedule,
+            'localtime': formNow,
+        }
 
-      template = jinja_environment.get_template('Prototype1.html')
-      self.response.out.write(template.render(template_values))
+        template = jinja_environment.get_template('Prototype1.html')
+        self.response.out.write(template.render(template_values))
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)

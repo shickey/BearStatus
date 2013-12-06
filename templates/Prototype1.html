@@ -66,21 +66,29 @@
     </title>
   </head>
   <body>
-    {%for i in schedule%}
     <h1>BoringTime 0.1</h1>
     <div class="time">
       <h2 class="time">
         The local time is - {{localtime}}
       </h2>
       <br />
+      <h2>
+        Todays schedule is:
+      </h2>
+    {%for i in schedule%}
+      <h3>
+        -------------------------------------------------
+      </h3>
       <h2 class="time">
-        The current block is: Block {{i.name}}
+        {{i.name}}
       </h2>
       <br />
       <h2 class="time">
-        Time start- {{i.stime}}
-        Time end- {{i.etime}}
+        Time start- {{i.sTime}}
+      </br>
+        Time end- {{i.eTime}}
       </h2>
+    {%endfor%}
     </div>
     <div class="assignments">
       <h3 class="assignments">
