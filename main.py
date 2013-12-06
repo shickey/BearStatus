@@ -28,16 +28,15 @@ import os
 jinja_environment = jinja2.Environment(autoescape=True,
     loader=jinja2.FileSystemLoader(os.path.join(os.path.dirname(__file__), 'templates')))
 
-
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-      schedule = schedule()
-        template_values = {
-            'schedule': schedule,
-        }
+      schedule = BlockModels.schedule()
+      template_values = {
+        'schedule': schedule,
+      }
 
-        template = jinja_environment.get_template('Prototype1.html')
-        self.response.out.write(template.render(template_values))
+      template = jinja_environment.get_template('Prototype1.html')
+      self.response.out.write(template.render(template_values))
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
