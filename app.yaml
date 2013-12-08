@@ -9,6 +9,11 @@ handlers:
   static_files: favicon.ico
   upload: favicon\.ico
 
+# set up the edit page to require admin access
+- url: /edit.*
+  script: edit.app
+  login: admin
+
 - url: .*
   script: main.app
 
