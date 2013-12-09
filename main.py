@@ -25,6 +25,11 @@ def now(sTime, eTime):
     else:
         return False
 
+# for i in schedule:
+#     if now(i.sTime,i.eTime) == True:
+#         return i.name
+# implement this into class MainHandler
+
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         template_values = {
