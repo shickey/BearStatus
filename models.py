@@ -9,8 +9,8 @@ class Entry(db.Model):
 class doRun(db.Model):
     runTrue = db.BooleanProperty()
 
-class CustomEntry(db.Model):
+class customEntry(db.Model):
     name = db.StringProperty(indexed=False)
     sTime = db.TimeProperty()
     eTime = db.TimeProperty()
-    day = db.IntegerProperty()
+    date = db.DateProperty()

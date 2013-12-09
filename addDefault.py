@@ -1,5 +1,4 @@
-import cgi, datetime, yaml, models
-from datetime import date
+import datetime, yaml, models
 
 # This codeblock checks whether a certain datastore entry exists, determining whether to add the hardcoded blocks to the datastore or not
 q = models.doRun.all()
@@ -27,15 +26,3 @@ if not result:
                                 day = doc['treeroot'][x]['day'])
         # Store the data that entries contains into the datastore
         entries.put()
-
-
-today = date.today()
-current_weekday = today.isoweekday()
-
-def schedule():
-    blocklist = []
-    q = models.Entry.all()
-    q.filter("day =", current_weekday).order("sTime")
-    for block in q.run():
-        blocklist.append(block)
-    return blocklist

@@ -1,5 +1,5 @@
 # Import blockmodels file
-import BlockModels
+import model
 import webapp2, jinja2, os
 from datetime import *
 
@@ -41,7 +41,7 @@ class MainHandler(webapp2.RequestHandler):
 
 class Schedule_Handler(webapp2.RequestHandler):
     def get(self):
-        schedule = BlockModels.schedule()
+        schedule = model.schedule()
         tlocal = datetime.now(cst)
         formNow = datetime.strftime(tlocal, "%A, %b %d %I:%M:%S %p")
         template_values = {
