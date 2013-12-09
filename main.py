@@ -18,6 +18,13 @@ class CST(tzinfo):
         
 cst = CST()
 
+def now(sTime, eTime):
+    current = datetime.datetime.now
+    if current >= sTime and current <= eTime:
+        return True
+    else:
+        return False
+
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         template_values = {
