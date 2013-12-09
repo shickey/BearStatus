@@ -1,5 +1,7 @@
 import datetime, models
 
+today = datetime.date.today()
+
 def createBlock(name, Year, Month, Day, sHour, sMin, eHour, eMin):
     date = datetime.date(Year, Month, Day)
     sTime = datetime.time(sHour, sMin, 0)
@@ -29,5 +31,4 @@ def getSchedule(Year, Month, Day):
             return blocklist
 
 def getToday():
-    date = datetime.date.today()
-    return getSchedule(date.year, date.month, date.day)
+    return getSchedule(today.year, today.month, today.day)
