@@ -18,7 +18,7 @@ class CST(tzinfo):
         
 cst = CST()
 
-class MainHandler(webapp2.RequestHandler):
+class Schedule_Handler(webapp2.RequestHandler):
     def get(self):
         schedule = BlockModels.schedule()
         tlocal = datetime.now(cst)
@@ -28,11 +28,11 @@ class MainHandler(webapp2.RequestHandler):
             'localtime': formNow,
         }
 
-        template = jinja_environment.get_template('Prototype1.html')
+        template = jinja_environment.get_template('schedule.html')
         self.response.out.write(template.render(template_values))
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+    ('/schedule', Schedule_Handler)
 ], debug=True)
 
 
