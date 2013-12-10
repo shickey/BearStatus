@@ -33,6 +33,9 @@ def current_block(schedule_list):
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
+        # This must be run on startup to initiate the blocks
+        model.initBlocks()
+        
         template_values = {
             'block': block,
         }
