@@ -25,10 +25,11 @@ def now(sTime, eTime):
     else:
         return False
 
-# for i in schedule:
-#     if now(i.sTime,i.eTime) == True:
-#         return i.name
-# implement this into class MainHandler
+# given a schedule list, determine the current block and return its model
+def current_block(schedule_list):
+    for i in schedule_list:
+        if now(i.sTime,i.eTime) == True:
+            return i
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
@@ -41,7 +42,7 @@ class MainHandler(webapp2.RequestHandler):
 
 class Schedule_Handler(webapp2.RequestHandler):
     def get(self):
-        schedule = model.schedule()
+        schedule = model.getToday()
         tlocal = datetime.now(cst)
         formNow = datetime.strftime(tlocal, "%A, %b %d %I:%M:%S %p")
         template_values = {
