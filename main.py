@@ -19,7 +19,7 @@ class CST(tzinfo):
 cst = CST()
 
 def now(sTime, eTime):
-    current = datetime.datetime.now
+    current = datetime.now().time()
     if current >= sTime and current <= eTime:
         return True
     else:
@@ -35,7 +35,8 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
         # This must be run on startup to initiate the blocks
         model.initBlocks()
-        
+        schedule = model.getToday()
+        block = current_block(schedule)
         template_values = {
             'block': block,
         }
@@ -57,7 +58,7 @@ class Schedule_Handler(webapp2.RequestHandler):
         self.response.out.write(template.render(template_values))
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+    ('/', MainHandler),
     ('/schedule', Schedule_Handler)
 ], debug=True)
 

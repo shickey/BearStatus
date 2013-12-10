@@ -17,7 +17,7 @@ def createBlock(name, Year, Month, Day, sHour, sMin, eHour, eMin):
 def getSchedule(Year, Month, Day):
     date = datetime.date(Year, Month, Day)
     q = models.customEntry.all()
-    q.filter("date =", today).order("sTime")
+    q.filter("date =", date).order("sTime")
     cblocklist = []
     blocklist = []
     for block in q.run():
@@ -36,3 +36,9 @@ def getToday():
 
 def initBlocks():
     addDefault.start()
+
+def deleteSchedule(Year, Month, Day):
+    date = datetime.date(Year, Month, Day)
+    q = models.customEntry.all()
+    q.filter("date =", date).order("sTime")
+    db.delete(q)
