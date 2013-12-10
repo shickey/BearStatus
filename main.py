@@ -19,7 +19,7 @@ class CST(tzinfo):
 cst = CST()
 
 def now(sTime, eTime):
-    current = datetime.now().time()
+    current = datetime.now(cst).time()
     if current >= sTime and current <= eTime:
         return True
     else:
@@ -37,13 +37,12 @@ class MainHandler(webapp2.RequestHandler):
         model.initBlocks()
         schedule = model.getToday()
         block = current_block(schedule)
-        self.response.write(schedule)
-        # template_values = {
-        #     'block': block,
-        # }
+        template_values = {
+            'block': block,
+        }
 
-        # # template = jinja_environment.get_template('index.html')
-        # self.response.out.write(template.render(template_values))
+        template = jinja_environment.get_template('index.html')
+        self.response.out.write(template.render(template_values))
 
 
 class Schedule_Handler(webapp2.RequestHandler):
