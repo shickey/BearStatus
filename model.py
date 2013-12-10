@@ -1,6 +1,7 @@
-import datetime, models
+import datetime, models, addDefault
 
 today = datetime.date.today()
+wday = today.isoweekday()
 
 def createBlock(name, Year, Month, Day, sHour, sMin, eHour, eMin):
     date = datetime.date(Year, Month, Day)
@@ -25,10 +26,13 @@ def getSchedule(Year, Month, Day):
         return cblocklist
     else:
         q = models.Entry.all()
-        q.filter("day =", today).order("sTime")
+        q.filter("day =", wday).order("sTime")
         for block in q.run():
             blocklist.append(block)
             return blocklist
 
 def getToday():
     return getSchedule(today.year, today.month, today.day)
+
+def initBlocks():
+    addDefault.start()
