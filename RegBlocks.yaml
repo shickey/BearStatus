@@ -1,0 +1,246 @@
+# This file contains all of the hardcoded blocks that are to be loaded on startup through the BlockModels.py file
+# 
+# Please DO NOT EDIT unless you have consulted the BACKEND team
+
+treeroot:
+
+# Monday
+    1:
+        name: Block 1
+        shour: 8
+        smin: 00
+        ehour: 8
+        emin: 45
+        day: 1
+    2:
+        name: Block 2
+        shour: 8
+        smin: 50
+        ehour: 9
+        emin: 35
+        day: 1
+    3:
+        name: Tutorial 
+        shour: 9
+        smin: 40
+        ehour: 10
+        emin: 15
+        day: 1
+    4:
+        name: Block 3
+        shour: 10
+        smin: 20
+        ehour: 11
+        emin: 05
+        day: 1
+    5:
+        name: Block 4/Lunch
+        shour: 11
+        smin: 10
+        ehour: 12
+        emin: 30
+        day: 1
+    6:
+        name: Block 5
+        shour: 12
+        smin: 35
+        ehour: 13
+        emin: 20
+        day: 1
+    7:
+        name: Block 6
+        shour: 13
+        smin: 25
+        ehour: 14
+        emin: 10
+        day: 1
+    8:
+        name: Block 7
+        shour: 14
+        smin: 15
+        ehour: 15
+        emin: 00
+        day: 1
+
+# Tuesday
+    9:
+        name: Block 2
+        shour: 8
+        smin: 00
+        ehour: 9
+        emin: 05
+        day: 2
+    10:
+        name: Assembly
+        shour: 9
+        smin: 10
+        ehour: 9
+        emin: 45
+        day: 2
+    11:
+        name: Block 4
+        shour: 9
+        smin: 50
+        ehour: 10
+        emin: 55
+        day: 2
+    12:
+        name: Block 3/Lunch
+        shour: 11
+        smin: 00
+        ehour: 12
+        emin: 40
+        day: 2
+    13:
+        name: Block 7
+        shour: 12
+        smin: 45
+        ehour: 13
+        emin: 50
+        day: 2
+    14:
+        name: Block 6
+        shour: 13
+        smin: 55
+        ehour: 15
+        emin: 00
+        day: 2
+
+# Wednesday
+    15:
+        name: Block 1
+        shour: 8
+        smin: 30
+        ehour: 9
+        emin: 35
+        day: 3
+    16:
+        name: Advisory/Grade Meeting
+        shour: 9
+        smin: 40
+        ehour: 10
+        emin: 10
+        day: 3
+    16:
+        name: Block 2
+        shour: 10
+        smin: 15
+        ehour: 11
+        emin: 20
+        day: 3
+    17:
+        name: Block 5/Lunch
+        shour: 11
+        smin: 25
+        ehour: 13
+        emin: 05
+        day: 3
+    18:
+        name: TASC/Symposium
+        shour: 13
+        smin: 10
+        ehour: 13
+        emin: 50
+        day: 3
+    19:
+        name: Block 6
+        shour: 13
+        smin: 55
+        ehour: 15
+        emin: 00
+        day: 3
+
+# Thursday
+    20:
+        name: Block 3
+        shour: 8
+        smin: 00
+        ehour: 9
+        emin: 05
+        day: 4
+    21:
+        name: Assembly
+        shour: 9
+        smin: 10
+        ehour: 9
+        emin: 45
+        day: 4
+    22:
+        name: Block 1
+        shour: 9
+        smin: 50
+        ehour: 10
+        emin: 55
+        day: 4
+    23:
+        name: Block 4/Lunch
+        shour: 11
+        smin: 00
+        ehour: 12
+        emin: 40
+        day: 4
+    24:
+        name: Block 5
+        shour: 13
+        smin: 55
+        ehour: 15
+        emin: 00
+        day: 4
+    25:
+        name: Block 7
+        shour: 13
+        smin: 55
+        ehour: 15
+        emin: 00
+        day: 4
+
+# Friday
+    26:
+        name: Block 2
+        shour: 8
+        smin: 30
+        ehour: 9
+        emin: 15
+        day: 5
+    27:
+        name: Block 1
+        shour: 9
+        smin: 20
+        ehour: 10
+        emin: 05
+        day: 5
+    28:
+        name: Block 3
+        shour: 10
+        smin: 10
+        ehour: 10
+        emin: 55
+        day: 5
+    29:
+        name: Block 4/Lunch
+        shour: 11
+        smin: 00
+        ehour: 12
+        emin: 30
+        day: 5
+    30:
+        name: Block 6
+        shour: 12
+        smin: 35
+        ehour: 13
+        emin: 20
+        day: 5
+    31:
+        name: Block 7
+        shour: 13
+        smin: 25
+        ehour: 14
+        emin: 10
+        day: 5
+    32:
+        name: Block 5
+        shour: 14
+        smin: 15
+        ehour: 15
+        emin: 00
+        day: 5
