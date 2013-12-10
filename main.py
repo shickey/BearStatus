@@ -19,7 +19,7 @@ class CST(tzinfo):
 cst = CST()
 
 def now(sTime, eTime):
-    current = datetime.time.now
+    current = datetime.now().time()
     if current >= sTime and current <= eTime:
         return True
     else:
