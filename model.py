@@ -24,12 +24,11 @@ def getSchedule(Year, Month, Day):
         cblocklist.append(block)
     if len(cblocklist) > 0:
         return cblocklist
-    else:
-        q = models.Entry.all()
-        q.filter("day =", wday).order("sTime")
-        for block in q.run():
-            blocklist.append(block)
-            return blocklist
+    q = models.Entry.all()
+    q.filter("day =", wday).order("sTime")
+    for block in q.run():
+        blocklist.append(block)
+        return blocklist
 
 def getToday():
     return getSchedule(today.year, today.month, today.day)
