@@ -34,7 +34,7 @@
         display: inline-block;
       }
     </style>
-    <title>BoringTime 0.1</title>
+    <title>BearStatus</title>
     
     <!--Bootstrap core CSS -->
     <link href="http://getbootstrap.com/dist/css/bootstrap.css" rel="stylesheet">
@@ -53,14 +53,14 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">BoringTime 0.1</a>
+        <a class="navbar-brand" href="#">BearStatus</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">Schedule</a></li>
+          <li><a href="#">Today's Schedule</a></li>
           <li><a href="#">Admin</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
@@ -70,16 +70,15 @@
 
       <div class="starter-template" id="welcome-message">
         <h1>BoringTime 0.1</h1>
-        <p class="lead">Welcome to BoringTime 0.1!<br />text here text here text here<br />text here text here text here<br />text here text here text here.</p>
+        <p class="lead">Welcome to BearStatus 0.1!<br />text here text here text here<br />text here text here text here<br />text here text here text here.</p>
       </div>
       
       <div class="starter-template" id="mini-schedule">
-         {%for i in schedule%}
         <p class="lead">
           <h1>Quick Info</h1>
-          The current block is {{i.name}}
-          <br> Start: {{i.stime}}
-          <br> End: {{i.etime}}
+          The current block is {{block.name}}
+          <br> Start: {{block.sTime}}
+          <br> End: {{block.eTime}}
         </p>
       </div>
 
