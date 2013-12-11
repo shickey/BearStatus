@@ -24,3 +24,6 @@ libraries:
   version: latest
 - name: yaml
   version: latest
+
+inbound_services:
+- warmup
