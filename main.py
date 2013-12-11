@@ -6,20 +6,21 @@ from datetime import *
 jinja_environment = jinja2.Environment(autoescape=True,
     loader=jinja2.FileSystemLoader(os.path.join(os.path.dirname(__file__), 'templates')))
 
-class CST(tzinfo):
-    def utcoffset(self, dt):
-        return timedelta(hours=-6)
 
-    def tzname(self, dt):
-        return "US/Central"
+# Use this function to get the current date and time
+def getTime():
+    import pytz
 
-    def dst(self, dt):
-        return timedelta(0)
-        
-cst = CST()
+    utcmoment_unaware = datetime.utcnow()
+    utcmoment = utcmoment_unaware.replace(tzinfo=pytz.utc)
+
+    tz = 'America/Chicago'
+
+    localDatetime = utcmoment.astimezone(pytz.timezone(tz))
+    return localDatetime
 
 def now(sTime, eTime):
-    current = datetime.now(cst).time()
+    current = getTime().time()
     if current >= sTime and current <= eTime:
         return True
     else:
@@ -46,7 +47,7 @@ class MainHandler(webapp2.RequestHandler):
 class Schedule_Handler(webapp2.RequestHandler):
     def get(self):
         schedule = model.getToday()
-        tlocal = datetime.now(cst)
+        tlocal = getTime()
         formNow = datetime.strftime(tlocal, "%A, %b %d %I:%M:%S %p")
         template_values = {
             'schedule': schedule,
