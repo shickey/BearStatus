@@ -8,54 +8,44 @@ today = datetime.date.today()
 
 
 
-def createBlock(name, Year, Month, Day, sHour, sMin, eHour, eMin):
-"""createBlock Function
-   
-Variables:
-name - Name of the block (String)
-Year - Full year of the block (e.g. 2013)(Integer)
-Month - Month number of the block (e.g. 12 for December)(Integer)
-Day - Day of the month for the block (Integer)
-sHour - Hour that the block starts (0-23)(Integer)
-sMin - Minute that the block starts (0-59)(Integer)
-eHour - Hour that the block ends (0-23)(Integer)
-eMin - Minute that the block ends (0-59)(Integer)
+def createBlock(name, date, sTime, eTime):
+    """
+    *NOTE*
+        PLEASE RUN THE deleteSchedule FUNCTION BEFORE THIS TO AVOID DUPLICATE ENTRIES
+    
+    Args:
+        name:   Name of the block (String)
+        date:   Date of the block (Date Object)
+        sTime:  Start time of the block (Time Object)
+        sTime:  End time of the block (Time Object)
 
-Output:
-None
+    Returns:
+        None
 
-Description:
-
-*NOTE*
-PLEASE RUN THE deleteSchedule FUNCTION BEFORE THIS TO AVOID DUPLICATE ENTRIES
-This function is used to create and store a custom block into the datastore"""
-    date = datetime.date(Year, Month, Day)
-    sTime = datetime.time(sHour, sMin, 0)
-    eTime = datetime.time(eHour, eMin, 0)
+    Description:
+        This function is used to create and store a custom block into the datastore
+    """
     cblock = Backend.CustomEntry.CustomEntry(name = name,
-                                     sTime = sTime,
-                                     eTime = eTime,
-                                     date = date)
+                                             sTime = sTime,
+                                             eTime = eTime,
+                                             date = date)
     cblock.put()
 
 
 
-def getSchedule(Year, Month, Day):
-"""getSchedule Function
+def getSchedule(date):
+    """
+    Args:
+        date:   Date of the requested schedule (Date Object)
 
-Variables:
-Year - Full year of the block (e.g. 12 for December)(Integer)
-Month - Month number of the block (Integer)
-Day - Day of the month for the block (Integer)
+    Returns:
+        Blocks for the inputed day, in order (List of datestore Objects)
 
-Output:
-Blocks for the inputed day, in order (List of objects)
-
-Description:
-This function is used to query the datastore for the schedule of any
-date. If there is a special schedule for that date, that will be returned,
-else, the default schedule for that day will be returned."""
-    date = datetime.date(Year, Month, Day)
+    Description:
+        This function is used to query the datastore for the schedule of any
+        date. If there is a special schedule for that date, that will be returned,
+        else, the default schedule for that day will be returned.
+    """
     wday = date.isoweekday()
     q = Backend.CustomEntry.CustomEntry.all()
     q.filter("date =", date).order("sTime")
@@ -74,52 +64,49 @@ else, the default schedule for that day will be returned."""
 
 
 def getToday():
-  """getToday Function
+    """
+    Args:
+        None
 
-  Variables:
-  None
+    Returns:
+        Todays blocks in order (List of Objects)
 
-  Output:
-  Todays blocks in order (List of objects)
-
-  Description:
-  This function is used to query the datastore for todays schedule. If there is
-  a special schedule for that day, that will be returned, else the default schedule
-  will be returned."""
-    return getSchedule(today.year, today.month, today.day)
+    Description:
+        This function is used to query the datastore for todays schedule. If there is
+        a special schedule for that day, that will be returned, else the default schedule
+        will be returned.
+    """
+    return getSchedule(today)
 
 
 def initBlocks():
-"""initBlocks Function
+    """
+    Args:
+        None
 
-  Variables:
-  None
+    Returns:
+        None
 
-  Output:
-  None
-
-  Description:
-  This function is to be called in the warmup handler of the program, to instantiate
-  the entries for the default blocks into the datastore."""
+    Description:
+        This function is to be called in the warmup handler of the program, to instantiate
+        the entries for the default blocks into the datastore.
+    """
     Backend.addDefault.start()
 
 
-def deleteSchedule(Year, Month, Day):
-  """deleteSchedule Function
+def deleteSchedule(date):
+    """
+    Args:
+        date:   Date of the requested schedule (Date Object)
 
-  Variables:
-  Year - Full year of the schedule (e.g. 12 for December)(Integer)
-  Month - Month number of the schedule (Integer)
-  Day - Day of the month for the schedule (Integer)
+    Returns:
+        None
 
-  Output:
-  None
-
-  Description:
-  This function is used to delete all special blocks that already exist for a certain day.
-  The purpose of this is to prevent duplicate entries for a day. Please run this before
-  running the createBlock function."""
-    date = datetime.date(Year, Month, Day)
+    Description:
+        This function is used to delete all special blocks that already exist for a certain day.
+        The purpose of this is to prevent duplicate entries for a day. Please run this before
+        running the createBlock function.
+    """
     q = Backend.CustomEntry.CustomEntry.all()
     q.filter("date =", date).order("sTime")
     db.delete(q)
