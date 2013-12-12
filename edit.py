@@ -8,7 +8,7 @@ import webapp2
 class DateHandler(webapp2.RequestHandler):
   
   def get(self):
-    
+    date = self.request.get(date)
     template_values = {    
         
     }
