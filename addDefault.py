@@ -1,12 +1,13 @@
-import datetime, yaml, models
+import datetime, yaml
+import Entry, DoRun
 
 # This codeblock checks whether a certain datastore entry exists, determining whether to add the hardcoded blocks to the datastore or not
 def start():
-    q = models.doRun.all()
+    q = DoRun.DoRun.all()
     result = q.get()
     if not result:
         # Creates a datastore entry to prevent readding hardcoded blocks
-        hasRun = models.doRun(runTrue = True)
+        hasRun = DoRun.DoRun(runTrue = True)
         hasRun.put()
 
         # Opens the tree.yaml file and saves the contents to doc
@@ -21,9 +22,9 @@ def start():
             eTime = datetime.time(doc['treeroot'][x]['ehour'], doc['treeroot'][x]['emin'])
             
             # Store the instance of Entry with the inputed data into entries
-            entries = models.Entry (name = doc['treeroot'][x]['name'],
-                                    sTime = sTime,
-                                    eTime = eTime,
-                                    day = doc['treeroot'][x]['day'])
+            entries = Entry.Entry(name = doc['treeroot'][x]['name'],
+                                  sTime = sTime,
+                                  eTime = eTime,
+                                  day = doc['treeroot'][x]['day'])
             # Store the data that entries contains into the datastore
             entries.put()

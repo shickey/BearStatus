@@ -5,14 +5,29 @@ import cgi
 from google.appengine.api import users
 import webapp2
 
+class DateHandler(webapp2.RequestHandler):
+  
+  def get(self):
+    
+    template_values = {    
+        
+    }
+    
+    template = jinja_environment.get_template('dates.html')
+    self.response.out.write(template.render(template_values))
 
-class Edit(webapp2.RequestHandler):
-
-template_values = {    }
-
-        template = jinja_environment.get_template('edit.html')
-        self.response.out.write(template.render(template_values))
+class EditHandler(webapp2.RequestHandler):
+  
+  def get(self):
+    
+    template_values = {    
+        
+    }
+    
+    template = jinja_environment.get_template('edit.html')
+    self.response.out.write(template.render(template_values))
 
 app = webapp2.WSGIApplication([
-    ('/edit', Edit)
+    ('/date', DateHandler)
+    ('/edit', EditHandler)
 ], debug=True)
