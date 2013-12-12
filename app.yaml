@@ -10,6 +10,10 @@ handlers:
   upload: favicon\.ico
 
 # set up the edit page to require admin access
+- url: /date.*
+  script: edit.app
+  login: admin
+
 - url: /edit.*
   script: edit.app
   login: admin
