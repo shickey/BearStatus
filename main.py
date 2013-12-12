@@ -32,9 +32,11 @@ def current_block(schedule_list):
         if now(i.sTime,i.eTime) == True:
             return i
 
-def next_block(schedule_list, current_block):
-    block_index = schedule_list.index(current_block)
-    return schedule_list[block_index+1]
+def next_block(schedule_list):
+    current = getTime().time()
+    for i in schedule_list:
+        if current <= i.sTime:
+            return i
     
 class MainHandler(webapp2.RequestHandler):
     def get(self):
