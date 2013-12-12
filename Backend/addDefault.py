@@ -11,7 +11,7 @@ def start():
         hasRun.put()
 
         # Opens the tree.yaml file and saves the contents to doc
-        with open('RegBlocks.yaml', 'r') as f:
+        with open('Backend/RegBlocks.yaml', 'r') as f:
             doc = yaml.load(f)
         
         # For every entry in the 'treeroot' directory of the tree.yaml file, do this:

@@ -1,5 +1,5 @@
-import datetime, sys
-import Entry, CustomEntry, DoRun, addDefault
+import datetime
+import Backend.addDefault, Backend.CustomEntry, Backend.DoRun, Backend.Entry
 
 #   To call any of these functions outside of this file, first import model
 #   and then call the function by model.<function name>(...)
@@ -31,7 +31,7 @@ def createBlock(name, Year, Month, Day, sHour, sMin, eHour, eMin):
     date = datetime.date(Year, Month, Day)
     sTime = datetime.time(sHour, sMin, 0)
     eTime = datetime.time(eHour, eMin, 0)
-    cblock = CustomEntry.CustomEntry(name = name,
+    cblock = Backend.CustomEntry.CustomEntry(name = name,
                                      sTime = sTime,
                                      eTime = eTime,
                                      date = date)
@@ -55,7 +55,7 @@ def createBlock(name, Year, Month, Day, sHour, sMin, eHour, eMin):
 def getSchedule(Year, Month, Day):
     date = datetime.date(Year, Month, Day)
     wday = date.isoweekday()
-    q = CustomEntry.CustomEntry.all()
+    q = Backend.CustomEntry.CustomEntry.all()
     q.filter("date =", date).order("sTime")
     cblocklist = []
     blocklist = []
@@ -64,7 +64,7 @@ def getSchedule(Year, Month, Day):
     if len(cblocklist) > 0:
         return cblocklist
     else:
-        q = Entry.Entry.all()
+        q = Backend.Entry.Entry.all()
         q.filter("day =", wday).order("sTime")
         for block in q.run():
             blocklist.append(block)
@@ -99,7 +99,7 @@ def getToday():
 #   This function is to be called in the warmup handler of the program, to instantiate
 #   the entries for the default blocks into the datastore.
 def initBlocks():
-    addDefault.start()
+    Backend.addDefault.start()
 
 
 #   deleteSchedule Function
@@ -118,6 +118,6 @@ def initBlocks():
 #   running the createBlock function.
 def deleteSchedule(Year, Month, Day):
     date = datetime.date(Year, Month, Day)
-    q = CustomEntry.CustomEntry.all()
+    q = Backend.CustomEntry.CustomEntry.all()
     q.filter("date =", date).order("sTime")
     db.delete(q)
