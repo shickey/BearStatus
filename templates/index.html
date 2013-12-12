@@ -7,37 +7,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="favicon.ico"/>
-    <style>
-      body { 
-        padding-top: 70px; 
-      }
-      
-      #welcome-message {
-        margin-top: 30px;
-        height: 500px;
-        width: 400px;
-        background-color: #c7bebe;
-        border: 2px solid #c7bebe;
-        border-radius: 10px;
-        float: left;
-        display: inline-block;
-      }
-      
-      #mini-schedule {
-        margin-top: 30px;
-        height: 500px;
-        width: 400px;
-        background-color: #c7bebe;
-        border: 2px solid #c7bebe;
-        border-radius: 10px;
-        float: right;
-        display: inline-block;
-      }
-    </style>
+   
     <title>BearStatus</title>
     
     <!--Bootstrap core CSS -->
     <link href="http://getbootstrap.com/dist/css/bootstrap.css" rel="stylesheet">
+    
+    <!-- Custom CSS for this page (non-Bootstrap)-->
+    <link href="index.css" rel="stylesheet">
     
     <!-- Custom styles for this template -->
     <link href="http://getbootstrap.com/examples/starter-template/starter-template.css" rel="stylesheet">
@@ -67,21 +44,26 @@
     </nav>
 
     <div class="container">
-
-      <div class="starter-template" id="welcome-message">
-        <h1>BoringTime 0.1</h1>
-        <p class="lead">Welcome to BearStatus 0.1!<br />text here text here text here<br />text here text here text here<br />text here text here text here.</p>
+      <div class="row">
+        <div class="col-xs-6 col-sm-4">
+          <div class="starter-template" id="welcome-message">
+            <h1>BearStatus</h1>
+            <p class="lead">Welcome to BearStatus 0.1!<br />text here text here text here<br />text here text here text here<br />text here text here text here.</p>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-4">
+        </div>
+        <div class="col-xs-6 col-sm-4">
+          <div class="starter-template" id="mini-schedule">
+            <p class="lead">
+              <h1>Quick Info</h1>
+              The current block is {{block.name}}
+              <br> Start: {{block.sTime}}
+              <br> End: {{block.eTime}}
+            </p>
+          </div>
+        </div>
       </div>
-      
-      <div class="starter-template" id="mini-schedule">
-        <p class="lead">
-          <h1>Quick Info</h1>
-          The current block is {{block.name}}
-          <br> Start: {{block.sTime}}
-          <br> End: {{block.eTime}}
-        </p>
-      </div>
-
     </div><!-- /.container -->
 
 

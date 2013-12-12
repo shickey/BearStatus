@@ -12,6 +12,11 @@ indexes:
 <<<<<<< HEAD
 =======
 
+- kind: CustomEntry
+  properties:
+  - name: date
+  - name: sTime
+
 - kind: Entry
   properties:
   - name: day
