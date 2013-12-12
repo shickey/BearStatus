@@ -42,7 +42,7 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
         schedule = model.getToday()
         block = current_block(schedule)
-        the_next_block = next_block(schedule, block)
+        the_next_block = next_block(schedule)
         template_values = {
             'block': block,
             'next_block': the_next_block,
