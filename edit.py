@@ -31,6 +31,14 @@ class DateHandler(webapp2.RequestHandler):
     end5 = self.request.get(end5)
     end6 = self.request.get(end6)
     
+    block0 = [name0, start0, end0]
+    block1 = [name1, start1, end1]
+    block2 = [name2, start2, end2]
+    block3 = [name3, start3, end3]
+    block4 = [name4, start4, end4]
+    block5 = [name5, start5, end5]
+    block6 = [name6, start6, end6]
+    
     template_values = {    
         
     }
