@@ -40,10 +40,10 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
         schedule = model.getToday()
         block = current_block(schedule)
-        next_block = next_block(schedule, block)
+        the_next_block = next_block(schedule, block)
         template_values = {
             'block': block,
-            'next_block': next_block,
+            'next_block': the_next_block,
         }
 
         template = jinja_environment.get_template('index.html')
