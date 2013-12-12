@@ -8,6 +8,17 @@ import webapp2
 class DateHandler(webapp2.RequestHandler):
   
   def get(self):
+    template_values = {    
+        
+    }
+    
+    template = jinja_environment.get_template('dates.html')
+    self.response.out.write(template.render(template_values))
+
+class EditHandler(webapp2.RequestHandler):
+  
+  def post(self):
+    
     date = self.request.get(date)
     name0 = self.request.get(name0)
     name1 = self.request.get(name1)
@@ -38,17 +49,6 @@ class DateHandler(webapp2.RequestHandler):
     block4 = [name4, start4, end4]
     block5 = [name5, start5, end5]
     block6 = [name6, start6, end6]
-    
-    template_values = {    
-        
-    }
-    
-    template = jinja_environment.get_template('dates.html')
-    self.response.out.write(template.render(template_values))
-
-class EditHandler(webapp2.RequestHandler):
-  
-  def get(self):
     
     template_values = {    
         
