@@ -336,7 +336,7 @@ treeroot:
         emin: 55
         day: 5
     L11:
-        name:1st lunch/Block 4 
+        name: 1st lunch/Block 4 
         shour: 11
         smin: 00
         ehour: 11
@@ -392,4 +392,4 @@ treeroot:
         smin: 0
         ehour: 23
         emin: 59
-        day: 70
+        day: 7
