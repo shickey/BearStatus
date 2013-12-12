@@ -51,7 +51,8 @@
     </nav>
     <div class="bs-header" id="content">
       <div class="container">
-        <h1>Edit Schedules</h1>
+        <h1>Edit Schedules: {{edit_date}}
+        </h1>
       </div>
     </div>
     <div class="bs-example">
@@ -63,43 +64,15 @@
           <th>End Time</th>
           </tr>
         </thead>
-        <form class="form-horizontal" role="form">
+        <form class="form-horizontal" role="form" method="post">
         <tbody>
+          {%for i in range (0,7)%}
           <tr>
-            <td><input type="text" class="form control" placeholder="Text Input"></td>
+            <td><input type="text" class="form control" placeholder="Text Input" name="name0"></td>
             <td><input type="text" class="form control" placeholder="Text Input"></td>
             <td><input type="text" class="form control" placeholder="Text Input"></td>
           </tr>
-          <tr>
-            <td><input type="text" class="form control" placeholder="Text Input"></td>
-            <td><input type="text" class="form control" placeholder="Text Input"></td>
-            <td><input type="text" class="form control" placeholder="Text Input"></td>
-          </tr>
-          <tr>
-            <td><input type="text" class="form control" placeholder="Text Input"></td>
-            <td><input type="text" class="form control" placeholder="Text Input"></td>
-            <td><input type="text" class="form control" placeholder="Text Input"></td>
-          </tr>  
-          <tr>
-            <td><input type="text" class="form control" placeholder="Text Input"></td>
-            <td><input type="text" class="form control" placeholder="Text Input"></td>
-            <td><input type="text" class="form control" placeholder="Text Input"></td>
-          </tr> 
-          <tr>
-            <td><input type="text" class="form control" placeholder="Text Input"></td>
-            <td><input type="text" class="form control" placeholder="Text Input"></td>
-            <td><input type="text" class="form control" placeholder="Text Input"></td>
-          </tr> 
-          <tr>
-            <td><input type="text" class="form control" placeholder="Text Input"></td>
-            <td><input type="text" class="form control" placeholder="Text Input"></td>
-            <td><input type="text" class="form control" placeholder="Text Input"></td>
-          </tr> 
-          <tr>
-            <td><input type="text" class="form control" placeholder="Text Input"></td>
-            <td><input type="text" class="form control" placeholder="Text Input"></td>
-            <td><input type="text" class="form control" placeholder="Text Input"></td>
-          </tr>
+          {%end for%}
         </tbody>
         </form>
       </table>
