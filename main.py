@@ -32,12 +32,20 @@ def current_block(schedule_list):
         if now(i.sTime,i.eTime) == True:
             return i
 
+def next_block(schedule_list):
+    current = getTime().time()
+    for i in schedule_list:
+        if current <= i.sTime:
+            return i
+    
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         schedule = model.getToday()
         block = current_block(schedule)
+        the_next_block = next_block(schedule)
         template_values = {
             'block': block,
+            'next_block': the_next_block,
         }
 
         template = jinja_environment.get_template('index.html')
