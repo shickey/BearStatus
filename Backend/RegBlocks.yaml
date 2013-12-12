@@ -40,10 +40,24 @@ treeroot:
         ehour: 11
         emin: 05
         day: 1
-    05:
-        name: Block 4/Lunch
+    L0:
+        name: 1st lunch/Block 4
         shour: 11
         smin: 10
+        ehour: 11
+        emin: 45
+        day: 1
+    L1:
+        name: Block 4
+        shour: 11
+        smin: 45
+        ehour: 11
+        emin: 55
+        day: 1
+    L2:
+        name: 2nd lunch/Block 4
+        shour: 11
+        smin: 55
         ehour: 12
         emin: 30
         day: 1
@@ -105,13 +119,27 @@ treeroot:
         ehour: 10
         emin: 55
         day: 2
-    14:
-        name: Block 3/Lunch
+    L3:
+        name: 1st lunch/Block 3 
         shour: 11
         smin: 00
+        ehour: 11
+        emin: 35
+        day: 2 
+    L4:
+        name: Block 3
+        shour: 11
+        smin: 35
+        ehour: 12
+        emin: 05
+        day: 2 
+    L5:
+        name: 2nd lunch/Block 3
+        shour: 12
+        smin: 05
         ehour: 12
         emin: 40
-        day: 2
+        day: 2 
     15:
         name: Block 7
         shour: 12
@@ -163,10 +191,24 @@ treeroot:
         ehour: 11
         emin: 20
         day: 3
-    22:
-        name: Block 5/Lunch
+    L5:
+        name: 1st lunch/Block 5
         shour: 11
         smin: 25
+        ehour: 12
+        emin: 00
+        day:  3
+    L6:
+        name: Block 5
+        shour: 12
+        smin: 00
+        ehour: 12
+        emin: 30
+        day: 3 
+    L7:
+        name: 2nd lunch/Block 5
+        shour: 12
+        smin: 30
         ehour: 13
         emin: 05
         day: 3
@@ -221,13 +263,27 @@ treeroot:
         ehour: 10
         emin: 55
         day: 4
-    30:
-        name: Block 4/Lunch
+    L8:
+        name: 1st lunch/Block 4
         shour: 11
         smin: 00
+        ehour: 11
+        emin: 35
+        day: 4 
+    L9:
+        name: Block 4
+        shour: 11
+        smin: 35
+        ehour: 12
+        emin: 05
+        day: 4 
+    L10:
+        name: 2nd lunch/Block 4
+        shour: 12
+        smin: 05
         ehour: 12
         emin: 40
-        day: 4
+        day: 4 
     31:
         name: Block 5
         shour: 12
@@ -279,13 +335,20 @@ treeroot:
         ehour: 10
         emin: 55
         day: 5
-    38:
-        name: Block 4/Lunch
+    L11:
+        name:1st lunch/Block 4 
         shour: 11
         smin: 00
+        ehour: 11
+        emin: 45
+        day: 5
+    L12:
+        name: 2nd lunch/Block 4
+        shour: 11
+        smin: 45
         ehour: 12
         emin: 30
-        day: 5
+        day: 5 
     39:
         name: Block 6
         shour: 12
