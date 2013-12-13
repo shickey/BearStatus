@@ -57,6 +57,6 @@ class EditHandler(webapp2.RequestHandler):
         self.response.out.write(template.render(template_values))
 
 app = webapp2.WSGIApplication([
-    ('/date', DateHandler)
+    ('/date', DateHandler),
     ('/edit', EditHandler)
 ], debug=True)
