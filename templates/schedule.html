@@ -59,23 +59,25 @@
       <div class="starter-template">
         <h1>Schedule</h1>
       </div>
-      <div>
-        <table id="schedule">
-          <tr>
-            <th style="padding:10px;">
-              Block
-            </th>
-            <th style="padding:10px;">
-              Time
-            </th>
-          {%for i in schedule%}
-          <tr>
-            <td id="cellone" > {{i.name}} </td>
-            <td id="cellone" > Time </td>
-          </tr>
-         {%endfor%}
-        </table>
-
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <table id="schedule">
+            <tr>
+              {%for i in schedule%}
+              <th>
+               {{i.name}}
+              </th> 
+              <th>
+                Start:{{i.sTime}}
+                End: {{i.eTime}}
+              </th>
+              {%endfor%}
+            </tr>
+          </table>
+        </div>
+        
+      </div>
+S
       
 
     </div><!-- /.container -->
