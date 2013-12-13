@@ -24,17 +24,7 @@ class DateHandler(webapp2.RequestHandler):
         
 
 class EditHandler(webapp2.RequestHandler):
-  
-  def post(self):
-        
-    iteratingblock = 0 
-    
-    while True:
-        self.request.get("name" + str(iteratingblock))
-        iteratingblock += 1
             
-    
-    template_values = {    
     def get(self):
         
         # load the page with a paramater, convert it to a datetime object
@@ -50,10 +40,17 @@ class EditHandler(webapp2.RequestHandler):
         self.response.out.write(template.render(template_values))      
         
     def post(self):
+
         
         # requests the editing date and converts it to a datetime object
         date = self.request.get('date')
         edit_date = parse('date')
+        
+        iteratingblock = 0 
+    
+        while True:
+            self.request.get("name" + str(iteratingblock))
+            iteratingblock += 1
         
         
        # parse(start0, default=edit_date)
