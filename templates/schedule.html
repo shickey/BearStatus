@@ -1,21 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <style>
-    #schedule{
-      border:2px solid #404040;
-    }
-    #cellone {
-      padding:10px;
-      
-      background-color:#ffffff;
-    }
-    #celltwo {
-      padding:10px;
-      background-color:#b7e6fb;
-    }
-    
-    </style>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,7 +47,7 @@
       </div>
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
-          <table id="schedule">
+          <table class = "table table-bordered" id="schedule">
             {%for i in schedule%}
             <tr>
               <th>
