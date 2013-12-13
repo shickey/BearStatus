@@ -4,6 +4,7 @@
 import cgi
 from google.appengine.api import users
 import webapp2
+import model
 
 class DateHandler(webapp2.RequestHandler):
   
@@ -49,6 +50,15 @@ class EditHandler(webapp2.RequestHandler):
     block4 = [name4, start4, end4]
     block5 = [name5, start5, end5]
     block6 = [name6, start6, end6]
+    
+    schedule = [block0, block1, block2, block3, block4, block5, block6]
+    
+    iteratingblock = 0 
+    
+    while True:
+        self.request.get("name" + str(iteratingblock))
+        iteratingblock += 1
+            
     
     template_values = {    
         
