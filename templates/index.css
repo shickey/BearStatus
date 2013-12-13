@@ -9,6 +9,8 @@ body {
   background-color: #c7bebe;
   border: 2px solid #c7bebe;
   border-radius: 10px;
+/*  float: left;
+  display: inline-block;*/
 }
  
 #mini-schedule {
@@ -18,5 +20,6 @@ body {
   background-color: #c7bebe;
   border: 2px solid #c7bebe;
   border-radius: 10px;
-  margin-left: -40px;
+/*  float: right;
+  display: inline-block;*/
 }

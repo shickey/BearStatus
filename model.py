@@ -4,7 +4,43 @@ import Backend.addDefault, Backend.CustomEntry, Backend.DoRun, Backend.Entry
 #   To call any of these functions outside of this file, first import model
 #   and then call the function by model.<function name>(...)
 
-today = datetime.date.today()
+def initBlocks():
+    """
+    Args:
+        None
+
+    Returns:
+        None
+
+    Description:
+        This function is to be called in the warmup handler of the program, to instantiate
+        the entries for the default blocks into the datastore.
+    """
+    Backend.addDefault.start()
+
+
+
+def getTime():
+    """
+    Args:
+        None
+    
+    Returns:
+        Python DateTime Object
+    
+    Description:
+        This function returns the correct date and time for the specified timezone,
+        including Daylight Savings Time if it is in effect
+    """
+    from datetime import *
+    import pytz
+
+    utcmoment_unaware = datetime.utcnow()
+    utcmoment = utcmoment_unaware.replace(tzinfo=pytz.utc)
+
+    tz = 'America/Chicago'
+    localDatetime = utcmoment.astimezone(pytz.timezone(tz))
+    return localDatetime
 
 
 
@@ -33,67 +69,6 @@ def createBlock(name, date, sTime, eTime):
 
 
 
-def getSchedule(date):
-    """
-    Args:
-        date:   Date of the requested schedule (Date Object)
-
-    Returns:
-        Blocks for the inputed day, in order (List of datestore Objects)
-
-    Description:
-        This function is used to query the datastore for the schedule of any
-        date. If there is a special schedule for that date, that will be returned,
-        else, the default schedule for that day will be returned.
-    """
-    wday = date.isoweekday()
-    q = Backend.CustomEntry.CustomEntry.all()
-    q.filter("date =", date).order("sTime")
-    cblocklist = []
-    blocklist = []
-    for block in q.run():
-        cblocklist.append(block)
-    if len(cblocklist) > 0:
-        return cblocklist
-    else:
-        q = Backend.Entry.Entry.all()
-        q.filter("day =", wday).order("sTime")
-        for block in q.run():
-            blocklist.append(block)
-        return blocklist
-
-
-def getToday():
-    """
-    Args:
-        None
-
-    Returns:
-        Todays blocks in order (List of Objects)
-
-    Description:
-        This function is used to query the datastore for todays schedule. If there is
-        a special schedule for that day, that will be returned, else the default schedule
-        will be returned.
-    """
-    return getSchedule(today)
-
-
-def initBlocks():
-    """
-    Args:
-        None
-
-    Returns:
-        None
-
-    Description:
-        This function is to be called in the warmup handler of the program, to instantiate
-        the entries for the default blocks into the datastore.
-    """
-    Backend.addDefault.start()
-
-
 def deleteSchedule(date):
     """
     Args:
@@ -110,3 +85,58 @@ def deleteSchedule(date):
     q = Backend.CustomEntry.CustomEntry.all()
     q.filter("date =", date).order("sTime")
     db.delete(q)
+
+
+
+def getSchedule(date):
+    """
+    Args:
+        date:   Date of the requested schedule (Date Object)
+
+    Returns:
+        Blocks for the inputed day, in order (List of datestore Objects)
+
+    Description:
+        This function is used to query the datastore for the schedule of any
+        date. If there is a special schedule for that date, that will be returned,
+        else, the default schedule for that day will be returned.
+    """
+    cblocklist = []
+    blocklist = []
+    wday = date.isoweekday()
+    
+    q = Backend.CustomEntry.CustomEntry.all()
+    q.filter("date =", date).order("sTime")
+    
+    for block in q.run():
+        cblocklist.append(block)
+    
+    if len(cblocklist) > 0:
+        return cblocklist
+    
+    else:
+        q = Backend.Entry.Entry.all()
+        q.filter("day =", wday).order("sTime")
+        
+        for block in q.run():
+            blocklist.append(block)
+        
+        return blocklist
+
+
+
+def getToday():
+    """
+    Args:
+        None
+
+    Returns:
+        Todays blocks in order (List of Objects)
+
+    Description:
+        This function is used to query the datastore for todays schedule. If there is
+        a special schedule for that day, that will be returned, else the default schedule
+        will be returned.
+    """
+    today = getTime().date()
+    return getSchedule(today)
