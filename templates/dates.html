@@ -1,21 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <style>
-    h2
-    {
-      color: black;
-    }
-    
-    body {
-      padding-top: 70px;
-    }
-    
-    #center {
-      text-align: center;
-    }
-    
-    </style>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,11 +10,23 @@
     
     <title>Date Selection</title>
     
-    <!--Bootstrap core CSS -->
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="dates.css">
+    
+    <!--jQuery stylesheet-->
+    <script src="dates.js"></script>
+    
+    <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
     
     <!-- Custom styles for this template -->
     <link href="http://getbootstrap.com/examples/starter-template/starter-template.css" rel="stylesheet">
+    
+    <!-- jQuery custom stylesheets for the datepicker -->
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css">   
   </head>
   <body>
 
@@ -42,15 +39,15 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">BoringTime 0.1</a>
+        <a class="navbar-brand" href="/index">BearStatus</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="index.html">Home</a></li>
-          <li><a href="schedule.html">Schedule</a></li>
-          <li><a href="admin.html">Admin</a></li>
+          <li class="active"><a href="/index">Home</a></li>
+          <li><a href="/schedule">Today's Schedule</a></li>
+          <li><a href="/admin">Edit (Admin Only)</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </nav>
@@ -59,16 +56,13 @@
 
       <div class="starter-template">
         <h1>Dates</h1>
-        <p class="lead">Input the date you would like to edit. Then press Edit.</p>
+        <p class="lead">Please select the date you would like to edit using the calendar, then press Edit..</p>
       </div>
     
      <!-- INTEGRATION: THESE ARE THE FORMS TO USE. LOOK AT THE NAME PROPERTY. --> 
       <div id="center">
         <form action="" method="post">
-          Day: <input type: "text" name: "day#" placeholder="dd">
-          Month: <input type: "text" name: "month#" placeholder="mm">
-          Year: <input type: "text" name: "year#" placeholder="yyyy">
-           <button type="button" class="btn btn-primary" href="edit.html">Edit</button>
+          <p>Date: <input type="text" id="datepicker" placeholder="Date"></p> <button type="button" class="btn btn-primary" href="/edit">Edit</button>
       </div>     
     </div><!-- /.container -->
 
