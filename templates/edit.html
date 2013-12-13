@@ -11,7 +11,7 @@
     <title>BoringTime0.1 - Edit Schedule</title>
      
     <!--Bootstrap core CSS -->
-    <link href="http://getbootstrap.com/dist/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
     
     <!-- Custom styles for this template -->
     <link href="http://getbootstrap.com/examples/starter-template/starter-template.css" rel="stylesheet">
@@ -37,15 +37,15 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">BearStatus</a>
+        <a class="navbar-brand" href="index.html">BearStatus</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">Today's Schedule</a></li>
-          <li><a href="#">Admin Login</a></li>
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="/schedule">Today's Schedule</a></li>
+          <li><a href="/edit">Admin Login</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </nav>
@@ -69,14 +69,36 @@
           {%for i in range (0,7)%}
           <tr>
             <td><input type="text" class="form control" placeholder="Text Input" name="name0"></td>
+<<<<<<< HEAD
+            <td><input type="text" class="form control" placeholder="Text Input" name="start0"></td>
+            <td><input type="text" class="form control" placeholder="Text Input" name="end0"></td>
+          </tr>
+          <tr>
+            <td><input type="text" class="form control" placeholder="Text Input" name="name1"></td>
+            <td><input type="text" class="form control" placeholder="Text Input" name="start1"></td>
+            <td><input type="text" class="form control" placeholder="Text Input" name="end1"></td>
+          </tr>
+          <tr>
+            <td><input type="text" class="form control" placeholder="Text Input" name="name2"></td>
+            <td><input type="text" class="form control" placeholder="Text Input" name="start2"></td>
+            <td><input type="text" class="form control" placeholder="Text Input" name="end2"></td>
+          </tr>  
+=======
+            <td><input type="text" class="form control" placeholder="Text Input"></td>
             <td><input type="text" class="form control" placeholder="Text Input"></td>
             <td><input type="text" class="form control" placeholder="Text Input"></td>
           </tr>
           {%endfor%}
+>>>>>>> 446d42ac8226f87fd595aa0f9e0b660ca3dd0af9
         </tbody>
         </form>
       </table>
     </div>
-    <button type="button" class="btn btn-primary" id="submit">Save</button>
+    <div class="row">
+      <div class="col-md-3 col-md-offset-9">
+        <a class="btn btn-default" href="dates.html" role="button">Cancel</a>
+        <a class="btn btn-primary" href="#" role="button">Save</a>
+      </div>
+    </div>
   </body>
 </html>  
