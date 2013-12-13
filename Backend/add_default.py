@@ -1,9 +1,9 @@
 import datetime, yaml
-import Entry, DoRun
+import entry, do_run
 
 # This codeblock checks whether a certain datastore entry exists, determining whether to add the hardcoded blocks to the datastore or not
 def start():
-    q = DoRun.DoRun.all()
+    q = do_run.DoRun.all()
     result = q.get()
     if not result:
         # Creates a datastore entry to prevent readding hardcoded blocks
