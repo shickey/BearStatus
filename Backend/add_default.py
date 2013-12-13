@@ -5,6 +5,7 @@ import entry, do_run
 def start():
     q = do_run.DoRun.all()
     result = q.get()
+    
     if not result:
         # Creates a datastore entry to prevent readding hardcoded blocks
         hasRun = DoRun.DoRun(runTrue = True)
