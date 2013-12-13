@@ -8,11 +8,11 @@ def start():
     
     if not result:
         # Creates a datastore entry to prevent readding hardcoded blocks
-        hasRun = DoRun.DoRun(runTrue = True)
+        hasRun = do_run.DoRun(runTrue = True)
         hasRun.put()
 
         # Opens the tree.yaml file and saves the contents to doc
-        with open('Backend/RegBlocks.yaml', 'r') as f:
+        with open('backend/reg_blocks.yaml', 'r') as f:
             doc = yaml.load(f)
         
         # For every entry in the 'treeroot' directory of the tree.yaml file, do this:
@@ -23,7 +23,7 @@ def start():
             eTime = datetime.time(doc['treeroot'][x]['ehour'], doc['treeroot'][x]['emin'])
             
             # Store the instance of Entry with the inputed data into entries
-            entries = Entry.Entry(name = doc['treeroot'][x]['name'],
+            entries = entry.Entry(name = doc['treeroot'][x]['name'],
                                   sTime = sTime,
                                   eTime = eTime,
                                   day = doc['treeroot'][x]['day'])

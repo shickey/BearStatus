@@ -1,5 +1,5 @@
 import datetime
-import Backend.addDefault, Backend.CustomEntry, Backend.DoRun, Backend.Entry
+import backend.add_default, backend.custom_entry, backend.do_run, backend.entry
 
 #   To call any of these functions outside of this file, first import model
 #   and then call the function by model.<function name>(...)
@@ -16,7 +16,7 @@ def initBlocks():
         This function is to be called in the warmup handler of the program, to instantiate
         the entries for the default blocks into the datastore.
     """
-    Backend.addDefault.start()
+    backend.add_default.start()
 
 
 
@@ -61,7 +61,7 @@ def createBlock(name, date, sTime, eTime):
     Description:
         This function is used to create and store a custom block into the datastore
     """
-    cblock = Backend.CustomEntry.CustomEntry(name = name,
+    cblock = backend.custom_entry.CustomEntry(name = name,
                                              sTime = sTime,
                                              eTime = eTime,
                                              date = date)
@@ -82,7 +82,7 @@ def deleteSchedule(date):
         The purpose of this is to prevent duplicate entries for a day. Please run this before
         running the createBlock function.
     """
-    q = Backend.CustomEntry.CustomEntry.all()
+    q = backend.custom_entry.CustomEntry.all()
     q.filter("date =", date).order("sTime")
     db.delete(q)
 
@@ -105,7 +105,7 @@ def getSchedule(date):
     blocklist = []
     wday = date.isoweekday()
     
-    q = Backend.CustomEntry.CustomEntry.all()
+    q = backend.custom_entry.CustomEntry.all()
     q.filter("date =", date).order("sTime")
     
     for block in q.run():
@@ -115,7 +115,7 @@ def getSchedule(date):
         return cblocklist
     
     else:
-        q = Backend.Entry.Entry.all()
+        q = backend.entry.Entry.all()
         q.filter("day =", wday).order("sTime")
         
         for block in q.run():
