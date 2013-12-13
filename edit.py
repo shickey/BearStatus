@@ -48,12 +48,22 @@ class EditHandler(webapp2.RequestHandler):
         
         iteratingblock = 0 
     
+        model.deleteSchedule(edit_date)    
+    
         while True:
-            self.request.get("name" + str(iteratingblock))
+            name = self.request.get("name" + str(iteratingblock))
+            start = self.request.get("start" + str(iteratingblock))
+            end = self.request.get("end" + str(iteratingblock))
+            
+            sTime = parse(start, default = edit_date)
+            eTime = parse(end, default = edit_date)
+            
+            model.createBlock(name, edit_date, sTime, eTime)
+            
             iteratingblock += 1
-        
-        
-       # parse(start0, default=edit_date)
+            
+            if iteratingblock == 7:
+                break
         
         
         # redirect to the main page
