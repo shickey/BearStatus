@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.ico"/>
+   
+    <title>BearStatus - Home</title>
+    
+    <!--Bootstrap core CSS -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    
+    <!-- Custom CSS for this page (non-Bootstrap)-->
+    <link href="index.css" rel="stylesheet">
+    
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/starter-template/starter-template.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" style = "font-family: Skia;" href="/">BearStatus</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="/schedule">Today's Schedule</a></li>
+          <li><a href="/date">Edit (Admin Only)</a></li>
+
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-4 col-sm-4 col-sm-offset-4">
+          <div class="starter-template" id="welcome-message">
+            <h1 style= "font-size: 54px; font-family: Skia;">BearStatus</h1>
+          
+            <p style= "font-size: 32px;" class="lead">
+              <h1 style= "font-size: 32px;" >Quick Info</h1>
+              The current block is {{block.name}}
+              <br> Start: {{block.sTime}}
+              <br> End: {{block.eTime}}<br>
+              <br> The next block is {{next_block.name}}
+              <br> Start: {{next_block.sTime}}
+              <br> End: {{next_block.eTime}}
+            </p>
+            <p style= "font-size: 9px;" class="lead"><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />Welcome to BearStatus 0.1! Created by the 2013 Blake School Computer Science Class <br />
+            </p>
+          </div>
+        </div>
+      </div>
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

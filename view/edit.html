@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.ico"/>
+    
+    <title>BearStatus - Edit Schedule</title>
+     
+    <!--Bootstrap core CSS -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    
+    <!-- Custom styles for this template -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="edit.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" style = "font-family: Skia;" href="index.html">BearStatus</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="/">Home</a></li>
+          <li><a href="/schedule">Today's Schedule</a></li>
+          <li class="active"><a href="/edit">Edit (Admin Only)</a></li>
+
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </nav>
+    <div class="bs-header" id="content">
+      <div class="container">
+        <h1>Edit Schedules: {{edit_date}}
+        </h1>
+      </div>
+    </div>
+    <div class="bs-example">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+          <th>Block #</th>
+          <th>Start Time</th>
+          <th>End Time</th>
+          </tr>
+        </thead>
+        <form class="form-horizontal" role="form" method="post">
+        <tbody>
+          {%for i in range (0,7)%}
+          <tr>
+            <td><input type="text" class="form control" placeholder="Text Input" name="name0"></td>
+            
+            <td><input type="text" class="form control" placeholder="Text Input" name="start0"></td>
+            <td><input type="text" class="form control" placeholder="Text Input" name="end0"></td>
+          </tr>
+          {%endfor%}
+        </tbody>
+        </form>
+      </table>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-md-offset-9">
+        <a class="btn btn-default" href="/dates" role="button">Cancel</a>
+        <a class="btn btn-primary" href="/schedule" role="button">Save</a>
+      </div>
+    </div>
+  </body>
+</html>  
