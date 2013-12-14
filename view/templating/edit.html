@@ -58,25 +58,24 @@
           </tr>
         </thead>
         <form class="form-horizontal" role="form" method="post">
-        <tbody>
-          {%for i in range (0,7)%}
-          <tr>
-            <td><input type="text" class="form control" placeholder="Text Input" name="name0"></td>
-            
-            <td><input type="text" class="form control" placeholder="Text Input" name="start0"></td>
-            <td><input type="text" class="form control" placeholder="Text Input" name="end0"></td>
-          </tr>
-          {%endfor%}
-        </tbody>
-        <div class="col-md-3 col-md-offset-9">
-            <a class="btn btn-default" href="/date" role="button">Cancel</a>
-            <input type="submit" class="btn btn-primary" value="Save">
-         </div>
+          <tbody>
+            {%for i in range (0,7)%}
+            <tr>
+              <td><input type="text" class="form control" placeholder="Text Input" name="name0"></td>
+              
+              <td><input type="text" class="form control" placeholder="Text Input" name="start0"></td>
+              <td><input type="text" class="form control" placeholder="Text Input" name="end0"></td>
+            </tr>
+            {%endfor%}
+            <div class="row">
+              <div class="col-md-3 col-md-offset-9">
+                <a class="btn btn-default" href="/date" role="button">Cancel</a>
+                <input type="submit" class="btn btn-primary" value="Save">
+              </div>
+            </div>
+          </tbody>
         </form>
       </table>
-    </div>
-    <div class="row">
-
     </div>
   </body>
 </html>  
