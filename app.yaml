@@ -9,6 +9,12 @@ handlers:
   static_files: favicon.ico
   upload: favicon\.ico
 
+# static urls
+- url: /view/stylesheets/
+  static_dir: view/stylesheets
+- url: /view/javascript/
+  static_dir: view/javascript
+
 # set up the edit page to require admin access
 - url: /date.*
   script: edit.app
