@@ -9,17 +9,5 @@ body {
   background-color: #c7bebe;
   border: 2px solid #c7bebe;
   border-radius: 10px;
-/*  float: left;
-  display: inline-block;*/
-}
- 
-#mini-schedule {
-  margin-top: 30px;
-  height: 500px;
-  width: 400px;
-  background-color: #c7bebe;
-  border: 2px solid #c7bebe;
-  border-radius: 10px;
-/*  float: right;
-  display: inline-block;*/
+  text-align: center;
 }
