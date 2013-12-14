@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.ico"/>
+    
+    <title>BearStatus - Edit Schedule</title>
+     
+    <!--Bootstrap core CSS -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    
+    <!-- Custom styles for this template -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="view/stylesheets/edit.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" style = "font-family: Skia" href="/">BearStatus</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="/">Home</a></li>
+          <li><a href="/schedule">Today's Schedule</a></li>
+          <li class="active"><a href="/date">Edit (Admin Only)</a></li>
+
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </nav>
+    <div class="bs-header" id="content">
+      <div class="container">
+        <h1>Edit Schedules: {{edit_date}}
+        </h1>
+      </div>
+    </div>
+    <div class="bs-example">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+          <th>Block #</th>
+          <th>Start Time</th>
+          <th>End Time</th>
+          </tr>
+        </thead>
+        <form class="form-horizontal" role="form" method="post">
+          <tbody>
+            <tr>
+              <td><input type="text" class="form control" placeholder="Block Number" name="name0"></td>
+              
+              <td><input type="text" class="form control" placeholder="Start Time" name="start0"></td>
+              <td><input type="text" class="form control" placeholder="End Time" name="end0"></td>
+            </tr>
+            <tr>
+              <td><input type="text" class="form control" placeholder="Block Number" name="name1"></td>
+              
+              <td><input type="text" class="form control" placeholder="Start Time" name="start1"></td>
+              <td><input type="text" class="form control" placeholder="End Time" name="end1"></td>
+            </tr>
+            <tr>
+              <td><input type="text" class="form control" placeholder="Block Number" name="name2"></td>
+              
+              <td><input type="text" class="form control" placeholder="Start Time" name="start2"></td>
+              <td><input type="text" class="form control" placeholder="End Time" name="end2"></td>
+            </tr>
+            <tr>
+              <td><input type="text" class="form control" placeholder="Block Number" name="name3"></td>
+              
+              <td><input type="text" class="form control" placeholder="Start Time" name="start3"></td>
+              <td><input type="text" class="form control" placeholder="End Time" name="end3"></td>
+            </tr>
+            <tr>
+              <td><input type="text" class="form control" placeholder="Block Number" name="name4"></td>
+              
+              <td><input type="text" class="form control" placeholder="Start Time" name="start4"></td>
+              <td><input type="text" class="form control" placeholder="End Time" name="end4"></td>
+            </tr>
+            <tr>
+              <td><input type="text" class="form control" placeholder="Block Number" name="name5"></td>
+              
+              <td><input type="text" class="form control" placeholder="Start Time" name="start5"></td>
+              <td><input type="text" class="form control" placeholder="End Time" name="end5"></td>
+            </tr>
+            <tr>
+              <td><input type="text" class="form control" placeholder="Block Number" name="name6"></td>
+              
+              <td><input type="text" class="form control" placeholder="Start Time" name="start6"></td>
+              <td><input type="text" class="form control" placeholder="End Time" name="end6"></td>
+            </tr>
+            <div class="row">
+              <div class="col-md-3 col-md-offset-9">
+                <a class="btn btn-default" href="/date" role="button">Cancel</a>
+                <input type="submit" class="btn btn-primary" value="Save">
+              </div>
+            </div>
+          </tbody>
+        </form>
+      </table>
+    </div>
+  </body>
+</html>  

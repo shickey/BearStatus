@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+   
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,16 +9,16 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="favicon.ico"/>
    
-    <title>BearStatus</title>
+    <title>BearStatus - Home</title>
     
     <!--Bootstrap core CSS -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
     
     <!-- Custom CSS for this page (non-Bootstrap)-->
-    <link href="index.css" rel="stylesheet">
+    <link href="view/stylesheets/index.css" rel="stylesheet">
     
     <!-- Custom styles for this template -->
-    <link href="http://getbootstrap.com/examples/starter-template/starter-template.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
 
@@ -30,7 +31,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">BearStatus</a>
+        <a class="navbar-brand" style="font-family: Skia" href="/">BearStatus</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -39,7 +40,7 @@
           
           <li class="active"><a href="/">Home</a></li>
           <li><a href="/schedule">Today's Schedule</a></li>
-          <li><a href="/date">Admin</a></li>
+          <li><a href="/date">Edit (Admin Only)</a></li>
 
         </ul>
       </div><!-- /.navbar-collapse -->
@@ -47,26 +48,21 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-sm-4">
+        <div class="col-xs-4 col-sm-4 col-sm-offset-4">
           <div class="starter-template" id="welcome-message">
-            <h1>BearStatus</h1>
-            <p class="lead">Welcome to BearStatus 0.1!<br />An app that informs students of<br />their daily schedules <br /></p>
-          </div>
-        </div>
-        <div class="col-xs-6 col-sm-4">
-        </div>
-        <div class="col-xs-6 col-sm-4">
-          <div class="starter-template" id="mini-schedule">
-            <p class="lead">
-              <h1>Quick Info</h1>
+            <h1 style= "font-size: 54px; font-family: Skia;">BearStatus</h1>
+          
+            <p style= "font-size: 32px;" class="lead">
+              <h1 style= "font-size: 32px;" >Quick Info</h1>
               The current block is {{block.name}}
               <br> Start: {{block.sTime}}
               <br> End: {{block.eTime}}<br>
-              <br>The next block is {{next_block.name}}
+              <br> The next block is {{next_block.name}}
               <br> Start: {{next_block.sTime}}
               <br> End: {{next_block.eTime}}
             </p>
-            
+            <p style= "font-size: 9px;" class="lead"><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />Welcome to BearStatus 0.1! Created by the 2013 Blake School Computer Science Class <br />
+            </p>
           </div>
         </div>
       </div>
