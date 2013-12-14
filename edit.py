@@ -27,6 +27,7 @@ class EditHandler(webapp2.RequestHandler):
             
     def get(self):
         
+        # declare global variables that can be passed between pages
         global edit_date_datetime
         global edit_date_date
 
@@ -34,6 +35,7 @@ class EditHandler(webapp2.RequestHandler):
         # load the page with a paramater, convert it to a datetime object
         date = self.request.get('date')
         edit_date_datetime = parse(date)
+        # convert the datetime object to a date object
         edit_date_date = edit_date_datetime.date()
         
         # load the template
@@ -46,14 +48,9 @@ class EditHandler(webapp2.RequestHandler):
         
     def post(self):
 
-        # requests the editing date and converts it to a datetime object
-        # date = self.request.get('date')
-        # edit_date = parse(date)
-        
-        iteratingblock = 0 
-
-    
         model.deleteSchedule(edit_date_date)    
+        
+        iteratingblock = 0
     
         while True:
             name = self.request.get("name" + str(iteratingblock))
@@ -63,6 +60,7 @@ class EditHandler(webapp2.RequestHandler):
             sTime_dt = parse(start, default = edit_date_datetime)
             eTime_dt = parse(end, default = edit_date_datetime)
             
+            # convert datetime objects to time objects
             sTime = sTime_dt.time()
             eTime = eTime_dt.time()
             
