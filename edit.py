@@ -27,9 +27,11 @@ class EditHandler(webapp2.RequestHandler):
             
     def get(self):
         
+        global edit_date
+        
         # load the page with a paramater, convert it to a datetime object
         date = self.request.get('date')
-        edit_date = parse(date)  
+        edit_date = parse(date)
         
         # load the template
         template_values = {    
@@ -42,8 +44,8 @@ class EditHandler(webapp2.RequestHandler):
     def post(self):
 
         # requests the editing date and converts it to a datetime object
-        date = self.request.get('date')
-        edit_date = parse(date)
+        # date = self.request.get('date')
+        # edit_date = parse(date)
         
         iteratingblock = 0 
     
@@ -63,8 +65,7 @@ class EditHandler(webapp2.RequestHandler):
             
             if iteratingblock == 7:
                 break
-        
-        
+                
         # redirect to the main page
         self.redirect('/')
         

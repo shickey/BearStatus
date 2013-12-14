@@ -61,9 +61,9 @@
     
      <!-- INTEGRATION: THESE ARE THE FORMS TO USE. LOOK AT THE NAME PROPERTY. --> 
       <div id="center">
-        <form action="" method="post">
-          <p>Date: <input type="text" id="datepicker" placeholder="Date"></p> 
-          <a class="btn btn-primary" href="/edit" role="button">Edit</a>
+        <form action="/edit" method="get">
+          <p>Date: <input type="text" id="datepicker" placeholder="Date" name="date"></p>
+          <input type="submit" class="btn btn-primary" value="Edit">
       </div>     
     </div><!-- /.container -->
 
