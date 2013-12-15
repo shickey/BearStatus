@@ -1,11 +1,7 @@
 # assume admin login has already been handled
 
-import cgi
-from google.appengine.api import users
-import webapp2
 import model
-import webapp2, jinja2, os
-import model
+import webapp2, jinja2, os, cgi
 from datetime import *
 from dateutil.parser import *
 
@@ -18,7 +14,6 @@ class DateHandler(webapp2.RequestHandler):
         template_values = {    
         
         }
-    
         template = jinja_environment.get_template('dates.html')
         self.response.out.write(template.render(template_values))
         
@@ -31,16 +26,16 @@ class EditHandler(webapp2.RequestHandler):
         global edit_date_datetime
         global edit_date_date
 
-        
         # load the page with a paramater, convert it to a datetime object
         date = self.request.get('date')
         edit_date_datetime = parse(date)
+        
         # convert the datetime object to a date object
         edit_date_date = edit_date_datetime.date()
         
         # load the template
         template_values = {    
-            
+            'edit_date': edit_date_date,
         }
         
         template = jinja_environment.get_template('edit.html')
@@ -53,18 +48,24 @@ class EditHandler(webapp2.RequestHandler):
         iteratingblock = 0
     
         while True:
+            
             name = self.request.get("name" + str(iteratingblock))
-            start = self.request.get("start" + str(iteratingblock))
-            end = self.request.get("end" + str(iteratingblock))
-            
-            sTime_dt = parse(start, default = edit_date_datetime)
-            eTime_dt = parse(end, default = edit_date_datetime)
-            
-            # convert datetime objects to time objects
-            sTime = sTime_dt.time()
-            eTime = eTime_dt.time()
-            
-            model.createBlock(name, edit_date_date, sTime, eTime)
+
+            if name != "":
+                
+                start = self.request.get("start" + str(iteratingblock))
+                end = self.request.get("end" + str(iteratingblock))
+                
+                # parse start and end time inputs
+                sTime_dt = parse(start, default = edit_date_datetime)
+                eTime_dt = parse(end, default = edit_date_datetime)
+                
+                # convert datetime objects to time objects
+                sTime = sTime_dt.time()
+                eTime = eTime_dt.time()
+                
+                # run through backend code
+                model.createBlock(name, edit_date_date, sTime, eTime)
             
             iteratingblock += 1
             
