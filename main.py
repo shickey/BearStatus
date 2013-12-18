@@ -3,9 +3,10 @@ import model
 import webapp2, jinja2, os
 from datetime import *
 
-jinja_environment = jinja2.Environment(autoescape=True,
-    loader=jinja2.FileSystemLoader(os.path.join(os.path.dirname(__file__), 'templates')))
+blocks_initialized = False
 
+jinja_environment = jinja2.Environment(autoescape=True,
+    loader=jinja2.FileSystemLoader(os.path.join(os.path.dirname(__file__), 'view/templating')))
 
 def now(sTime, eTime):
     current = model.getTime().time()
@@ -27,7 +28,16 @@ def next_block(schedule_list):
             return i
     
 class MainHandler(webapp2.RequestHandler):
+    
     def get(self):
+        
+        global blocks_initialized
+        
+        # initialize the blocks if this hasn't been done
+        if blocks_initialized != True:
+            model.initBlocks()
+            blocks_initialized = True
+            
         schedule = model.getToday()
         block = current_block(schedule)
         the_next_block = next_block(schedule)
@@ -56,8 +66,16 @@ class Schedule_Handler(webapp2.RequestHandler):
 # this runs as a new instance of an app is loaded to load the blocks
 # it reduces load times and improves scalability
 class WarmupHandler(webapp2.RequestHandler):
+    
     def get(self):
-        model.initBlocks()
+        
+        global blocks_initialized
+        
+        # initialize the blocks if this hasn't been done
+        if blocks_initialized != True:
+            model.initBlocks()
+            blocks_initialized = True
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),

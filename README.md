@@ -11,6 +11,8 @@ Jason Shu
 
 Teddy Ankeny
 
+Pierce Carlson
+
 ### Backend
 Kevin Hayes
 

@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="favicon.ico"/>
-   
-    <title>BearStatus</title>
+    
+    <title>BearStatus - Today's Schedule</title>
     
     <!--Bootstrap core CSS -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
     
-    <!-- Custom CSS for this page (non-Bootstrap)-->
-    <link href="index.css" rel="stylesheet">
-    
     <!-- Custom styles for this template -->
-    <link href="http://getbootstrap.com/examples/starter-template/starter-template.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="view/stylesheets/schedule.css" rel="stylesheet">
   </head>
   <body>
 
@@ -30,46 +31,54 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">BearStatus</a>
+        <a class="navbar-brand" style="font-family: Skia" href="/">BearStatus</a>
       </div>
-
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          
-          <li class="active"><a href="/">Home</a></li>
-          <li><a href="/schedule">Today's Schedule</a></li>
-          <li><a href="/date">Admin</a></li>
-
+          <li><a href="/">Home</a></li>
+          <li class="active" ><a href="/schedule">Today's Schedule</a></li>
+          <li><a href="/date">Edit (Admin Only)</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </nav>
 
     <div class="container">
-      <div class="row">
-        <div class="col-xs-6 col-sm-4">
-          <div class="starter-template" id="welcome-message">
-            <h1>BearStatus</h1>
-            <p class="lead">Welcome to BearStatus 0.1!<br />text here text here text here<br />text here text here text here<br />text here text here text here.</p>
-          </div>
-        </div>
-        <div class="col-xs-6 col-sm-4">
-        </div>
-        <div class="col-xs-6 col-sm-4">
-          <div class="starter-template" id="mini-schedule">
-            <p class="lead">
-              <h1>Quick Info</h1>
-              The current block is {{block.name}}
-              <br> Start: {{block.sTime}}
-              <br> End: {{block.eTime}}<br>
-              <br>The next block is {{next_block.name}}
-              <br> Start: {{next_block.sTime}}
-              <br> End: {{next_block.eTime}}
-            </p>
-            
-          </div>
-        </div>
+      <div class="starter-template">
+        <h1>Schedule</h1>
       </div>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <table class = "table table-bordered" id="schedule"> 
+            <tr>
+              <th>
+               Block
+              </th>
+              <th>
+                Start
+              </th>
+              <th>
+                End
+              </th>
+            </tr>
+            {%for i in schedule%}
+            <tr>
+              <td>
+                {{i.name}}
+              </td>
+              <td>
+                {{i.sTime}}
+              </td>
+              <td>
+                {{i.eTime}}
+              </td>
+              {%endfor%}
+            </tr>
+          </table>
+        </div>
+        
+      </div>
+            <a href="http://www.breadfish.co.uk"> &nbsp; </a>
     </div><!-- /.container -->
 
 
