@@ -69,7 +69,7 @@ class EditHandler(webapp2.RequestHandler):
             
             iteratingblock += 1
             
-            if iteratingblock == 7:
+            if iteratingblock == 12:
                 break
                 
         # redirect to the main page

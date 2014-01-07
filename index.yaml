@@ -19,11 +19,3 @@ indexes:
   properties:
   - name: day
   - name: sTime
-<<<<<<< HEAD
-
-- kind: customEntry
-  properties:
-  - name: date
-  - name: sTime
-=======
->>>>>>> 4dc1dad0361c643830efd993b2298c8d84abef31
