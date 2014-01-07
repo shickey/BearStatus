@@ -2,6 +2,7 @@
 import model
 import webapp2, jinja2, os
 from datetime import *
+from dateutil.parser import *
 
 blocks_initialized = False
 
@@ -52,12 +53,17 @@ class MainHandler(webapp2.RequestHandler):
 
 class Schedule_Handler(webapp2.RequestHandler):
     def get(self):
-        schedule = model.getToday()
-        tlocal = model.getTime()
-        formNow = datetime.strftime(tlocal, "%A, %b %d %I:%M:%S %p")
+        
+        date = self.request.get('date')
+        
+        if date == "":
+            schedule = model.getToday()
+        else:
+            date = parse(date).date()
+            schedule = model.getSchedule(date)
+            
         template_values = {
             'schedule': schedule,
-            'localtime': formNow,
         }
 
         template = jinja_environment.get_template('schedule.html')
