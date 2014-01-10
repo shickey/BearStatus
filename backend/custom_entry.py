@@ -5,3 +5,9 @@ class CustomEntry(db.Model):
     sTime = db.TimeProperty()
     eTime = db.TimeProperty()
     date = db.DateProperty()
+
+    def formsTime(i):
+        return i.sTime.strftime("%I:%M %p")
+        
+    def formeTime(i):
+        return i.eTime.strftime("%I:%M %p")
