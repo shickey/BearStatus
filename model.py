@@ -1,9 +1,100 @@
 import datetime
 from google.appengine.ext import db
-import backend.add_default, backend.custom_entry, backend.do_run, backend.entry
+import backend.add_default, backend.custom_entry, backend.do_run, backend.entry, backend.split_lunch
 
 #   To call any of these functions outside of this file, first import model
 #   and then call the function by model.<function name>(...)
+
+
+
+def formatDate(udate):
+    """
+    Args:
+        udate:  Date to be formated (Date Object)
+
+    Returns:
+        Date in a formated string
+
+    Description:
+        This function takes a raw date object and converts it into
+        a nice looking string format.
+    """
+    return udate.strftime("%A, %b %d %Y")
+
+
+
+def formatTime(utime):
+    """
+    Args:
+        utime:  Time to be formated (Time Object)
+
+    Returns:
+        Time in a formated string
+
+    Description:
+        This function takes a raw time object and converts it into
+        a nice looking string format.
+    """
+    return utime.strftime("%I:%M %p")
+
+
+
+def formatDateTime(udtime):
+    """
+    Args:
+        udtime: Date and Time to be formated (DateTime Object)
+
+    Returns:
+        Date and Time in a formated string
+
+    Description:
+        This function takes a raw datetime object and converts it into
+        a nice looking string format.
+    """
+    return udtime.strftime("%I:%M %p %A, %b %d %Y")
+
+
+
+def changeSplitLunch(url):
+    """
+    Args:
+        url:    URL Link to the split lunch schedule (URL)
+
+    Returns:
+        None
+
+    Description:
+        This function takes a URL Link and stores it into the datastore,
+        erasing any previous link that was already there.
+    """
+    q = backend.split_lunch.SplitLunch.all()
+    for i in q:
+        db.delete(q)
+    ssched = backend.split_lunch.SplitLunch(name = url)
+    ssched.put()
+
+
+
+def getSplitLunch():
+    """
+    Args:
+        None
+
+    Returns:
+        List containing the Split Lunch URL
+
+    Description:
+        This function queries the datastore for the split lunch URL,
+        and then returns it to the user.
+    """
+    linklist = []
+    q = backend.split_lunch.SplitLunch.all()
+    for i in q:
+        linklist.append(i)
+    
+    return linklist
+    
+    
 
 def initBlocks():
     """

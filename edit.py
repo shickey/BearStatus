@@ -74,8 +74,18 @@ class EditHandler(webapp2.RequestHandler):
                 
         # redirect to the main page
         self.redirect('/')
+
+class SplitLunchHandler(webapp2.RequestHandler):
+    
+    def get(self):
+
+        date = self.request.get('lunchurl')
+        model.changeSplitLunch(date)
+        
+        self.redirect('/')
         
 app = webapp2.WSGIApplication([
     ('/date', DateHandler),
-    ('/edit', EditHandler)
+    ('/edit', EditHandler),
+    ('/changelunch', SplitLunchHandler)
 ], debug=True)

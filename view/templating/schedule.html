@@ -18,7 +18,17 @@
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Custom CSS -->
-    <link href="view/stylesheets/schedule.css" rel="stylesheet">
+    <link rel="stylesheet" href="view/stylesheets/schedule.css">
+
+    <!-- jQuery custom stylesheets for the datepicker -->
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script> 
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css">   
+    
+    <!--jQuery stylesheet-->
+    <script src="view/javascript/dates.js"></script>
+    
   </head>
   <body>
 
@@ -45,7 +55,7 @@
 
     <div class="container">
       <div class="starter-template">
-        <h1>Schedule</h1>
+        <h1>Schedule for {{display_date}}</h1>
       </div>
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
@@ -67,26 +77,43 @@
                 {{i.name}}
               </td>
               <td>
-                {{i.sTime}}
+                {{i.formsTime()}}
               </td>
               <td>
-                {{i.eTime}}
+                {{i.formeTime()}}
               </td>
               {%endfor%}
             </tr>
+            <div class="row">
+              <div class="col-md-3 col-md-offset-9">
+                <form action="/splitlunch" method="get">
+                  <input type="submit" class="btn btn-primary" value="Split Lunch Schedule">
+                </form>
+                <br />
+                <br />
+              </div>
+            </div>
           </table>
         </div>
       </div>
-        <a href="https://docs.google.com/spreadsheet/ccc?key=0AoKBCrXc7E9HdE9XaFlsV2VVamlWcTN1WVJLdVdFM3c">Split Lunch Schedule</a>
-        </br>
-        <a href="http://goo.gl/gaRWSB"> &nbsp; </a>
+      <div id="center">
+        <br />
+        <br />
+        <p class="lead">To view the schedule of a different day, select the date below, then press View.</p>
+        <form action="/specificday" method="get">
+          <p>Date: <input type="text" id="datepicker" placeholder="Date" name="date"></p>
+          <input type="submit" class="btn btn-primary" value="View">
+        </form>
+        <p style= "font-size: 9px;" class="lead"><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />Welcome to BearStatus 0.1! Created by the 2013 Blake School Computer Science Class <br />
+        </p>
+      </div>
     </div><!-- /.container -->
 
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script> -->
   </body>
 </html>

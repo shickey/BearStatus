@@ -52,18 +52,25 @@ class MainHandler(webapp2.RequestHandler):
 
 
 class Schedule_Handler(webapp2.RequestHandler):
+    
     def get(self):
         
         date = self.request.get('date')
+        splitlunch = model.getSplitLunch()
         
         if date == "":
             schedule = model.getToday()
+            date = "Today"
         else:
-            date = parse(date).date()
+            date = parse(date)
             schedule = model.getSchedule(date)
+            date = model.formatDate(date)
+            
             
         template_values = {
+            'display_date': date,
             'schedule': schedule,
+            'splitlunch': splitlunch,
         }
 
         template = jinja_environment.get_template('schedule.html')
@@ -82,11 +89,22 @@ class WarmupHandler(webapp2.RequestHandler):
             model.initBlocks()
             blocks_initialized = True
 
+class LunchLinkHandler(webapp2.RequestHandler):
+    
+    def get(self):
+        splitlunch = model.getSplitLunch()
+        if len(splitlunch) > 0:
+            self.redirect(str(splitlunch[0].name))
+        else:
+            self.redirect("404.derp")
+        
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/schedule', Schedule_Handler),
-    ('/_ah/warmup', WarmupHandler)
+    ('/_ah/warmup', WarmupHandler),
+    ('/splitlunch', LunchLinkHandler),
+    ('/specificday', Schedule_Handler),
 ], debug=True)
 
 

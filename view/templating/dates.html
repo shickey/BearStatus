@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,15 +10,15 @@
     <link rel="shortcut icon" href="favicon.ico"/>
     
     <title>BearStatus - Date Selection</title>
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="view/stylesheets/dates.css">
-    
+
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
     
     <!-- Custom styles for this template -->
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="view/stylesheets/dates.css">
     
     <!-- jQuery custom stylesheets for the datepicker -->
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
@@ -27,6 +28,7 @@
     
     <!--jQuery stylesheet-->
     <script src="view/javascript/dates.js"></script>
+    
   </head>
   <body>
 
@@ -45,9 +47,9 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="/">Home</a></li>
+          <li><a href="/">Home</a></li>
           <li><a href="/schedule">Today's Schedule</a></li>
-          <li><a href="/date">Edit (Admin Only)</a></li>
+          <li class="active"><a href="/date">Edit (Admin Only)</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </nav>
@@ -64,7 +66,21 @@
         <form action="/edit" method="get">
           <p>Date: <input type="text" id="datepicker" placeholder="Date" name="date"></p>
           <input type="submit" class="btn btn-primary" value="Edit">
-      </div>     
+        </form>
+      </div>
+      <div class="starter-template" id="center">
+        <br />
+        <h1>Change Split Lunch Schedule</h1>
+        <p class="lead">Please enter the new URL for the Split Lunch Schedule, then press Save.</p>
+      </div>
+      <div id="center">
+        <form action="/changelunch" method="get">
+          <p>URL: <input type="text" id="lunchurl" placeholder="Link" name="lunchurl" size="60"></p>
+          <input type="submit" class="btn btn-primary" value="Save">
+        </form>
+      <p style= "font-size: 9px;" class="lead"><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />Welcome to BearStatus 0.1! Created by the 2013 Blake School Computer Science Class <br />
+      </p>
+      </div>
     </div><!-- /.container -->
 
 

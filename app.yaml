@@ -24,6 +24,16 @@ handlers:
   script: edit.app
   login: admin
 
+- url: /changelunch.*
+  script: edit.app
+  login: admin
+
+- url: /splitlunch.*
+  script: main.app
+
+- url: /specificday.*
+  script: main.app
+
 - url: .*
   script: main.app
 
