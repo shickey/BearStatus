@@ -19,7 +19,7 @@ def now(sTime, eTime):
 # given a schedule list, determine the current block and return its model
 def current_block(schedule_list):
     for i in schedule_list:
-        if now(i.sTime,i.eTime) == True:
+        if i.isnow() == True:
             return i
 
 def next_block(schedule_list):
@@ -27,6 +27,26 @@ def next_block(schedule_list):
     for i in schedule_list:
         if current <= i.sTime:
             return i
+
+def testsblock(block):
+    # try:
+    #     block.isnow()
+    # except RuntimeError:
+    #     return ""
+    # return block.formsTime()
+    if block == None:
+        return ""
+    return block.formsTime()
+
+def testeblock(block):
+    # try:
+    #     block.isnow()
+    # except RuntimeError:
+    #     return ""
+    # return block.formeTime()
+    if block == None:
+        return ""
+    return block.formeTime()
     
 class MainHandler(webapp2.RequestHandler):
     
@@ -41,9 +61,17 @@ class MainHandler(webapp2.RequestHandler):
             
         schedule = model.getToday()
         block = current_block(schedule)
+        blocksTime = testsblock(block)
+        blockeTime = testeblock(block)
         the_next_block = next_block(schedule)
+        next_blocksTime = testsblock(the_next_block)
+        next_blockeTime = testeblock(the_next_block)
         template_values = {
             'block': block,
+            'blocksTime': blocksTime,
+            'blockeTime': blockeTime,
+            'next_blocksTime': next_blocksTime,
+            'next_blockeTime': next_blockeTime,
             'next_block': the_next_block,
         }
 
