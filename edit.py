@@ -105,9 +105,22 @@ class SplitLunchHandler(webapp2.RequestHandler):
         model.changeSplitLunch(date)
         
         self.redirect('/')
+
+class RevertDateHandler(webapp2.RequestHandler):
+    
+    def get(self):
         
+        date = self.request.get('dateR')
+        
+        edit_date_datetime = parse(date)
+        
+        model.deleteSchedule(edit_date_datetime)
+        
+        self.redirect('/')
+
 app = webapp2.WSGIApplication([
     ('/date', DateHandler),
     ('/edit', EditHandler),
-    ('/changelunch', SplitLunchHandler)
+    ('/changelunch', SplitLunchHandler),
+    ('/revertdate', RevertDateHandler)
 ], debug=True)

@@ -67,9 +67,26 @@
           <p>Date: <input type="text" id="datepicker" placeholder="Date" name="date"></p>
           <input type="submit" class="btn btn-primary" value="Edit">
         </form>
-      </div>
-      <div class="starter-template" id="center">
         <br />
+        <br />
+      </div>
+
+      <div class="starter-template" id="center">
+        <h1>Revert Date</h1>
+        <p class="lead">Please select the date you would like to revert to a normal schedule, then press Revert.</p>
+      </div>
+    
+     <!-- INTEGRATION: THESE ARE THE FORMS TO USE. LOOK AT THE NAME PROPERTY. --> 
+      <div id="center">
+        <form action="/revertdate" method="get">
+          <p>Date: <input type="text" id="datepickerR" placeholder="Date" name="dateR"></p>
+          <input type="submit" class="btn btn-primary" value="Revert">
+        </form>
+        <br />
+        <br />
+      </div>
+      
+      <div class="starter-template" id="center">
         <h1>Change Split Lunch Schedule</h1>
         <p class="lead">Please enter the new URL for the Split Lunch Schedule, then press Save.</p>
       </div>
