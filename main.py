@@ -88,17 +88,20 @@ class Schedule_Handler(webapp2.RequestHandler):
         
         if date == "":
             schedule = model.getToday()
-            date = "Today"
+            date = model.getTime()
+            display_date = "Today"
         else:
             date = parse(date)
             schedule = model.getSchedule(date)
-            date = model.formatDate(date)
-            
+            display_date = model.formatDate(date)
+        
+        short_date = date.strftime("%x")            # short date to display in form at bottom
             
         template_values = {
-            'display_date': date,
+            'display_date': display_date,
             'schedule': schedule,
             'splitlunch': splitlunch,
+            'short_date': short_date,
         }
 
         template = jinja_environment.get_template('schedule.html')
