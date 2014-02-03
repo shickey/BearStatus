@@ -39,8 +39,12 @@
         <ul class="nav navbar-nav">
           
           <li class="active"><a href="/">Home</a></li>
-          <li><a href="/schedule">Today's Schedule</a></li>
-          <li><a href="/date">Edit (Admin Only)</a></li>
+          <li><a href="/schedule">Schedule</a></li>
+          {% if users.get_current_user() %}
+            {% if users.is_current_user_admin() %}
+              <li><a href="/date">Edit</a></li>
+            {% endif %}
+          {% endif %}
 
         </ul>
       </div><!-- /.navbar-collapse -->

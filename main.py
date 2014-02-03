@@ -3,6 +3,7 @@ import model
 import webapp2, jinja2, os
 from datetime import *
 from dateutil.parser import *
+from google.appengine.api import users
 
 blocks_initialized = False
 
@@ -53,7 +54,7 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
         
         global blocks_initialized
-        
+                
         # initialize the blocks if this hasn't been done
         if blocks_initialized != True:
             model.initBlocks()
@@ -73,6 +74,7 @@ class MainHandler(webapp2.RequestHandler):
             'next_blocksTime': next_blocksTime,
             'next_blockeTime': next_blockeTime,
             'next_block': the_next_block,
+            'users': users
         }
 
         template = jinja_environment.get_template('index.html')
@@ -102,6 +104,7 @@ class Schedule_Handler(webapp2.RequestHandler):
             'schedule': schedule,
             'splitlunch': splitlunch,
             'short_date': short_date,
+            'users': users
         }
 
         template = jinja_environment.get_template('schedule.html')
