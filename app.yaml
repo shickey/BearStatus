@@ -28,6 +28,10 @@ handlers:
   script: edit.app
   login: admin
 
+- url: /revertdate.*
+  script: edit.app
+  login: admin
+
 - url: /splitlunch.*
   script: main.app
 

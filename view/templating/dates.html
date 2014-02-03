@@ -61,15 +61,28 @@
         <p class="lead">Please select the date you would like to edit using the calendar, then press Edit.</p>
       </div>
     
-     <!-- INTEGRATION: THESE ARE THE FORMS TO USE. LOOK AT THE NAME PROPERTY. --> 
       <div id="center">
         <form action="/edit" method="get">
           <p>Date: <input type="text" id="datepicker" placeholder="Date" name="date"></p>
           <input type="submit" class="btn btn-primary" value="Edit">
         </form>
-      </div>
-      <div class="starter-template" id="center">
         <br />
+      </div>
+
+      <div class="starter-template" id="center">
+        <h1>Revert Date</h1>
+        <p class="lead">Please select the date you would like to revert to a normal schedule, then press Revert.</p>
+      </div>
+    
+      <div id="center">
+        <form action="/revertdate" method="get">
+          <p>Date: <input type="text" id="datepickerR" placeholder="Date" name="dateR"></p>
+          <input type="submit" class="btn btn-primary" value="Revert">
+        </form>
+        <br />
+      </div>
+      
+      <div class="starter-template" id="center">
         <h1>Change Split Lunch Schedule</h1>
         <p class="lead">Please enter the new URL for the Split Lunch Schedule, then press Save.</p>
       </div>
@@ -78,9 +91,8 @@
           <p>URL: <input type="text" id="lunchurl" placeholder="Link" name="lunchurl" size="60"></p>
           <input type="submit" class="btn btn-primary" value="Save">
         </form>
-      <p style= "font-size: 9px;" class="lead"><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />Welcome to BearStatus 1.0! Created by the First Semester 2013 Blake School Computer Science Class <br />
-      </p>
       </div>
+      <br/>
     </div><!-- /.container -->
 
 
