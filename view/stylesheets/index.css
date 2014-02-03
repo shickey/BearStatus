@@ -1,13 +1,24 @@
 body { 
   padding-top: 70px; 
 }
-      
-#welcome-message {
-  margin-top: 30px;
+
+footer {
+    position: inherit;
+    bottom: 0px;
+    text-align: center;
+    font-size: 10px;
+}
+
+#content {
+  position: inherit;
+  margin-top: 3%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
   height: 500px;
-  width: 400px;
   background-color: #c7bebe;
   border: 2px solid #c7bebe;
   border-radius: 10px;
-  text-align: center;
 }
