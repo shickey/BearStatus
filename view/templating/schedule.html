@@ -49,10 +49,8 @@
           
           <li><a href="/">Home</a></li>
           <li class="active"><a href="/schedule">Schedule</a></li>
-          {% if users.get_current_user() %}
-            {% if users.is_current_user_admin() %}
-              <li><a href="/date">Edit</a></li>
-            {% endif %}
+          {% if isadmin %}
+            <li><a href="/date">Edit</a></li>
           {% endif %}
           
         </ul>
@@ -92,7 +90,7 @@
             </tr>
             <div class="row">
               <div class="col-md-3 col-md-offset-9">
-                <form action="/splitlunch" method="get">
+                <form action="/splitlunch" method="get" target="_blank">
                   <input type="submit" class="btn btn-primary" value="Split Lunch Schedule">
                 </form>
                 <br />

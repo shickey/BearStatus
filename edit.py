@@ -4,7 +4,6 @@ import model
 import webapp2, jinja2, os, cgi
 from datetime import *
 from dateutil.parser import *
-from google.appengine.api import users
 
 jinja_environment = jinja2.Environment(autoescape=True,
     loader=jinja2.FileSystemLoader(os.path.join(os.path.dirname(__file__), 'view/templating')))
@@ -13,19 +12,16 @@ class DateHandler(webapp2.RequestHandler):
   
     def get(self):
         template_values = {    
-            'users': users
         }
         template = jinja_environment.get_template('dates.html')
         self.response.out.write(template.render(template_values))
         
 global edit_date_datetime
 global edit_date_date
+
 class EditHandler(webapp2.RequestHandler):
             
     def get(self):
-        
-        # declare global variables that can be passed between pages
-
 
         # load the page with a paramater, convert it to a datetime object
         date = self.request.get('date')
@@ -37,7 +33,6 @@ class EditHandler(webapp2.RequestHandler):
         # load the template
         template_values = {    
             'edit_date': model.formatDate(edit_date_date),
-            'users': users
         }
         
         template = jinja_environment.get_template('edit.html')
