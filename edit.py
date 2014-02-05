@@ -12,19 +12,16 @@ class DateHandler(webapp2.RequestHandler):
   
     def get(self):
         template_values = {    
-        
         }
         template = jinja_environment.get_template('dates.html')
         self.response.out.write(template.render(template_values))
         
 global edit_date_datetime
 global edit_date_date
+
 class EditHandler(webapp2.RequestHandler):
             
     def get(self):
-        
-        # declare global variables that can be passed between pages
-
 
         # load the page with a paramater, convert it to a datetime object
         date = self.request.get('date')

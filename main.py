@@ -3,6 +3,7 @@ import model
 import webapp2, jinja2, os
 from datetime import *
 from dateutil.parser import *
+from google.appengine.api import users
 
 blocks_initialized = False
 
@@ -52,8 +53,10 @@ class MainHandler(webapp2.RequestHandler):
     
     def get(self):
         
-        global blocks_initialized
+        isadmin = users.is_current_user_admin()
         
+        global blocks_initialized
+                
         # initialize the blocks if this hasn't been done
         if blocks_initialized != True:
             model.initBlocks()
@@ -73,6 +76,7 @@ class MainHandler(webapp2.RequestHandler):
             'next_blocksTime': next_blocksTime,
             'next_blockeTime': next_blockeTime,
             'next_block': the_next_block,
+            'isadmin': isadmin,
         }
 
         template = jinja_environment.get_template('index.html')
@@ -83,6 +87,8 @@ class Schedule_Handler(webapp2.RequestHandler):
     
     def get(self):
         
+        isadmin = users.is_current_user_admin()
+
         date = self.request.get('date')
         splitlunch = model.getSplitLunch()
         
@@ -102,6 +108,7 @@ class Schedule_Handler(webapp2.RequestHandler):
             'schedule': schedule,
             'splitlunch': splitlunch,
             'short_date': short_date,
+            'isadmin': isadmin
         }
 
         template = jinja_environment.get_template('schedule.html')
@@ -130,12 +137,19 @@ class LunchLinkHandler(webapp2.RequestHandler):
             self.redirect("404.derp")
         
 
+# class DebugHandler(webapp2.RequestHandler):
+    
+#     def get(self):
+#         isadmin = model.isadmin()
+#         self.response.write(isadmin)
+
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/schedule', Schedule_Handler),
     ('/_ah/warmup', WarmupHandler),
     ('/splitlunch', LunchLinkHandler),
     ('/specificday', Schedule_Handler),
+    # ('/debug', DebugHandler)
 ], debug=True)
 
 

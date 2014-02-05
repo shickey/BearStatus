@@ -46,9 +46,13 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
+          
           <li><a href="/">Home</a></li>
-          <li class="active" ><a href="/schedule">Today's Schedule</a></li>
-          <li><a href="/date">Edit (Admin Only)</a></li>
+          <li class="active"><a href="/schedule">Schedule</a></li>
+          {% if isadmin %}
+            <li><a href="/date">Edit</a></li>
+          {% endif %}
+          
         </ul>
       </div><!-- /.navbar-collapse -->
     </nav>
@@ -86,7 +90,7 @@
             </tr>
             <div class="row">
               <div class="col-md-3 col-md-offset-9">
-                <form action="/splitlunch" method="get">
+                <form action="/splitlunch" method="get" target="_blank">
                   <input type="submit" class="btn btn-primary" value="Split Lunch Schedule">
                 </form>
                 <br />
