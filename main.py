@@ -149,7 +149,7 @@ app = webapp2.WSGIApplication([
     ('/_ah/warmup', WarmupHandler),
     ('/splitlunch', LunchLinkHandler),
     ('/specificday', Schedule_Handler),
-    ('/debug', DebugHandler)
+    # ('/debug', DebugHandler)
 ], debug=True)
 
 
