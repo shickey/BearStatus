@@ -6,7 +6,7 @@ treeroot:
 
 # Monday
     00:
-        name: Before
+        name: Before School
         shour: 0
         smin: 0
         ehour: 8
@@ -106,7 +106,7 @@ treeroot:
 
 # Tuesday
     10:
-        name: Before
+        name: Before School
         shour: 0
         smin: 0
         ehour: 8
@@ -185,7 +185,7 @@ treeroot:
 
 # Wednesday
     18:
-        name: Before
+        name: Before School
         shour: 0
         smin: 0
         ehour: 8
@@ -264,7 +264,7 @@ treeroot:
 
 # Thursday
     26:
-        name: Before
+        name: Before School
         shour: 0
         smin: 0
         ehour: 8
@@ -343,7 +343,7 @@ treeroot:
 
 # Friday
     34:
-        name: Before
+        name: Before School
         shour: 0
         smin: 0
         ehour: 8

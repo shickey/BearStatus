@@ -20,6 +20,10 @@ handlers:
   script: edit.app
   login: admin
 
+- url: /admin.*
+  script: edit.app
+  login: admin
+
 - url: /edit.*
   script: edit.app
   login: admin
@@ -31,12 +35,6 @@ handlers:
 - url: /revertdate.*
   script: edit.app
   login: admin
-
-- url: /splitlunch.*
-  script: main.app
-
-- url: /specificday.*
-  script: main.app
 
 - url: .*
   script: main.app
