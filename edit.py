@@ -50,7 +50,8 @@ class EditHandler(webapp2.RequestHandler):
         
         # convert the datetime object to a date object
         edit_date_date = edit_date_datetime.date()
-
+        
+        # delete any existing schedules to prevent duplicates
         model.deleteSchedule(edit_date_date)    
         
         iteratingblock = 0
@@ -77,6 +78,7 @@ class EditHandler(webapp2.RequestHandler):
                 sTime = sTime_dt.time()
                 eTime = eTime_dt.time()
                 
+                # write block to datastore
                 model.createBlock(name, edit_date_date, sTime, eTime)
 
             # if name != "":
@@ -128,7 +130,7 @@ class RevertDateHandler(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
     ('/date', DateRedirector),
     ('/edit', EditHandler),
-    ('/revertdate', RevertDateHandler)
+    ('/revertdate', RevertDateHandler),
     ('/admin', AdminHandler),
     ('/changelunch', SplitLunchHandler)
 ], debug=True)

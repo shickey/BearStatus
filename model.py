@@ -17,7 +17,7 @@ def formatDate(udate):
         This function takes a raw date object and converts it into
         a nice looking string format.
     """
-    return udate.strftime("%A, %b %d %Y")
+    return udate.strftime("%A, %b. %d, %Y")
 
 
 
@@ -49,7 +49,7 @@ def formatDateTime(udtime):
         This function takes a raw datetime object and converts it into
         a nice looking string format.
     """
-    return udtime.strftime("%I:%M %p %A, %b %d %Y")
+    return udtime.strftime("%I:%M %p %A, %b. %d, %Y")
 
 
 
