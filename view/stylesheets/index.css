@@ -3,10 +3,10 @@ body {
 }
 
 footer {
-    position: inherit;
-    bottom: 0px;
-    text-align: center;
-    font-size: 10px;
+  position: inherit;
+  bottom: 0px;
+  text-align: center;
+  font-size: 10px;
 }
 
 #content {
@@ -21,4 +21,8 @@ footer {
   background-color: #c7bebe;
   border: 2px solid #c7bebe;
   border-radius: 10px;
+}
+
+#logo {
+  font-family: 'Open Sans', sans-serif;
 }
