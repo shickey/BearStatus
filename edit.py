@@ -8,9 +8,6 @@ from dateutil.parser import *
 jinja_environment = jinja2.Environment(autoescape=True,
     loader=jinja2.FileSystemLoader(os.path.join(os.path.dirname(__file__), 'view/templating')))
 
-global edit_date_datetime
-global edit_date_date
-
 class AdminHandler(webapp2.RequestHandler):
   
     def get(self):
@@ -35,9 +32,17 @@ class EditHandler(webapp2.RequestHandler):
         # convert the datetime object to a date object
         edit_date_date = edit_date_datetime.date()
         
+        # determine how many blocks are needed
+        blocks = self.request.get('blocks')
+        if blocks == "":
+            blocks = 12
+        else:
+            blocks = int(blocks)
+                
         # load the template
         template_values = {    
             'edit_date': model.formatDate(edit_date_date),
+            'blocks': blocks,
         }
         
         template = jinja_environment.get_template('edit.html')
@@ -53,6 +58,8 @@ class EditHandler(webapp2.RequestHandler):
         
         # delete any existing schedules to prevent duplicates
         model.deleteSchedule(edit_date_date)    
+        
+        maxblocks = int(self.request.get('blocks'))
         
         iteratingblock = 0
     
@@ -99,7 +106,7 @@ class EditHandler(webapp2.RequestHandler):
             
             iteratingblock += 1
             
-            if iteratingblock == 12:
+            if iteratingblock == maxblocks:
                 break
                 
         # redirect to the main page
