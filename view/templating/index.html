@@ -60,16 +60,23 @@
         <div id="content">
           <div class="starter-template" id="welcome-message">
             <h1 id="logo" style="font-size: 54px;">BearStatus</h1>
-          
             <p style= "font-size: 32px;" class="lead">
               <h1 style= "font-size: 32px;" id="logo">Quick Info</h1>
               <br>
-              <u style= "font-size:26px;">Now: </u> <p style= "font-size: 16px;"> {{block.name}} <p>
-              Start: {{blocksTime}}
-              <br> End: {{blockeTime}}<br>
-              <br> <u style= "font-size:26px;">Next: </u> <p style= "font-size: 16px;"> {{next_block.name}} <p>
-              Start: {{next_blocksTime}}
-              <br> End: {{next_blockeTime}}
+              {% if block.name %}
+                <u style= "font-size:26px;">Now: </u> <p style= "font-size: 16px;"> {{block.name}} <p>
+                Start: {{blocksTime}}
+                <br> End: {{blockeTime}}<br>
+              {% endif %}
+              {% if next_block.name %}
+                <u style= "font-size:26px;">Next: </u> <p style= "font-size: 16px;"> {{next_block.name}} <p>
+                Start: {{next_blocksTime}}
+                <br> End: {{next_blockeTime}}
+              {% endif %}
+              {% if block.name is undefined and next_block.name is undefined %}
+                <u style= "font-size:26px;">Now: </u> <p style= "font-size: 16px;">No School<p>
+              {% endif %}
+              <br>
             </p>
 
           </div>

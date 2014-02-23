@@ -5,13 +5,13 @@
 treeroot:
 
 # Monday
-    00:
-        name: Before School
-        shour: 0
-        smin: 0
-        ehour: 8
-        emin: 0
-        day: 1
+    # 00:
+    #     name: Before School
+    #     shour: 0
+    #     smin: 0
+    #     ehour: 8
+    #     emin: 0
+    #     day: 1
     01:
         name: Block 1
         shour: 8
@@ -96,22 +96,22 @@ treeroot:
         ehour: 15
         emin: 00
         day: 1
-    09:
-        name: After School
-        shour: 15
-        smin: 00
-        ehour: 23
-        emin: 59
-        day: 1
+    # 09:
+    #     name: After School
+    #     shour: 15
+    #     smin: 00
+    #     ehour: 23
+    #     emin: 59
+    #     day: 1
 
 # Tuesday
-    10:
-        name: Before School
-        shour: 0
-        smin: 0
-        ehour: 8
-        emin: 0
-        day: 2
+    # 10:
+    #     name: Before School
+    #     shour: 0
+    #     smin: 0
+    #     ehour: 8
+    #     emin: 0
+    #     day: 2
     11:
         name: Block 2
         shour: 8
@@ -175,22 +175,22 @@ treeroot:
         ehour: 15
         emin: 00
         day: 2
-    17:
-        name: After School
-        shour: 15
-        smin: 0
-        ehour: 23
-        emin: 59
-        day: 2
+    # 17:
+    #     name: After School
+    #     shour: 15
+    #     smin: 0
+    #     ehour: 23
+    #     emin: 59
+    #     day: 2
 
 # Wednesday
-    18:
-        name: Before School
-        shour: 0
-        smin: 0
-        ehour: 8
-        emin: 30
-        day: 3
+    # 18:
+    #     name: Before School
+    #     shour: 0
+    #     smin: 0
+    #     ehour: 8
+    #     emin: 30
+    #     day: 3
     19:
         name: Block 1
         shour: 8
@@ -254,22 +254,22 @@ treeroot:
         ehour: 15
         emin: 00
         day: 3
-    25:
-        name: After School
-        shour: 15
-        smin: 0
-        ehour: 23
-        emin: 59
-        day: 3
+    # 25:
+    #     name: After School
+    #     shour: 15
+    #     smin: 0
+    #     ehour: 23
+    #     emin: 59
+    #     day: 3
 
 # Thursday
-    26:
-        name: Before School
-        shour: 0
-        smin: 0
-        ehour: 8
-        emin: 0
-        day: 4
+    # 26:
+    #     name: Before School
+    #     shour: 0
+    #     smin: 0
+    #     ehour: 8
+    #     emin: 0
+    #     day: 4
     27:
         name: Block 3
         shour: 8
@@ -333,22 +333,22 @@ treeroot:
         ehour: 15
         emin: 00
         day: 4
-    33:
-        name: After School
-        shour: 15
-        smin: 0
-        ehour: 23
-        emin: 59
-        day: 4
+    # 33:
+    #     name: After School
+    #     shour: 15
+    #     smin: 0
+    #     ehour: 23
+    #     emin: 59
+    #     day: 4
 
 # Friday
-    34:
-        name: Before School
-        shour: 0
-        smin: 0
-        ehour: 8
-        emin: 30
-        day: 5
+    # 34:
+    #     name: Before School
+    #     shour: 0
+    #     smin: 0
+    #     ehour: 8
+    #     emin: 30
+    #     day: 5
     35:
         name: Block 2
         shour: 8
@@ -426,19 +426,19 @@ treeroot:
         ehour: 23
         emin: 59
         day: 5
-# Saturday
-    43:
-        name: Weekend
-        shour: 0
-        smin: 0
-        ehour: 23
-        emin: 59
-        day: 6
-# Sunday
-    44:
-        name: Weekend
-        shour: 0
-        smin: 0
-        ehour: 23
-        emin: 59
-        day: 7
+# # Saturday
+#     43:
+#         name: Weekend
+#         shour: 0
+#         smin: 0
+#         ehour: 23
+#         emin: 59
+#         day: 6
+# # Sunday
+#     44:
+#         name: Weekend
+#         shour: 0
+#         smin: 0
+#         ehour: 23
+#         emin: 59
+#         day: 7
