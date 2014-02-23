@@ -73,6 +73,14 @@ class Schedule_Handler(webapp2.RequestHandler):
         template = jinja_environment.get_template('schedule.html')
         self.response.out.write(template.render(template_values))
         
+class AboutHandler(webapp2.RequestHandler):
+  
+    def get(self):
+        template_values = {    
+        }
+        template = jinja_environment.get_template('about.html')
+        self.response.out.write(template.render(template_values))
+        
 # this runs as a new instance of an app is loaded to load the blocks
 # it reduces load times and improves scalability
 class WarmupHandler(webapp2.RequestHandler):
@@ -105,6 +113,7 @@ class LunchLinkHandler(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/schedule', Schedule_Handler),
+    ('/about', AboutHandler),
     ('/_ah/warmup', WarmupHandler),
     ('/splitlunch', LunchLinkHandler),
     ('/specificday', Schedule_Handler),
