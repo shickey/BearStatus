@@ -76,7 +76,12 @@ class Schedule_Handler(webapp2.RequestHandler):
 class AboutHandler(webapp2.RequestHandler):
   
     def get(self):
+        
+        # admin check for navbar
+        isadmin = users.is_current_user_admin()
+        
         template_values = {    
+            'isadmin': isadmin
         }
         template = jinja_environment.get_template('about.html')
         self.response.out.write(template.render(template_values))
