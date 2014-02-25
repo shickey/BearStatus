@@ -5,48 +5,35 @@
 treeroot:
 
 # Monday
-    # 00:
-    #     name: Before School
-    #     shour: 0
-    #     smin: 0
-    #     ehour: 8
-    #     emin: 0
-    #     day: 1
-    01:
+    00:
         name: Block 1
         shour: 8
         smin: 00
         ehour: 8
         emin: 45
         day: 1
-    02:
+    01:
         name: Block 2
         shour: 8
         smin: 50
         ehour: 9
         emin: 35
         day: 1
-    03:
+    02:
         name: Tutorial 
         shour: 9
         smin: 40
         ehour: 10
         emin: 15
         day: 1
-    04:
+    03:
         name: Block 3
         shour: 10
         smin: 20
         ehour: 11
         emin: 05
         day: 1
-    L0:
-        name: 1st lunch/Block 4
-        shour: 11
-        smin: 10
-        ehour: 11
-        emin: 45
-        day: 1
+#   04:
     L0:
         name: Block 4A
         shour: 11
@@ -75,64 +62,51 @@ treeroot:
         ehour: 12
         emin: 30
         day: 1
-    06:
+    05:
         name: Block 5
         shour: 12
         smin: 35
         ehour: 13
         emin: 20
         day: 1
-    07:
+    06:
         name: Block 6
         shour: 13
         smin: 25
         ehour: 14
         emin: 10
         day: 1
-    08:
+    07:
         name: Block 7
         shour: 14
         smin: 15
         ehour: 15
         emin: 00
         day: 1
-    # 09:
-    #     name: After School
-    #     shour: 15
-    #     smin: 00
-    #     ehour: 23
-    #     emin: 59
-    #     day: 1
 
 # Tuesday
-    # 10:
-    #     name: Before School
-    #     shour: 0
-    #     smin: 0
-    #     ehour: 8
-    #     emin: 0
-    #     day: 2
-    11:
+    08:
         name: Block 2
         shour: 8
         smin: 00
         ehour: 9
         emin: 05
         day: 2
-    12:
+    09:
         name: Assembly
         shour: 9
         smin: 10
         ehour: 9
         emin: 45
         day: 2
-    13:
+    10:
         name: Block 4
         shour: 9
         smin: 50
         ehour: 10
         emin: 55
         day: 2
+    # 11:
     L4:
         name: Block 3A
         shour: 11
@@ -161,57 +135,43 @@ treeroot:
         ehour: 12
         emin: 40
         day: 2
-    15:
+    12:
         name: Block 7
         shour: 12
         smin: 45
         ehour: 13
         emin: 50
         day: 2
-    16:
+    13:
         name: Block 6
         shour: 13
         smin: 55
         ehour: 15
         emin: 00
         day: 2
-    # 17:
-    #     name: After School
-    #     shour: 15
-    #     smin: 0
-    #     ehour: 23
-    #     emin: 59
-    #     day: 2
-
 # Wednesday
-    # 18:
-    #     name: Before School
-    #     shour: 0
-    #     smin: 0
-    #     ehour: 8
-    #     emin: 30
-    #     day: 3
-    19:
+    14:
         name: Block 1
         shour: 8
         smin: 30
         ehour: 9
         emin: 35
         day: 3
-    20:
+    15:
         name: Advisory/Grade Meeting
         shour: 9
         smin: 40
         ehour: 10
         emin: 10
         day: 3
-    21:
+    16:
         name: Block 2
         shour: 10
         smin: 15
         ehour: 11
         emin: 20
         day: 3
+    # 17:
     L8:
         name: Block 5A
         shour: 11
@@ -240,57 +200,45 @@ treeroot:
         ehour: 13
         emin: 05
         day: 3
-    23:
+    18:
         name: TASC/Symposium
         shour: 13
         smin: 10
         ehour: 13
         emin: 50
         day: 3
-    24:
+    19:
         name: Block 6
         shour: 13
         smin: 55
         ehour: 15
         emin: 00
         day: 3
-    # 25:
-    #     name: After School
-    #     shour: 15
-    #     smin: 0
-    #     ehour: 23
-    #     emin: 59
-    #     day: 3
 
 # Thursday
-    # 26:
-    #     name: Before School
-    #     shour: 0
-    #     smin: 0
-    #     ehour: 8
-    #     emin: 0
-    #     day: 4
-    27:
+
+    20:
         name: Block 3
         shour: 8
         smin: 00
         ehour: 9
         emin: 05
         day: 4
-    28:
+    21:
         name: Assembly
         shour: 9
         smin: 10
         ehour: 9
         emin: 45
         day: 4
-    29:
+    22:
         name: Block 1
         shour: 9
         smin: 50
         ehour: 10
         emin: 55
         day: 4
+    # 23:
     L12:
         name: Block 4A
         shour: 11
@@ -319,57 +267,44 @@ treeroot:
         ehour: 12
         emin: 40
         day: 4
-    31:
+    24:
         name: Block 5
         shour: 12
         smin: 45
         ehour: 13
         emin: 50
         day: 4
-    32:
+    25:
         name: Block 7
         shour: 13
         smin: 55
         ehour: 15
         emin: 00
         day: 4
-    # 33:
-    #     name: After School
-    #     shour: 15
-    #     smin: 0
-    #     ehour: 23
-    #     emin: 59
-    #     day: 4
 
 # Friday
-    # 34:
-    #     name: Before School
-    #     shour: 0
-    #     smin: 0
-    #     ehour: 8
-    #     emin: 30
-    #     day: 5
-    35:
+    26:
         name: Block 2
         shour: 8
         smin: 30
         ehour: 9
         emin: 15
         day: 5
-    36:
+    27:
         name: Block 1
         shour: 9
         smin: 20
         ehour: 10
         emin: 05
         day: 5
-    37:
+    28:
         name: Block 3
         shour: 10
         smin: 10
         ehour: 10
         emin: 55
         day: 5
+    # 29:
     L16:
         name: Block 4A
         shour: 11
@@ -398,47 +333,24 @@ treeroot:
         ehour: 12
         emin: 30
         day: 5
-    39:
+    30:
         name: Block 6
         shour: 12
         smin: 35
         ehour: 13
         emin: 20
         day: 5
-    40:
+    31:
         name: Block 7
         shour: 13
         smin: 25
         ehour: 14
         emin: 10
         day: 5
-    41:
+    32:
         name: Block 5
         shour: 14
         smin: 15
         ehour: 15
         emin: 00
         day: 5
-    42:
-        name: After School
-        shour: 15
-        smin: 0
-        ehour: 23
-        emin: 59
-        day: 5
-# # Saturday
-#     43:
-#         name: Weekend
-#         shour: 0
-#         smin: 0
-#         ehour: 23
-#         emin: 59
-#         day: 6
-# # Sunday
-#     44:
-#         name: Weekend
-#         shour: 0
-#         smin: 0
-#         ehour: 23
-#         emin: 59
-#         day: 7
