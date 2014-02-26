@@ -14,6 +14,8 @@ handlers:
   static_dir: view/stylesheets
 - url: /view/javascript/
   static_dir: view/javascript
+- url: /view/images/
+  static_dir: view/images
 
 # set up the edit page to require admin access
 - url: /date.*

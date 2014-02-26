@@ -7,10 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+    
+    <!-- Support "add to home screen" on mobile -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="shortcut icon" href="favicon.ico"/>
+    <meta name="apple-mobile-web-app-title" content="BearStatus">
+    
+    <!-- Icons -->
+    <link rel="shortcut icon" sizes="16x16" href="/view/images/icon16.png"/>
+    <link rel="shortcut icon" sizes="32x32" href="/view/images/icon32.png"/>
+    <link rel="shortcut icon" sizes="196x196" href="/view/images/icon196.png">
+    <link rel="shortcut icon" sizes="120x120" href="/view/images/icon120.png">
+    <link rel="apple-touch-icon" sizes="196x196" href="/view/images/icon196.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/view/images/icon120.png">
     
     <title>BearStatus - Administration</title>
 
@@ -21,7 +31,8 @@
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="view/stylesheets/admin.css">
+    <link href="view/stylesheets/site.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="view/stylesheets/admin.css"> -->
     
     <!-- Google Fonts stylesheet -->
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">
@@ -55,44 +66,39 @@
     </nav>
 
     <div class="container">
-
-      <div class="starter-template" id="center">
-        <h1>Dates</h1>
-        <p class="lead">Please select the date you would like to edit using the calendar, then press Edit.</p>
-      </div>
-    
+      <br/>
+      <br/>
       <div id="center">
         <form action="/edit" method="get">
-          <p>Date: <input type="text" id="datepicker" placeholder="Date" name="date"></p>
+          <h1>Add special schedule:</h1><br/><input type="text" id="datepicker" placeholder="Date" name="date">
           <input type="submit" class="btn btn-primary" value="Edit">
         </form>
-        <br />
-      </div>
-
-      <div class="starter-template" id="center">
-        <h1>Revert Date</h1>
-        <p class="lead">Please select the date you would like to revert to a normal schedule, then press Revert.</p>
+        <br/>
+        <br/>
+        <br/>
       </div>
     
       <div id="center">
         <form action="/revertdate" method="get">
-          <p>Date: <input type="text" id="datepickerR" placeholder="Date" name="dateR"></p>
+          <h3>Delete special schedule:</h3><br/><input type="text" id="datepickerR" placeholder="Date" name="dateR">
           <input type="submit" class="btn btn-primary" value="Revert">
         </form>
-        <br />
+        <br/>
       </div>
       
       <div class="starter-template" id="center">
-        <h1>Change Split Lunch Schedule</h1>
-        <p class="lead">Please enter the new URL for the Split Lunch Schedule, then press Save.</p>
-      </div>
       <div id="center">
         <form action="/changelunch" method="get">
-          <p>URL: <input type="text" id="lunchurl" placeholder="Link" name="lunchurl" size="60"></p>
+          <h3>Change split lunch link:</h3><br/><input type="text" id="lunchurl" placeholder="Link" name="lunchurl" size="60">
           <input type="submit" class="btn btn-primary" value="Save">
         </form>
       </div>
       <br/>
+      <br/>
+      <footer>
+        <p>Created by the 2013 Blake School Computer Science Class<br>
+          <a href="http://goo.gl/gaRWSB">Request a Feature</a> • <a href="/admin">Admin Login</a></p>
+      </footer>
     </div><!-- /.container -->
 
     <!-- jQuery custom stylesheets for the datepicker -->
