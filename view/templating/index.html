@@ -87,6 +87,7 @@
                 Start: {{blocksTime}}
                 <br> End: {{blockeTime}}<br>
               {% endif %}
+              <br>
               {% if next_block.name %}
                 <u style= "font-size:26px;">Next: </u> <p style= "font-size: 16px;"> {{next_block.name}} <p>
                 Start: {{next_blocksTime}}
@@ -95,9 +96,12 @@
               {% if block.name is undefined and next_block.name is undefined %}
                 <u style= "font-size:26px;">Now: </u> <p style= "font-size: 16px;">No School<p>
               {% endif %}
-              <br>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
             </p>
-
           </div>
         </div>
       </div>
@@ -107,6 +111,18 @@
       </footer>
     </div><!-- /.container -->
 
+    <!--Local js-->
+    <script src="view/javascript/index.js"></script>
+    
+    <!-- Auto refresh -->
+    <!-- THE TIMES NEED TO BE TEMPLATED IN SOMEHOW -->
+    <script>
+      {% if block.name %}
+        refreshAt(20,05,01);
+      {% elif next_block.name %}
+        refreshAt(20,05,01);
+      {% endif %}
+    </script>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
