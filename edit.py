@@ -59,7 +59,11 @@ class EditHandler(webapp2.RequestHandler):
         # delete any existing schedules to prevent duplicates
         model.deleteSchedule(edit_date_date)    
         
-        maxblocks = int(self.request.get('blocks'))
+        maxblocks = self.request.get('blocks')
+        if maxblocks == "":
+            maxblocks = 12
+        else:
+            maxblocks = int(maxblocks)
         
         iteratingblock = 0
     
@@ -109,8 +113,8 @@ class EditHandler(webapp2.RequestHandler):
             if iteratingblock == maxblocks:
                 break
                 
-        # redirect to the main page
-        self.redirect('/')
+        # redirect to the schedule for the date just edited
+        self.redirect('/schedule?date=' + date)
         
 
 class SplitLunchHandler(webapp2.RequestHandler):

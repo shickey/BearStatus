@@ -1,5 +1,6 @@
 import model
 
+# given two times, determine whether or not the current time fits in that window
 def now(sTime, eTime):
     current = model.getTime().time()
     if current >= sTime and current <= eTime:
