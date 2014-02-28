@@ -21,15 +21,7 @@
     <link rel="apple-touch-icon" sizes="196x196" href="/view/images/icon196.png">
     <link rel="apple-touch-icon" sizes="120x120" href="/view/images/icon120.png">
    
-    <title>
-      {% if block.name %}
-        {{blockeTime}}: End {{block.name}}
-      {% elif next_block.name %}
-        {{next_blocksTime}}: Start {{next_block.name}}
-      {% else %}
-        BearStatus
-      {% endif %}
-    </title>
+    <title>{{title}}</title>
     
     <!--Bootstrap core CSS -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
@@ -115,12 +107,9 @@
     <script src="view/javascript/index.js"></script>
     
     <!-- Auto refresh -->
-    <!-- THE TIMES NEED TO BE TEMPLATED IN SOMEHOW -->
     <script>
-      {% if block.name %}
-        refreshAt(20,05,01);
-      {% elif next_block.name %}
-        refreshAt(20,05,01);
+      {% if refresh_time %}
+        refreshAt({{refresh_time}});
       {% endif %}
     </script>
 

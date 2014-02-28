@@ -27,6 +27,21 @@ class MainHandler(webapp2.RequestHandler):
         # admin check for navbar
         isadmin = users.is_current_user_admin()
         
+        # determine the page title
+        if block:
+          title = blockeTime + ": End " + block.name
+        elif the_next_block:
+          title = next_blocksTime + ": Start " + the_next_block.name
+        else:
+          title = "BearStatus"
+          
+        # determine whether or not to refresh, and if so, what time to do it at
+        if block:
+            refresh_time = block.eTime.strftime("%H,%M,01")
+        elif the_next_block:
+            refresh_time = the_next_block.sTime.strftime("%H,%M,01")
+            
+        
         template_values = {
             'block': block,
             'blocksTime': blocksTime,
@@ -35,6 +50,8 @@ class MainHandler(webapp2.RequestHandler):
             'next_blockeTime': next_blockeTime,
             'next_block': the_next_block,
             'isadmin': isadmin,
+            'title': title,
+            'refresh_time': refresh_time,
         }
 
         template = jinja_environment.get_template('index.html')
