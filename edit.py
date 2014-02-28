@@ -71,42 +71,42 @@ class EditHandler(webapp2.RequestHandler):
             
             name = self.request.get("name" + str(iteratingblock))
             
-            if name != "":
-                
-                # get values from form
-                sHour = self.request.get("sHour" + str(iteratingblock))
-                sMinute = self.request.get("sMinute" + str(iteratingblock))
-                eHour = self.request.get("eHour" + str(iteratingblock))
-                eMinute = self.request.get("eMinute" + str(iteratingblock))
-                sT = self.request.get("sT" + str(iteratingblock))
-                eT = self.request.get("eT" + str(iteratingblock))
-                
-                # parse input to datetime obejcts
-                sTime_dt = parse(str(sHour) + "h" + str(sMinute) + "m" + " " + str(sT))
-                eTime_dt = parse(str(eHour) + "h" + str(eMinute) + "m" + " " + str(eT))
-                
-                # convert input to time objects
-                sTime = sTime_dt.time()
-                eTime = eTime_dt.time()
-                
-                # write block to datastore
-                model.createBlock(name, edit_date_date, sTime, eTime)
-
             # if name != "":
                 
-            #     start = self.request.get("start" + str(iteratingblock))
-            #     end = self.request.get("end" + str(iteratingblock))
+            #     # get values from form
+            #     sHour = self.request.get("sHour" + str(iteratingblock))
+            #     sMinute = self.request.get("sMinute" + str(iteratingblock))
+            #     eHour = self.request.get("eHour" + str(iteratingblock))
+            #     eMinute = self.request.get("eMinute" + str(iteratingblock))
+            #     sT = self.request.get("sT" + str(iteratingblock))
+            #     eT = self.request.get("eT" + str(iteratingblock))
                 
-            #     # parse start and end time inputs
-            #     sTime_dt = parse(start, default = edit_date_datetime)
-            #     eTime_dt = parse(end, default = edit_date_datetime)
+            #     # parse input to datetime obejcts
+            #     sTime_dt = parse(str(sHour) + "h" + str(sMinute) + "m" + " " + str(sT))
+            #     eTime_dt = parse(str(eHour) + "h" + str(eMinute) + "m" + " " + str(eT))
                 
-            #     # convert datetime objects to time objects
+            #     # convert input to time objects
             #     sTime = sTime_dt.time()
             #     eTime = eTime_dt.time()
                 
-            #     # run through backend code
+            #     # write block to datastore
             #     model.createBlock(name, edit_date_date, sTime, eTime)
+
+            if name != "":
+                
+                start = self.request.get("start" + str(iteratingblock))
+                end = self.request.get("end" + str(iteratingblock))
+                
+                # parse start and end time inputs
+                sTime_dt = parse(start, default = edit_date_datetime)
+                eTime_dt = parse(end, default = edit_date_datetime)
+                
+                # convert datetime objects to time objects
+                sTime = sTime_dt.time()
+                eTime = eTime_dt.time()
+                
+                # run through backend code
+                model.createBlock(name, edit_date_date, sTime, eTime)
             
             iteratingblock += 1
             
