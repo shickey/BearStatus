@@ -83,9 +83,9 @@
             <tr>
               <td><input type="text" class="form control" placeholder="Block Name" name="name{{i}}"></td>
               
-              <!--<td><input type="text" class="form control" placeholder="End Time" name="end{{i}}"></td>
-              <td><input type="text" class="form control" placeholder="Start Time" name="start{{i}}"></td> -->
-              <td>
+              <td><input type="time" class="form control" placeholder="End Time" name="end{{i}}"></td>
+              <td><input type="time" class="form control" placeholder="Start Time" name="start{{i}}"></td> 
+           <!--    <td>
                 <select name="sHour{{i}}">
                   <option value="" selected></option>
                   {% for i in range(1,13) %}
@@ -124,7 +124,7 @@
                   <option value="AM">AM</option>
                   <option value="PM">PM</option>
                 </select>
-              </td>
+              </td> -->
             </tr>
             {% endfor %}
             <div class="row">
