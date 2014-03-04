@@ -40,6 +40,8 @@ class MainHandler(webapp2.RequestHandler):
             refresh_time = block.eTime.strftime("%H,%M,01")
         elif the_next_block:
             refresh_time = the_next_block.sTime.strftime("%H,%M,01")
+        else:
+            refresh_time = None
             
         
         template_values = {
