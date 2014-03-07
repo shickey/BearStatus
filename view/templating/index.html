@@ -71,25 +71,24 @@
       <div class="row">
         <div id="content">
           <div class="starter-template" id="welcome-message">
-            <h1 id="logo" style="font-size: 60px;">BearStatus</h1>
-            <p style= "font-size: 32px;" class="lead">
-              <h1 style= "font-size: 28px;">Quick Info</h1>
+            <h1 id="logo" style="font-size: 54px;">BearStatus</h1>
+              <h2>Quick Info</h2>
               <br/>
               {% if block.name %}
-                <u style= "font-size:26px;">Now: </u> <p style= "font-size: 16px;"> {{block.name}} <p>
+                <p> <u style= "font-size: 22px;">Now:</u> </p> <p style= "font-size: 18px;">{{block.name}}</p>
                 Start: {{blocksTime}}
                 <br> End: {{blockeTime}}<br>
               <br>
               {% endif %}
               {% if next_block.name %}
-                <u style= "font-size:26px;">Next: </u> <p style= "font-size: 16px;"> {{next_block.name}} <p>
+                <p> <u style= "font-size: 22px;">Next:</u> </p> <p style= "font-size: 18px;">{{next_block.name}}</p>
                 Start: {{next_blocksTime}}
                 <br> End: {{next_blockeTime}}
               {% endif %}
               {% if block.name is undefined and next_block.name is undefined %}
-                <u style= "font-size:26px;">Now: </u> <p style= "font-size: 16px;">No School<p>
+                <p> <u style= "font-size: 22px;">Now:</u></p> <p style= "font-size: 18px;">No School</p>
               {% endif %}
-                <br/>
+              <br/>
               <br/>
               <br/>
               <br/>
