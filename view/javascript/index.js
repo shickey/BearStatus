@@ -1,9 +1,8 @@
 function refreshAt(hours, minutes, seconds) {
     
-    // set the proper variables
+    // declare and set variables
     var now = new Date();
     var then = new Date();
-    
     then.setHours(hours);
     then.setMinutes(minutes);
     then.setSeconds(seconds);
