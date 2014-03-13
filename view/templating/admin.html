@@ -56,7 +56,7 @@
           <li><a href="/">Home</a></li>
           <li><a href="/schedule">Schedule</a></li>
           <li><a href="/about">About</a></li>
-          <li class="active"><a href="/admin">Edit</a></li>
+          <li class="active"><a href="/admin">Admin</a></li>
           
         </ul>
       </div><!-- /.navbar-collapse -->
@@ -65,38 +65,54 @@
     <div class="container">
       <br/>
       <br/>
-      <div id="center">
+      <div class="col-md-6">
+        <h1>Add special schedule:</h1>
         <form action="/edit" method="get">
-          <h1>Add special schedule:</h1><br/><input type="text" id="datepicker" placeholder="Date" name="date" class="lead">
-          <input type="submit" class="btn btn-primary btn-lg" value="Edit">
+          <div class="input-group">
+            <input type="text" class="form-control" id="datepicker" placeholder="Date" name="date">
+            <div class="input-group-btn">
+              <input type="submit" class="btn btn-primary" value="Edit">
+            </div>
+          </div>
         </form>
-        <br/>
-        <br/>
-        <br/>
-      </div>
-    
-      <div id="center">
+        
+      <br>
+      
+      <div>
+        <h1><small>Delete special schedule:</small></h1>
         <form action="/revertdate" method="get">
-          <h3>Delete special schedule:</h3><br/><input type="text" id="datepickerR" placeholder="Date" name="dateR">
-          <input type="submit" class="btn btn-primary" value="Revert">
+          <div class="input-group">
+            <input type="text" class="form-control" id="datepickerR" placeholder="Date" name="date">
+            <div class="input-group-btn">
+              <input type="submit" class="btn" value="Revert">
+            </div>
+          </div>
         </form>
-        <br/>
       </div>
       
-      <div class="starter-template" id="center">
-      <div id="center">
+      <br>
+      
+      <div>
+        <h1><small>Change split lunch link:</small></h1>
         <form action="/changelunch" method="get">
-          <h3>Change split lunch link:</h3><br/><input type="url" id="lunchurl" placeholder="Link" name="lunchurl" size="60">
-          <input type="submit" class="btn btn-primary" value="Save">
+          <div class="input-group">
+            <input type="url" class="form-control" id="lunchurl" placeholder="URL" name="lunchurl">
+            <div class="input-group-btn">
+              <input type="submit" class="btn" value="Save">
+            </div>
+          </div>
         </form>
       </div>
+      
       <br/>
       <br/>
-      <footer>
-        <p>Created by the 2013 Blake School Computer Science Class<br>
-          <a href="http://goo.gl/gaRWSB">Request a Feature</a> • <a href="/admin">Admin Login</a></p>
-      </footer>
+      <br/>
+      </div>
     </div><!-- /.container -->
+    <footer>
+      <p>Created by the 2013 Blake School Computer Science Class<br>
+        <a href="http://goo.gl/gaRWSB">Request a Feature</a> • <a href="/admin">Admin Login</a></p>
+    </footer>
 
     <!-- Bootstrap and jQuery core JavaScript
     ================================================== -->
