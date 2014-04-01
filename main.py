@@ -1,74 +1,49 @@
 # Import blockmodels file
-import model
+import model, controller
 import webapp2, jinja2, os
 from datetime import *
 from dateutil.parser import *
 from google.appengine.api import users
 
-blocks_initialized = False
+# initalize the blocks
+model.initBlocks()
+blocks_initialized = True
 
 jinja_environment = jinja2.Environment(autoescape=True,
     loader=jinja2.FileSystemLoader(os.path.join(os.path.dirname(__file__), 'view/templating')))
-
-def now(sTime, eTime):
-    current = model.getTime().time()
-    if current >= sTime and current <= eTime:
-        return True
-    else:
-        return False
-
-# given a schedule list, determine the current block and return its model
-def current_block(schedule_list):
-    for i in schedule_list:
-        if i.isnow() == True:
-            return i
-
-def next_block(schedule_list):
-    current = model.getTime().time()
-    for i in schedule_list:
-        if current <= i.sTime:
-            return i
-
-def testsblock(block):
-    # try:
-    #     block.isnow()
-    # except RuntimeError:
-    #     return ""
-    # return block.formsTime()
-    if block == None:
-        return ""
-    return block.formsTime()
-
-def testeblock(block):
-    # try:
-    #     block.isnow()
-    # except RuntimeError:
-    #     return ""
-    # return block.formeTime()
-    if block == None:
-        return ""
-    return block.formeTime()
     
 class MainHandler(webapp2.RequestHandler):
     
     def get(self):
-        
-        isadmin = users.is_current_user_admin()
-        
-        global blocks_initialized
-                
-        # initialize the blocks if this hasn't been done
-        if blocks_initialized != True:
-            model.initBlocks()
-            blocks_initialized = True
             
         schedule = model.getToday()
-        block = current_block(schedule)
-        blocksTime = testsblock(block)
-        blockeTime = testeblock(block)
-        the_next_block = next_block(schedule)
-        next_blocksTime = testsblock(the_next_block)
-        next_blockeTime = testeblock(the_next_block)
+        block = controller.current_block(schedule)
+        blocksTime = controller.testsblock(block)
+        blockeTime = controller.testeblock(block)
+        the_next_block = controller.next_block(schedule)
+        next_blocksTime = controller.testsblock(the_next_block)
+        next_blockeTime = controller.testeblock(the_next_block)
+        
+        # admin check for navbar
+        isadmin = users.is_current_user_admin()
+        
+        # determine the page title
+        if block:
+          title = blockeTime + ": End " + block.name
+        elif the_next_block:
+          title = next_blocksTime + ": Start " + the_next_block.name
+        else:
+          title = "BearStatus"
+          
+        # determine whether or not to refresh, and if so, what time to do it at
+        if block:
+            refresh_time = block.eTime.strftime("%H,%M,01")
+        elif the_next_block:
+            refresh_time = the_next_block.sTime.strftime("%H,%M,01")
+        else:
+            refresh_time = None
+            
+        
         template_values = {
             'block': block,
             'blocksTime': blocksTime,
@@ -77,6 +52,8 @@ class MainHandler(webapp2.RequestHandler):
             'next_blockeTime': next_blockeTime,
             'next_block': the_next_block,
             'isadmin': isadmin,
+            'title': title,
+            'refresh_time': refresh_time,
         }
 
         template = jinja_environment.get_template('index.html')
@@ -86,8 +63,6 @@ class MainHandler(webapp2.RequestHandler):
 class Schedule_Handler(webapp2.RequestHandler):
     
     def get(self):
-        
-        isadmin = users.is_current_user_admin()
 
         date = self.request.get('date')
         splitlunch = model.getSplitLunch()
@@ -102,6 +77,9 @@ class Schedule_Handler(webapp2.RequestHandler):
             display_date = model.formatDate(date)
         
         short_date = date.strftime("%x")            # short date to display in form at bottom
+           
+        # admin check for navbar
+        isadmin = users.is_current_user_admin()
             
         template_values = {
             'display_date': display_date,
@@ -112,6 +90,19 @@ class Schedule_Handler(webapp2.RequestHandler):
         }
 
         template = jinja_environment.get_template('schedule.html')
+        self.response.out.write(template.render(template_values))
+        
+class AboutHandler(webapp2.RequestHandler):
+  
+    def get(self):
+        
+        # admin check for navbar
+        isadmin = users.is_current_user_admin()
+        
+        template_values = {    
+            'isadmin': isadmin
+        }
+        template = jinja_environment.get_template('about.html')
         self.response.out.write(template.render(template_values))
         
 # this runs as a new instance of an app is loaded to load the blocks
@@ -136,6 +127,14 @@ class LunchLinkHandler(webapp2.RequestHandler):
         else:
             self.redirect("404.derp")
         
+class FeedbackHandler(webapp2.RequestHandler):
+    
+    def get(self):
+        feedback = model.getFeedback()
+        if len(feedback) > 0:
+            self.redirect(str(feedback[0].name))
+        else:
+            self.redirect("404.derp")
 
 # class DebugHandler(webapp2.RequestHandler):
     
@@ -146,10 +145,12 @@ class LunchLinkHandler(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/schedule', Schedule_Handler),
+    ('/about', AboutHandler),
     ('/_ah/warmup', WarmupHandler),
     ('/splitlunch', LunchLinkHandler),
+    ('/feedback', FeedbackHandler),
     ('/specificday', Schedule_Handler),
     # ('/debug', DebugHandler)
-], debug=True)
+], debug=False)
 
 

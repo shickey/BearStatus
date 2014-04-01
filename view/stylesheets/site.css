@@ -1,0 +1,18 @@
+body {
+  padding-top: 70px;
+}
+
+footer {
+  position: inherit;
+  bottom: 0px;
+  text-align: center;
+  font-size: 11px;
+}
+
+#center {
+  text-align: center;
+}
+
+#logo {
+  font-family: 'Ubuntu', sans-serif;
+}

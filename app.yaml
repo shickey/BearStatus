@@ -2,7 +2,7 @@ application: bear-status
 version: stable
 runtime: python27
 api_version: 1
-threadsafe: yes
+threadsafe: true
 
 handlers:
 - url: /favicon\.ico
@@ -14,9 +14,15 @@ handlers:
   static_dir: view/stylesheets
 - url: /view/javascript/
   static_dir: view/javascript
+- url: /view/images/
+  static_dir: view/images
 
 # set up the edit page to require admin access
 - url: /date.*
+  script: edit.app
+  login: admin
+
+- url: /admin.*
   script: edit.app
   login: admin
 
@@ -28,18 +34,21 @@ handlers:
   script: edit.app
   login: admin
 
+- url: /changefeedback.*
+  script: edit.app
+  login: admin
+
 - url: /revertdate.*
   script: edit.app
   login: admin
 
-- url: /splitlunch.*
-  script: main.app
-
-- url: /specificday.*
-  script: main.app
-
 - url: .*
   script: main.app
+
+admin_console:
+  pages:
+  - name: Schedule Editing
+    url: /admin
 
 libraries:
 - name: webapp2

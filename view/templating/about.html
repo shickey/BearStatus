@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,26 +21,25 @@
     <link rel="icon" sizes="16x16" href="/view/images/icon16.png">
     <link rel="apple-touch-icon" sizes="196x196" href="/view/images/icon196.png">
     <link rel="apple-touch-icon" sizes="120x120" href="/view/images/icon120.png">
-
-   
-    <title>{{title}}</title>
+        
+    <title>BearStatus - About </title>
     
     <!--Bootstrap core CSS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
     
-    <!-- Custom CSS for this page (non-Bootstrap)-->
+    <!-- Custom CSS -->
     <link href="view/stylesheets/site.css" rel="stylesheet">
-    <link href="view/stylesheets/index.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="view/stylesheets/about.css"> -->
     
     <!-- Google Fonts stylesheet -->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu:300">
     
     <!-- JQuery JS -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-    
+        
     <!-- Sitewide JS -->
     <script src="view/javascript/site.js"></script>
-
+    
   </head>
   <body>
 
@@ -55,51 +54,43 @@
         </button>
         <a class="navbar-brand" id="logo" href="/">BearStatus</a>
       </div>
-
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           
-          <li class="active"><a href="/">Home</a></li>
+          <li><a href="/">Home</a></li>
           <li><a href="/schedule">Schedule</a></li>
-          <li><a href="/about">About</a></li>
+          <li class="active"><a href="/about">About</a></li>
           {% if isadmin %}
             <li><a href="/admin">Admin</a></li>
           {% endif %}
-
+          
         </ul>
       </div><!-- /.navbar-collapse -->
     </nav>
 
     <div class="container">
-      <div class="row">
-        <div id="content">
-          <div class="starter-template" id="welcome-message">
-            <h1 id="logo" style="font-size: 54px;">BearStatus</h1>
-              <h2>Quick Info</h2>
-              <br/>
-              {% if block.name %}
-                <p> <u style= "font-size: 22px;">Now:</u> </p> <p style= "font-size: 18px;">{{block.name}}</p>
-                Start: {{blocksTime}}
-                <br> End: {{blockeTime}}<br>
-              <br>
-              {% endif %}
-              {% if next_block.name %}
-                <p> <u style= "font-size: 22px;">Next:</u> </p> <p style= "font-size: 18px;">{{next_block.name}}</p>
-                Start: {{next_blocksTime}}
-                <br> End: {{next_blockeTime}}
-              {% endif %}
-              {% if block.name is undefined and next_block.name is undefined %}
-                <p> <u style= "font-size: 22px;">Now:</u></p> <p style= "font-size: 18px;">No School</p>
-              {% endif %}
-              <br/>
-              <br/>
-              <br/>
-              <br/>
-            </p>
-          </div>
-        </div>
+      <div>
+        <h1>About BearStatus</h1>
+          <br>
+          <p class="lead">Development Team</p>
+          <p>
+            BearStatus was created by the Fall 2013 Blake Computer Science class (taught by Sean Hickey).
+          </p>
+          <p>
+            <strong>Frontend Development:</strong> Allison Eastham, Jason Shu, Teddy Ankeny, Pierce Carlson<br>
+            <strong> Backend Development:</strong> Kevin Hayes, Laura DeMane, Anthony Hu, Marcus Berg<br>
+            <strong>Integration:</strong> Noah Abramovitz, Yona Cooperman, Ben Weinshel, Brynne Swearingen<br>
+            <strong>Project Management:</strong> Walker Bond, Quinn Ellis, Carolyn Nye, Meghna Kaul
+          </p>
+           <p>Continuing development done by Ben Weinshel and Jason Shu</p>
+           <p>
+             Source code available on <a href="https://github.com/clnye15/CS-Final-Project-Prototype/">Github</a>.
+           </p>
+      <br/>
+      <a href="http://goo.gl/gaRWSB"> &nbsp; </a>
       </div>
+      <br>
         <footer>
           <p>
             Like us on <a href="https://www.facebook.com/bearstatus">Facebook</a> • Follow us on <a href="https://twitter.com/bear__status">Twitter</a><br>
@@ -108,20 +99,9 @@
       </footer>
     </div><!-- /.container -->
 
-    <!--Local js-->
-    <script src="view/javascript/index.js"></script>
-    
-    <!-- Auto refresh -->
-    {% if refresh_time %}
-    <script>
-        // run refresh function every 10 seconds which will reload page if appropriate
-        setInterval(function(){refreshAt({{refresh_time}})}, 60000);
-    </script>
-    {% endif %}
-
-    <!-- Bootstrap core JavaScript
+    <!-- Bootstrap and jQuery core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    </body>
+  </body>
 </html>

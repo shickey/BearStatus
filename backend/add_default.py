@@ -11,11 +11,11 @@ def start():
         hasRun = do_run.DoRun(runTrue = True)
         hasRun.put()
 
-        # Opens the tree.yaml file and saves the contents to doc
+        # Opens the reg_blocks.yaml file and saves the contents to doc
         with open('backend/reg_blocks.yaml', 'r') as f:
             doc = yaml.load(f)
         
-        # For every entry in the 'treeroot' directory of the tree.yaml file, do this:
+        # For every entry in the 'treeroot' directory of the reg_blocks.yaml file, do this:
         for x in doc['treeroot']:
             # Take the variables 'shour' and 'smin' and create a formated time stored in sTime
             sTime = datetime.time(doc['treeroot'][x]['shour'], doc['treeroot'][x]['smin'])
