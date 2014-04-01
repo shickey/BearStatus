@@ -34,6 +34,10 @@ handlers:
   script: edit.app
   login: admin
 
+- url: /changefeedback.*
+  script: edit.app
+  login: admin
+
 - url: /revertdate.*
   script: edit.app
   login: admin

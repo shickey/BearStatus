@@ -127,6 +127,14 @@ class LunchLinkHandler(webapp2.RequestHandler):
         else:
             self.redirect("404.derp")
         
+class FeedbackHandler(webapp2.RequestHandler):
+    
+    def get(self):
+        feedback = model.getFeedback()
+        if len(feedback) > 0:
+            self.redirect(str(feedback[0].name))
+        else:
+            self.redirect("404.derp")
 
 # class DebugHandler(webapp2.RequestHandler):
     
@@ -140,6 +148,7 @@ app = webapp2.WSGIApplication([
     ('/about', AboutHandler),
     ('/_ah/warmup', WarmupHandler),
     ('/splitlunch', LunchLinkHandler),
+    ('/feedback', FeedbackHandler),
     ('/specificday', Schedule_Handler),
     # ('/debug', DebugHandler)
 ], debug=True)

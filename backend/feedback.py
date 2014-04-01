@@ -1,4 +1,4 @@
 from google.appengine.ext import db
 
-class SplitLunch(db.Model):
+class Feedback(db.Model):
     name = db.LinkProperty()

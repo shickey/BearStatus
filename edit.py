@@ -126,6 +126,15 @@ class SplitLunchHandler(webapp2.RequestHandler):
         
         self.redirect('/')
 
+class FeebackWriteHandler(webapp2.RequestHandler):
+    
+    def get(self):
+
+        url = self.request.get('feedbackurl')
+        model.changeFeedback(url)
+        
+        self.redirect('/')
+
 class RevertDateHandler(webapp2.RequestHandler):
     
     def get(self):
@@ -143,5 +152,6 @@ app = webapp2.WSGIApplication([
     ('/edit', EditHandler),
     ('/revertdate', RevertDateHandler),
     ('/admin', AdminHandler),
-    ('/changelunch', SplitLunchHandler)
+    ('/changelunch', SplitLunchHandler),
+    ('/changefeedback', FeebackWriteHandler)
 ], debug=True)
