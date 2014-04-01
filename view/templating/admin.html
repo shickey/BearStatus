@@ -104,15 +104,32 @@
         </form>
       </div>
       
+      <div>
+        <h1><small>Change feedback link:</small></h1>
+        <form action="/changefeedback" method="get">
+          <div class="input-group">
+            <input type="url" class="form-control" id="feedbackurl" placeholder="URL" name="feedbackurl">
+            <div class="input-group-btn">
+              <input type="submit" class="btn" value="Save">
+            </div>
+          </div>
+        </form>
+      </div>
+      
       <br/>
       <br/>
       <br/>
       </div>
     </div><!-- /.container -->
-    <footer>
-      <p>Created by the 2013 Blake School Computer Science Class<br>
-        <a href="http://goo.gl/gaRWSB">Request a Feature</a> • <a href="/admin">Admin Login</a></p>
+      <footer>
+        <p>
+          Like us on <a href="https://www.facebook.com/bearstatus">Facebook</a> • Follow us on <a href="https://twitter.com/bear__status">Twitter</a><br>
+          <a href="/feedback">Send Feedback</a> • <a href="/admin">Admin Login</a>
+        </p>
     </footer>
+
+    <!-- Sitewide JS -->
+    <script src="view/javascript/site.js"></script>
 
     <!-- Bootstrap and jQuery core JavaScript
     ================================================== -->
