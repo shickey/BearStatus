@@ -13,3 +13,8 @@ function refreshAt(hours, minutes, seconds) {
         window.location.reload(true);
     }
 }
+
+var addToHomeConfig = {
+  expire:10,
+  touchIcon:true,
+};
