@@ -40,6 +40,13 @@
     
     <!-- Sitewide JS -->
     <script src="view/javascript/site.js"></script>
+    
+    <!--Page-specific JS-->
+    <script src="view/javascript/index.js"></script>
+    
+    <!-- Popup to add to homescreen on iPhone -->
+    <link rel="stylesheet" href="view/javascript/cubiq-add-to-homescreen/add2home.css">
+    <script type="application/javascript" src="view/javascript/cubiq-add-to-homescreen/add2home.js"></script>
 
   </head>
   <body>
@@ -101,21 +108,19 @@
         </div>
       </div>
         <footer>
-          <p>
-            Like us on <a href="https://www.facebook.com/bearstatus">Facebook</a> • Follow us on <a href="https://twitter.com/bear__status">Twitter</a><br>
-            <a href="/feedback">Send Feedback</a> • <a href="/admin">Admin Login</a>
-          </p>
-      </footer>
+            <footer>
+              <p>
+                Like us on <a href="https://www.facebook.com/bearstatus" target="_blank">Facebook</a> • Follow us on <a href="https://twitter.com/bear__status" target="_blank">Twitter</a><br>
+                <a href="/feedback" target="_blank">Send Feedback</a> • <a href="/admin">Admin Login</a>
+              </p>
+          </footer>
     </div><!-- /.container -->
-
-    <!--Local js-->
-    <script src="view/javascript/index.js"></script>
     
     <!-- Auto refresh -->
     {% if refresh_time %}
     <script>
         // run refresh function every 10 seconds which will reload page if appropriate
-        setInterval(function(){refreshAt({{refresh_time}})}, 60000);
+        setInterval(function(){refreshAt({{refresh_time}})}, 20000);
     </script>
     {% endif %}
 
