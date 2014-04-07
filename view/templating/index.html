@@ -120,7 +120,7 @@
     {% if refresh_time %}
     <script>
         // run refresh function every 10 seconds which will reload page if appropriate
-        setInterval(function(){refreshAt({{refresh_time}})}, 60000);
+        setInterval(function(){refreshAt({{refresh_time}})}, 20000);
     </script>
     {% endif %}
 
