@@ -9,10 +9,14 @@ footer {
   font-size: 11px;
 }
 
-#center {
-  text-align: center;
+.logo {
+  font-family: 'Ubuntu', sans-serif;
 }
 
-#logo {
+.navbar-brand{
   font-family: 'Ubuntu', sans-serif;
+}
+
+#center {
+  text-align: center;
 }
