@@ -58,17 +58,34 @@
           </button>
           <a class="navbar-brand" href="/">BearStatus</a>
         </div>
+        
+        {% set active_page = active_page|default('index') -%}
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             
-            <li class="active"><a href="/">Home</a></li>
-            <li><a href="/schedule">Schedule</a></li>
-            <li><a href="/about">About</a></li>
-            {% if isadmin %}
-              <li><a href="/admin">Admin</a></li>
+            {# Set the pages to go in the navbar #}
+            {% if isadmin %}{# Show the admin page in the navbar if admin is logged in #}
+              {% set navigation_bar = [
+                  ('/', 'index', 'Home'),
+                  ('/schedule', 'schedule', 'Schedule'),
+                  ('/about', 'about', 'About'),
+                  ('/admin', 'admin', 'Admin')
+              ] -%}
+            {% else %}
+              {% set navigation_bar = [
+                  ('/', 'index', 'Home'),
+                  ('/schedule', 'schedule', 'Schedule'),
+                  ('/about', 'about', 'About')
+              ] -%}
             {% endif %}
+            
+            {# Use the variables set above to generate the navbar #}
+            {% for href, id, caption in navigation_bar %}
+              <li{% if id == active_page %} class="active"{% endif
+              %}><a href="{{ href|e }}">{{ caption|e }}</a></li>
+            {% endfor %}
 
           </ul>
         </div><!-- /.navbar-collapse -->

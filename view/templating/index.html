@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% set active_page = "index" %}
 {% block title %} {{title}} {% endblock %}
 {% block head %}
     {{ super() }}
@@ -18,9 +19,6 @@
     <link rel="stylesheet" href="view/javascript/cubiq-add-to-homescreen/add2home.css">
     <script type="application/javascript" src="view/javascript/cubiq-add-to-homescreen/add2home.js"></script>
     
-{% endblock %}
-{% block navbar %}
-  {{ super() }}
 {% endblock %}
 {% block content %}
       <div class="row">
