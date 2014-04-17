@@ -21,26 +21,28 @@
     <link rel="icon" sizes="196x196" href="/view/images/icon196.png">
     <link rel="icon" sizes="120x120" href="/view/images/icon120.png">
     <link rel="icon" sizes="16x16" href="/view/images/icon16.png">
-    <link rel="apple-touch-icon" sizes="196x196" href="/view/images/icon196.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/view/images/icon120.png">
+    <!-- iOS 7 icons -->
+    <link rel="apple-touch-icon" sizes="120x120" href="/view/images/apple-touch-icon-120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/view/images/apple-touch-icon-76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/view/images/apple-touch-icon-152.png">
+    <!-- iOS ≤6 icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/view/images/apple-touch-icon-57-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/view/images/apple-touch-icon-57-precomposed.png">
 
     <title>{% block title %}{% endblock %}</title>
     
     <!--Bootstrap core CSS -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-    
-    <!-- Custom CSS for this page (non-Bootstrap)-->
-    <link href="view/stylesheets/site.css" rel="stylesheet">
-    <link href="view/stylesheets/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
     
     <!-- Google Fonts stylesheet -->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu:300">
     
     <!-- JQuery JS -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     
-    <!-- Sitewide JS -->
+    <!-- Sitewide CSS, JS -->
     <script src="view/javascript/site.js"></script>
+    <link href="view/stylesheets/site.css" rel="stylesheet">
     
     {% endblock %}
     
@@ -110,7 +112,7 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     
     {% endblock %}
     
