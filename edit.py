@@ -16,7 +16,8 @@ class AdminHandler(webapp2.RequestHandler):
         # admin check for navbar
         isadmin = users.is_current_user_admin()
         
-        template_values = {    
+        template_values = {  
+        'isadmin': isadmin, 
         }
         template = jinja_environment.get_template('admin.html')
         self.response.out.write(template.render(template_values))
@@ -51,6 +52,7 @@ class EditHandler(webapp2.RequestHandler):
         template_values = {    
             'edit_date': model.formatDate(edit_date_date),
             'blocks': blocks,
+            'isadmin': isadmin,
         }
         
         template = jinja_environment.get_template('edit.html')

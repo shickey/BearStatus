@@ -3,8 +3,9 @@
 {% block title %} {{title}} {% endblock %}
 {% block head %}
     {{ super() }}
-
-    <!--Page-specific JS-->
+    
+    <!-- Page-specific CSS, JS-->
+    <link href="view/stylesheets/index.css" rel="stylesheet">
     <script src="view/javascript/index.js"></script>
 
     {% if refresh_time %}
