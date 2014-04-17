@@ -5,6 +5,7 @@
     {{ super() }}
 {% endblock %}
 {% block content %}
+    <div class="container">
       <div class="starter-template">
         <h1>Schedule for {{display_date}}</h1>
       </div>
@@ -38,6 +39,7 @@
           <input type="submit" class="btn btn-primary" value="View"> </p>
         </form>
       </div>
+    </div><!-- /.container -->
 {% endblock %}
 {% block pageend %}
   {{ super() }}

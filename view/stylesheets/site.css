@@ -11,10 +11,12 @@ footer {
 
 .logo {
   font-family: 'Ubuntu', sans-serif;
+  font-weight:300;
 }
 
 .navbar-brand{
   font-family: 'Ubuntu', sans-serif;
+  font-weight:300;
 }
 
 #center {
