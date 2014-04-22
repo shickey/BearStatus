@@ -174,8 +174,7 @@
 	-webkit-background-size:60px 60px;
 	background-size:60px 60px;
 	margin:0 12px 0 0;
-	border:1px solid #333;
+	/*border:1px solid #333;*/
 	-webkit-background-clip:padding-box;
 	background-clip:padding-box;
-	background-color:black;
 }

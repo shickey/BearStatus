@@ -1,158 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    
-    <!-- Support "add to home screen" on mobile -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="BearStatus">
-    
-    <!-- Icons -->    
-    <link rel="icon" sizes="32x32" href="/view/images/icon32.png">
-    <link rel="icon" sizes="196x196" href="/view/images/icon196.png">
-    <link rel="icon" sizes="120x120" href="/view/images/icon120.png">
-    <link rel="icon" sizes="16x16" href="/view/images/icon16.png">
-    <link rel="apple-touch-icon" sizes="196x196" href="/view/images/icon196.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/view/images/icon120.png">
-    
-    <title>BearStatus - Edit Schedule</title>
-     
-    <!--Bootstrap core CSS -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-    
-    <!-- Custom CSS -->
-    <link href="view/stylesheets/site.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="view/stylesheets/edit.css"> -->
-    
-    <!-- Google Fonts stylesheet -->
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu:300"> 
-    
-    <!-- JQuery JS -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-    
-    <!-- Sitewide JS -->
-    <script src="view/javascript/site.js"></script>
-     
-  </head>
-  <body>
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" id="logo" href="/">BearStatus</a>
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-
-          <li><a href="/">Home</a></li>
-          <li><a href="/schedule">Schedule</a></li>
-          <li><a href="/about">About</a></li>
-          <li class="active"><a href="/admin">Admin</a></li>
-
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </nav>
-    <div class="bs-header" id="content">
-      <div class="container">
-        <h1>Edit Schedules: {{edit_date}}
-        </h1>
-      </div>
-    </div>
-    <div class="bs-example" id="center">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <td><h5>Block</h5></td>
-            <td><h5>Start Time</h5></td>
-            <td><h5>End Time</h5></td>
-          </tr>
-        </thead>
-        <form class="form-horizontal" role="form" method="post">
-          <tbody>
-          {% for i in range(0, blocks) %}
-            <tr>
-              <td><input type="text" class="form control" placeholder="Block Name" name="name{{i}}"></td>
-              <td><input type="time" class="form control" placeholder="Start Time" name="start{{i}}"></td> 
-              <td><input type="time" class="form control" placeholder="End Time" name="end{{i}}"></td>
-
-           <!--    <td>
-                <select name="sHour{{i}}">
-                  <option value="" selected></option>
-                  {% for i in range(1,13) %}
-                    <option value="{{i}}">{{i}}</option>
-                  {% endfor %}
-                </select>
-                :
-                <select name="sMinute{{i}}">
-                  <option value=""></option>
-                  {% for i in range(0,12) %}
-                    <option value="{{5*i}}">{{5*i}}</option>
-                  {% endfor %}
-                </select>
-                <select name="sT{{i}}">
-                  <option value=""></option>
-                  <option value="AM">AM</option>
-                  <option value="PM">PM</option>
-                </select>
-              </td>
-              <td>
-                <select name="eHour{{i}}">
-                  <option value="" selected></option>
-                  {% for i in range(1,13) %}
-                  <option value="{{i}}">{{i}}</option>
-                  {% endfor %}
-                </select>
-                :
-                <select name="eMinute{{i}}">
-                  <option value=""></option>
-                  {% for i in range(0,12) %}
-                  <option value="{{5*i}}">{{5*i}}</option>
-                  {% endfor %}
-                </select>
-                <select name="eT{{i}}">
-                  <option value=""></option>
-                  <option value="AM">AM</option>
-                  <option value="PM">PM</option>
-                </select>
-              </td> -->
-            </tr>
-            {% endfor %}
-            <div class="row">
-            </div>
-            <div class="col-md-3 col-md-offset-9">
-              <a class="btn btn-default" href="/admin" role="button">Cancel</a>
-              <input type="submit" class="btn btn-primary" value="Save">
-            </div>
-          </tbody>
-        </form>
-      </table>
-        <footer>
-          <p>
-            Like us on <a href="https://www.facebook.com/bearstatus" target="_blank">Facebook</a> • Follow us on <a href="https://twitter.com/bear__status" target="_blank">Twitter</a><br>
-            <a href="/feedback" target="_blank">Send Feedback</a> • <a href="/admin">Admin Login</a>
-          </p>
-      </footer>
-    </div>
-  </body>
-
-    <!-- Bootstrap and jQuery core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    </body>
-    
-</html> 
+{% extends "base.html" %}
+{% set active_page = "admin" %}
+{% block title %}Edit Schedules - BearStatus{{title}} {% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+<div id="content">
+  <div class="container">
+    <h1>Edit Schedules: {{edit_date}}
+    </h1>
+  </div>
+</div>
+<div id="center">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <td><h5>Block</h5></td>
+        <td><h5>Start Time</h5></td>
+        <td><h5>End Time</h5></td>
+      </tr>
+    </thead>
+    <form class="form-horizontal" role="form" method="post">
+      <tbody>
+      {% for i in range(0, blocks) %}
+        <tr>
+          <td><input type="text" class="form control" placeholder="Block Name" name="name{{i}}"></td>
+          <td><input type="time" class="form control" placeholder="Start Time" name="start{{i}}"></td> 
+          <td><input type="time" class="form control" placeholder="End Time" name="end{{i}}"></td>
+        </tr>
+        {% endfor %}
+        <div class="row">
+        </div>
+        <div class="col-md-3 col-md-offset-9">
+          <a class="btn btn-default" href="/admin" role="button">Cancel</a>
+          <input type="submit" class="btn btn-primary" value="Save">
+        </div>
+      </tbody>
+    </form>
+  </table>
+</div>
+{% endblock %}
