@@ -16,6 +16,7 @@ function refreshAt(hours, minutes, seconds) {
 }
 
 var addToHomeConfig = {
-  expire:10,
+  // expire:2,
   touchIcon:true,
+  message:'Install BearStatus on your %device: tap %icon and then <strong>Add to Home Screen</strong>.'
 };

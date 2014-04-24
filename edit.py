@@ -4,6 +4,7 @@ import model
 import webapp2, jinja2, os, cgi
 from datetime import *
 from dateutil.parser import *
+from google.appengine.api import users
 
 jinja_environment = jinja2.Environment(autoescape=True,
     loader=jinja2.FileSystemLoader(os.path.join(os.path.dirname(__file__), 'view/templating')))
@@ -11,7 +12,12 @@ jinja_environment = jinja2.Environment(autoescape=True,
 class AdminHandler(webapp2.RequestHandler):
   
     def get(self):
-        template_values = {    
+        
+        # admin check for navbar
+        isadmin = users.is_current_user_admin()
+        
+        template_values = {  
+        'isadmin': isadmin, 
         }
         template = jinja_environment.get_template('admin.html')
         self.response.out.write(template.render(template_values))
@@ -38,11 +44,15 @@ class EditHandler(webapp2.RequestHandler):
             blocks = 12
         else:
             blocks = int(blocks)
+            
+        # admin check for navbar
+        isadmin = users.is_current_user_admin()
                 
         # load the template
         template_values = {    
             'edit_date': model.formatDate(edit_date_date),
             'blocks': blocks,
+            'isadmin': isadmin,
         }
         
         template = jinja_environment.get_template('edit.html')

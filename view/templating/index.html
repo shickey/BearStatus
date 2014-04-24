@@ -1,88 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+{% extends "base.html" %}
+{% set active_page = "index" %}
+{% block title %} {{title}} {% endblock %}
+{% block head %}
+    {{ super() }}
     
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    
-    <!-- Support "add to home screen" on mobile -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="BearStatus">
-    
-    <!-- Icons -->    
-    <link rel="icon" sizes="32x32" href="/view/images/icon32.png">
-    <link rel="icon" sizes="196x196" href="/view/images/icon196.png">
-    <link rel="icon" sizes="120x120" href="/view/images/icon120.png">
-    <link rel="icon" sizes="16x16" href="/view/images/icon16.png">
-    <link rel="apple-touch-icon" sizes="196x196" href="/view/images/icon196.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/view/images/icon120.png">
-
-   
-    <title>{{title}}</title>
-    
-    <!--Bootstrap core CSS -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-    
-    <!-- Custom CSS for this page (non-Bootstrap)-->
-    <link href="view/stylesheets/site.css" rel="stylesheet">
+    <!-- Page-specific CSS, JS-->
     <link href="view/stylesheets/index.css" rel="stylesheet">
-    
-    <!-- Google Fonts stylesheet -->
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu:300">
-    
-    <!-- JQuery JS -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-    
-    <!-- Sitewide JS -->
-    <script src="view/javascript/site.js"></script>
-    
-    <!--Page-specific JS-->
     <script src="view/javascript/index.js"></script>
+
+    {% if refresh_time %}
+    <!-- Auto refresh -->
+    <script>
+        // run refresh function every 10 seconds which will reload page if appropriate
+        setInterval(function(){refreshAt({{refresh_time}})}, 20000);
+    </script>
+    {% endif %}
     
     <!-- Popup to add to homescreen on iPhone -->
     <link rel="stylesheet" href="view/javascript/cubiq-add-to-homescreen/add2home.css">
     <script type="application/javascript" src="view/javascript/cubiq-add-to-homescreen/add2home.js"></script>
-
-  </head>
-  <body>
-
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" id="logo" href="/">BearStatus</a>
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          
-          <li class="active"><a href="/">Home</a></li>
-          <li><a href="/schedule">Schedule</a></li>
-          <li><a href="/about">About</a></li>
-          {% if isadmin %}
-            <li><a href="/admin">Admin</a></li>
-          {% endif %}
-
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </nav>
-
+    
+{% endblock %}
+{% block content %}
     <div class="container">
       <div class="row">
         <div id="content">
           <div class="starter-template" id="welcome-message">
-            <h1 id="logo" style="font-size: 54px;">BearStatus</h1>
+            <h1 class="logo" style="font-size: 54px;">BearStatus</h1>
               <h2>Quick Info</h2>
               <br/>
               {% if block.name %}
@@ -107,26 +51,5 @@
           </div>
         </div>
       </div>
-        <footer>
-            <footer>
-              <p>
-                Like us on <a href="https://www.facebook.com/bearstatus" target="_blank">Facebook</a> • Follow us on <a href="https://twitter.com/bear__status" target="_blank">Twitter</a><br>
-                <a href="/feedback" target="_blank">Send Feedback</a> • <a href="/admin">Admin Login</a>
-              </p>
-          </footer>
     </div><!-- /.container -->
-    
-    <!-- Auto refresh -->
-    {% if refresh_time %}
-    <script>
-        // run refresh function every 10 seconds which will reload page if appropriate
-        setInterval(function(){refreshAt({{refresh_time}})}, 20000);
-    </script>
-    {% endif %}
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    </body>
-</html>
+{% endblock %}
