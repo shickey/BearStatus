@@ -17,7 +17,7 @@
               <tr><td>No School</td><td></td><td></td></tr>
             {% else %}
               {% for i in schedule %}
-                <tr><td>{{i.name}}</td><td>{{i.formsTime()}}</td><td>{{i.formeTime()}}</td></tr>
+                <tr {% if i.isnow() %}class="success"{% endif %}><td>{{i.name}}</td><td>{{i.formsTime()}}</td><td>{{i.formeTime()}}</td></tr>
               {% endfor %}
             {% endif %}
             <div class="row">
