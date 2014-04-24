@@ -151,6 +151,6 @@ app = webapp2.WSGIApplication([
     ('/feedback', FeedbackHandler),
     ('/specificday', Schedule_Handler),
     # ('/debug', DebugHandler)
-], debug=True)
+], debug=False)
 
 
