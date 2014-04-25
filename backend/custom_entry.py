@@ -21,3 +21,9 @@ class CustomEntry(db.Model):
         if i.sTime <= now and i.eTime >= now:
             return True
         return False
+    
+    def sTimeMinutes(self):
+        return (self.sTime.hour * 60) + self.sTime.minute
+    
+    def eTimeMinutes(self):
+        return (self.eTime.hour * 60) + self.eTime.minute
