@@ -3,6 +3,8 @@
 {% block title %}Schedule - BearStatus{% endblock %}
 {% block head %}
     {{ super() }}
+    <script src="view/javascript/schedule.js"></script>
+    <link href="view/stylesheets/schedule.css" rel="stylesheet">
 {% endblock %}
 {% block content %}
     <div class="container">
@@ -11,33 +13,29 @@
       </div>
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
-          <table class="table table-bordered" id="schedule"> 
-            <tr><th>Block</th><th>Start</th><th>End</th></tr>
+          <div id="schedule-container">
             {% if schedule == [] %}
-              <tr><td>No School</td><td></td><td></td></tr>
+              <div class="schedule-event" data-start-time="0" data-end-time="100">
+                <div class="schedule-event-content">No School</div>
+              </div>
             {% else %}
-              {% for i in schedule %}
-                <tr {% if i.isnow() %}class="success"{% endif %}><td>{{i.name}}</td><td>{{i.formsTime()}}</td><td>{{i.formeTime()}}</td></tr>
+              {% for event in schedule %}
+              <div class="schedule-event" data-start-time="{{event.sTimeMinutes()}}" data-end-time="{{event.eTimeMinutes()}}">
+                <div class="schedule-event-content {% if event.isnow() %}now{% endif%}">{{event.name}}</div>
+              </div>
               {% endfor %}
             {% endif %}
-            <div class="row">
-              <div class="col-md-3 col-md-offset-9">
-                <form action="/splitlunch" method="get" target="_blank">
-                  <input type="submit" class="btn btn-primary" value="Split Lunch Schedule">
-                </form>
-                <br />
-                <br />
-              </div>
-            </div>
-          </table>
+          </div>
         </div>
       </div>
-      <div id="center">
-        <form action="/schedule" method="get">
-          <br />
-          <p class="lead">View another date: <input type="text" id="datepicker" placeholder={{short_date}} name="date">
-          <input type="submit" class="btn btn-primary" value="View"> </p>
-        </form>
+      <div class="row">
+        <div id="center">
+          <form action="/schedule" method="get">
+            <br />
+            <p class="lead">View another date: <input type="text" id="datepicker" placeholder={{short_date}} name="date">
+            <input type="submit" class="btn btn-primary" value="View"> </p>
+          </form>
+        </div>
       </div>
     </div><!-- /.container -->
 {% endblock %}
