@@ -67,8 +67,11 @@ function layoutEvents(events) {
       height = 30;
     };
     o.css('height', height);
-    
   });
+  // Set height of container element
+  var lastEvent = $(events)[events.length-1].obj;
+  var containerHeight = lastEvent.position().top + lastEvent.height();
+  $('#schedule-container').css('height', containerHeight);
 }
 
 function packEvents(columns) {
