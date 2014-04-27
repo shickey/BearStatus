@@ -9,7 +9,7 @@
 {% block content %}
     <div class="container">
       <div class="starter-template">
-        <h1>Schedule for {{display_date}}</h1>
+        <h1>Schedule <small>{{display_date}}</small></h1>
       </div>
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
@@ -22,6 +22,14 @@
               {% for event in schedule %}
               <div class="schedule-event" data-start-time="{{event.sTimeMinutes()}}" data-end-time="{{event.eTimeMinutes()}}">
                 <div class="schedule-event-content {% if event.isnow() %}now{% endif%}">{{event.name}}</div>
+              </div>
+              <div class="schedule-event panel panel-default" data-start-time="{{event.sTimeMinutes()}}" data-end-time="{{event.eTimeMinutes()}}">
+                <div class="panel-body">
+                  <h4 class="panel-title">{{event.name}} <small>{{event.formsTime()}} to {{event.formeTime()}}</small></h4>
+                </div>
+<!--                 <div class="panel-body">
+                  {{event.formsTime()}} to {{event.formeTime()}}
+                </div> -->
               </div>
               {% endfor %}
             {% endif %}
