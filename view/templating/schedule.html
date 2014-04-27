@@ -20,9 +20,9 @@
               </div>
             {% else %}
               {% for event in schedule %}
-              <div class="schedule-event" data-start-time="{{event.sTimeMinutes()}}" data-end-time="{{event.eTimeMinutes()}}">
+<!--               <div class="schedule-event" data-start-time="{{event.sTimeMinutes()}}" data-end-time="{{event.eTimeMinutes()}}">
                 <div class="schedule-event-content {% if is_today and event.isnow() %}now{% endif%}">{{event.name}}</div>
-              </div>
+              </div> -->
               <div class="schedule-event panel panel-default" data-start-time="{{event.sTimeMinutes()}}" data-end-time="{{event.eTimeMinutes()}}">
                 <div class="panel-body">
                   <h4 class="panel-title">{{event.name}} <small>{{event.formsTime()}} to {{event.formeTime()}}</small></h4>
