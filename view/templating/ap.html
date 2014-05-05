@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% set active_page = "ap" %}
+{% block title %}AP Exams - BearStatus{{title}} {% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+  <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+              <h1>Week 1 <small>May 5-9</small></h1>
+              <table class="table table-hover">
+                <thead><tr><th class="tableSubhed">Week 1 </th><th class="tableSubhed"><b>Morning 8 a.m.</b></th><th class="tableSubhed"><b>Afternoon 12 noon</b> </th>   </tr> </thead>  <tbody>   <tr>      <th>      <p>     Monday,<br />     May 5       </p>      </th>     <td>      <p>     Chemistry<br />     Environmental Science       </p>      </td>     <td>      <p>     Psychology      </p>      </td>   </tr>
+                <tr class="tableDark">      <th><p>Tuesday, May 6</p></th>     <td>      <p>     Computer Science A <br />     Spanish Language and Culture      </p>      </td>     <td>      <p>     Art History       </p>      </td>   </tr>
+                <tr>      <th>      <p>     Wednesday, May 7</p>      </th>     <td>      <p>     Calculus AB<br />     Calculus BC       </p>      </td>     <td>      <p>     Chinese Language and Culture      </p>      </td>   </tr>   <tr class="tableDark">      <th>      <p>     Thursday, May 8       </p>      </th>     <td>      <p>     English Literature and Composition      </p>      </td>     <td>      <p>     Japanese Language and Culture <br />      Latin       </p>      </td>   </tr>
+                <tr> <th rowspan="2"><p>Friday, May 9</p></th>     <td>      <p>     English Language and Composition      </p>      </td>     <td>      <p>     Statistics      </p>      </td>   </tr>
+                <tr>      <td colspan="2">      <p>     Studio Art&mdash;last day for Coordinators to submit digital portfolios (by 8 p.m. EDT) and to gather 2-D Design and Drawing students for physical portfolio assembly       </p>      <p>     Teachers should have forwarded students&#39; completed digital portfolios to Coordinators before this date.       </p>      </td></tr></tbody>
+              </table>
+              <h1>Week 2 <small>May 12-16</small></h2>
+              <table class="table table-hover">
+                <thead>   <tr>      <th class="tableSubhed">Week 2 </th><th class="tableSubhed">Morning 8 a.m. </th><th class="tableSubhed">Afternoon 12 noon </th><th class="tableSubhed">Afternoon 2 p.m. </th>   </tr> </thead>  <tbody>   <tr>      <th>      <p>     Monday, May 12      </p>      </th>     <td>      <p>     Biology <br />      Music Theory      </p>      </td>     <td>      <p>     Physics B <br />      Physics C: Mechanics      </p>      </td>     <td>      <p>     Physics C:<br />      Electricity and Magnetism       </p>      </td>   </tr>   <tr class="tableDark">      <th>      <p>     Tuesday,<br />      May 13      </p>      </th>     <td>      <p>     United States Government and Politics       </p>      </td>     <td>      <p>     French Language and Culture<br />     Human Geography     </p>      </td>     <td>&nbsp;</td>   </tr>   <tr>      <th>      <p>     Wednesday,<br />      May 14      </p>      </th>     <td>      <p>     German Language and Culture<br />     United States History       </p>      </td>     <td>      <p>     European History      </p>      </td>     <td>&nbsp;</td>   </tr>   <tr class="tableDark">      <th>      <p>     Thursday,<br />     May 15      </p>      </th>     <td>      <p>     Macroeconomics <br />     World History       </p>      </td>     <td>      <p>     Italian Language and Culture <br />     Microeconomics      </p>      </td>     <td>&nbsp;</td>   </tr>   <tr>      <th>      <p>     Friday,<br />     May 16      </p>      </th>     <td>      <p>     Comparative Government and Politics<br />     Spanish Literature and Culture      </p>      </td>     <td></td>     <td>&nbsp;</td>   </tr> </tbody>
+              </table>
+          </div>
+        <br/>
+        <a href="http://goo.gl/gaRWSB"> &nbsp; </a>
+      </div>
+      <br>
+    </div><!-- /.container -->
+{% endblock %}

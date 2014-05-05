@@ -104,6 +104,18 @@ class AboutHandler(webapp2.RequestHandler):
         }
         template = jinja_environment.get_template('about.html')
         self.response.out.write(template.render(template_values))
+class AP_Handler(webapp2.RequestHandler):
+  
+    def get(self):
+        
+        # admin check for navbar
+        isadmin = users.is_current_user_admin()
+        
+        template_values = {    
+            'isadmin': isadmin
+        }
+        template = jinja_environment.get_template('ap.html')
+        self.response.out.write(template.render(template_values))
         
 # this runs as a new instance of an app is loaded to load the blocks
 # it reduces load times and improves scalability
@@ -146,6 +158,7 @@ app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/schedule', Schedule_Handler),
     ('/about', AboutHandler),
+    ('/ap', AP_Handler),
     ('/_ah/warmup', WarmupHandler),
     ('/splitlunch', LunchLinkHandler),
     ('/feedback', FeedbackHandler),
