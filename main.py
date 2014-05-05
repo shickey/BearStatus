@@ -81,7 +81,11 @@ class Schedule_Handler(webapp2.RequestHandler):
         # admin check for navbar
         isadmin = users.is_current_user_admin()
             
+        # check to see if the current date value is today
+        is_today = (date.date() == datetime.today().date())
+        
         template_values = {
+            'is_today': is_today,
             'display_date': display_date,
             'schedule': schedule,
             'splitlunch': splitlunch,

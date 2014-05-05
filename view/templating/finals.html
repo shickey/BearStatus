@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% set active_page = "finals" %}
+{% block title %}Final Exams - BearStatus{{title}} {% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+  <div class="container">
+      <div id="content">
+        <table class="table table-bordered" id="schedule">
+          <tr><th></th><th>Friday 5/23</th><th>Tuesday 5/27</th><th>Wedneday 5/28</th><th>Thursday 5/29</th><th>Friday 5/30</th></tr>
+          <tr><th>8:00-10:30</th><td><a href="/schedule?date=05%2F23%2F2014">Special schedule</a></td><td>Math Exams</td><td>Science Exams</td><td>Block 1</td><td>Block 2</td></tr>
+          <tr><th colspan="6">Lunch</th></tr>
+          <tr><th>12:30-3:00</th><td>Block 7</td><td>Block 5</td><td>Block 4</td><td>Block 3</td><td>Block 6</td></tr>
+        </table>
+        <table class="table table-bordered" id="schedule">
+          <tr><th></th><th>Friday 5/23</th><th>Tuesday 5/27</th><th>Wedneday 5/28</th><th>Thursday 5/29</th><th>Friday 5/30</th></tr>
+          <tr><th>8:00-10:30</th><td><a href="/schedule?date=05%2F23%2F2014">Special schedule</a></td><td>Math Exams</td><td>Science Exams</td><td>Block 1</td><td>Block 2</td></tr>
+          <tr><th>Lunch</th></tr>
+          <tr><th>12:30-3:00</th><td>Block 7</td><td>Block 5</td><td>Block 4</td><td>Block 3</td><td>Block 6</td></tr>
+        </table>
+      <br/>
+      <a href="http://goo.gl/gaRWSB"> &nbsp; </a>
+      </div>
+      <br>
+    </div><!-- /.container -->
+{% endblock %}
