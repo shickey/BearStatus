@@ -7,23 +7,23 @@
 {% block content %}
     <div class="container">
       <div class="starter-template">
-        <h1>Schedule for {{display_date}}</h1>
+        <h1>Schedule <small>{{display_date}}</small></h1>
       </div>
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
-          <table class="table table-bordered" id="schedule"> 
-            <tr><th>Block</th><th>Start</th><th>End</th></tr>
+          <table class="table table-hover" id="schedule"> 
+            <thead><tr><th>Block</th><th>Start</th><th>End</th></tr></thead>
             {% if schedule == [] %}
               <tr><td>No School</td><td></td><td></td></tr>
             {% else %}
               {% for i in schedule %}
-                <tr><td>{{i.name}}</td><td>{{i.formsTime()}}</td><td>{{i.formeTime()}}</td></tr>
+                <tr {% if is_today and i.isnow() %}class="success"{% endif %}><td>{{i.name}}</td><td>{{i.formsTime()}}</td><td>{{i.formeTime()}}</td></tr>
               {% endfor %}
             {% endif %}
             <div class="row">
               <div class="col-md-3 col-md-offset-9">
                 <form action="/splitlunch" method="get" target="_blank">
-                  <input type="submit" class="btn btn-primary" value="Split Lunch Schedule">
+                  <button type="submit" class="btn btn-primary">Split Lunch Schedule</button>
                 </form>
                 <br />
                 <br />
@@ -36,7 +36,7 @@
         <form action="/schedule" method="get">
           <br />
           <p class="lead">View another date: <input type="text" id="datepicker" placeholder={{short_date}} name="date">
-          <input type="submit" class="btn btn-primary" value="View"> </p>
+          <button type="submit" class="btn btn-primary">View</button> </p>
         </form>
       </div>
     </div><!-- /.container -->

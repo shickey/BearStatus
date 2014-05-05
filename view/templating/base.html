@@ -32,7 +32,7 @@
     <title>{% block title %}{% endblock %}</title>
     
     <!--Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     
     <!-- Google Fonts stylesheet -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:300">
@@ -72,6 +72,7 @@
               {% set navigation_bar = [
                   ('/', 'index', 'Home'),
                   ('/schedule', 'schedule', 'Schedule'),
+                  ('/ap', 'ap', 'AP'),
                   ('/about', 'about', 'About'),
                   ('/admin', 'admin', 'Admin')
               ] -%}
@@ -79,6 +80,7 @@
               {% set navigation_bar = [
                   ('/', 'index', 'Home'),
                   ('/schedule', 'schedule', 'Schedule'),
+                  ('/ap', 'ap', 'AP'),
                   ('/about', 'about', 'About')
               ] -%}
             {% endif %}

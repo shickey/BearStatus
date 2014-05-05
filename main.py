@@ -81,7 +81,11 @@ class Schedule_Handler(webapp2.RequestHandler):
         # admin check for navbar
         isadmin = users.is_current_user_admin()
             
+        # check to see if the current date value is today
+        is_today = (date.date() == datetime.today().date())
+        
         template_values = {
+            'is_today': is_today,
             'display_date': display_date,
             'schedule': schedule,
             'splitlunch': splitlunch,
@@ -103,6 +107,18 @@ class AboutHandler(webapp2.RequestHandler):
             'isadmin': isadmin
         }
         template = jinja_environment.get_template('about.html')
+        self.response.out.write(template.render(template_values))
+class AP_Handler(webapp2.RequestHandler):
+  
+    def get(self):
+        
+        # admin check for navbar
+        isadmin = users.is_current_user_admin()
+        
+        template_values = {    
+            'isadmin': isadmin
+        }
+        template = jinja_environment.get_template('ap.html')
         self.response.out.write(template.render(template_values))
         
 # this runs as a new instance of an app is loaded to load the blocks
@@ -146,6 +162,7 @@ app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/schedule', Schedule_Handler),
     ('/about', AboutHandler),
+    ('/ap', AP_Handler),
     ('/_ah/warmup', WarmupHandler),
     ('/splitlunch', LunchLinkHandler),
     ('/feedback', FeedbackHandler),
