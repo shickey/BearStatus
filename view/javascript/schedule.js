@@ -59,14 +59,14 @@ function layoutEvents(events) {
     var o = e.obj;
     o.css('left', e.left);
     o.css('width', e.width);
-    o.css('top', 1.25 * (e.startTime - offset));
+    o.css('top', (e.startTime - offset));
     
     var height = e.endTime - e.startTime;
     if (height < 30) {
       offset -= 30 - height;
       height = 30;
     };
-    height *= 1.25
+    // height *= 1.5
     o.css('height', height);
   });
   // Set height of container element
