@@ -7,14 +7,6 @@
     <!-- Page-specific CSS, JS-->
     <link href="view/stylesheets/index.css" rel="stylesheet">
     <script src="view/javascript/index.js"></script>
-
-    {% if refresh_time %}
-    <!-- Auto refresh -->
-    <script>
-        // run refresh function every 10 seconds which will reload page if appropriate
-        setInterval(function(){refreshAt({{refresh_time}})}, 20000);
-    </script>
-    {% endif %}
     
     <!-- Popup to add to homescreen on iPhone -->
     <link rel="stylesheet" href="view/javascript/cubiq-add-to-homescreen/add2home.css">
@@ -52,4 +44,16 @@
         </div>
       </div>
     </div><!-- /.container -->
+{% endblock %}
+{% block pageend %}
+
+    {{ super() }}
+
+    {% if refresh_time %}
+    <!-- Auto refresh -->
+    <script>
+        // run refresh function every 10 seconds which will reload page if appropriate
+        setInterval(function(){refreshAt({{refresh_time}})}, 20000);
+    </script>
+    {% endif %}
 {% endblock %}
