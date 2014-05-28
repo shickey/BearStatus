@@ -6,23 +6,50 @@
 .schedule-event {
   position: absolute;
   padding: 1px;
-  display: table;
-  margin-bottom: 0px;
-  min-height: 5px;
+/*  margin-bottom: 0px;
+  min-height: 5px;*/
 }
 
 .schedule-event-content {
-/*  border-radius: 5px;
-  border: 2px solid #999;
-  height: 100%;*/
-  /*background-color: #ddd;*/
+/*  display: flex;
+  justify-content:center;
+  align-content:center;
+  flex-direction:column;*/
   text-align: center;
-  display: table-cell; 
-  vertical-align: middle; 
-  height: 100%
+  border-radius: 5px;
+  border: 2px solid #999;
+  height: 100%;
+  background-color: #ddd;
+  
+  /* Internet Explorer 10 */
+  display:-ms-flexbox;
+  -ms-flex-pack:center;
+  -ms-flex-align:center;
+  
+  /* Firefox */
+  display:-moz-box;
+  -moz-box-pack:center;
+  -moz-box-align:center;
+
+  /* Safari, Opera, and Chrome */
+  display:-webkit-box;
+  -webkit-box-pack:center;
+  -webkit-box-align:center;
+
+  /* W3C */
+  display:box;
+  box-pack:center;
+  box-align:center;
+  
+
 }
 
-.schedule-event.now {
+.schedule-event-content h4 {
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
+
+.schedule-event-content.now {
   background-color: #dff0d8;
   border: 1px solid #d6e9c6;
 }

@@ -23,9 +23,9 @@
 <!--               <div class="schedule-event" data-start-time="{{event.sTimeMinutes()}}" data-end-time="{{event.eTimeMinutes()}}">
                 <div class="schedule-event-content {% if is_today and event.isnow() %}now{% endif%}">{{event.name}}</div>
               </div> -->
-              <div class="schedule-event {% if is_today and event.isnow() %}now{% endif%} well well-sm" data-start-time="{{event.sTimeMinutes()}}" data-end-time="{{event.eTimeMinutes()}}">
+              <div class="schedule-event {% if is_today and event.isnow() %}now{% endif%}" data-start-time="{{event.sTimeMinutes()}}" data-end-time="{{event.eTimeMinutes()}}">
                 <div class="schedule-event-content">
-                  <h4>{{event.name}} <small>{{event.formsTime()}} to {{event.formeTime()}}</small></h4>
+                  <div class="schedule-event-content-content"><h4>{{event.name}} <small>{{event.formsTime()}} to {{event.formeTime()}}</small></h4></div>
                 </div>
               </div>
 <!--               <div class="schedule-event panel {% if is_today and event.isnow() %}panel-primary{% else %}panel-default{% endif %}" data-start-time="{{event.sTimeMinutes()}}" data-end-time="{{event.eTimeMinutes()}}">
