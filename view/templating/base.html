@@ -67,14 +67,14 @@
             {# Set the pages to go in the navbar #}
             {% if isadmin %}{# Show the admin page in the navbar if admin is logged in #}
               {% set navigation_bar = [
-                  ('/', 'index', 'Home'),
+                  ('/?summer=false', 'index', 'Home'),
                   ('/schedule', 'schedule', 'Schedule'),
                   ('/about', 'about', 'About'),
                   ('/admin', 'admin', 'Admin')
               ] -%}
             {% else %}
               {% set navigation_bar = [
-                  ('/', 'index', 'Home'),
+                  ('/?summer=false', 'index', 'Home'),
                   ('/schedule', 'schedule', 'Schedule'),
                   ('/about', 'about', 'About')
               ] -%}
