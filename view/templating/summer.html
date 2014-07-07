@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% set active_page = "summer" %}
+{% block title %}BearStatus is hibernating{{title}} {% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+  <div class="container">
+      <div>
+        <h1>BearStatus is hibernating for the summer</h1>
+          <br>
+          <p class="lead">It is currently dreaming about some delicous food.</p>
+          <iframe width="560" height="315" src="//www.youtube-nocookie.com/embed/0RpdPzJgaBw?rel=0" frameborder="0" allowfullscreen></iframe>
+          <p><br>If you <em>must</em> wake it up, you can use the navbar above.</p>
+      <br/>
+      </div>
+    </div><!-- /.container -->
+{% endblock %}
