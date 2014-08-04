@@ -3,6 +3,8 @@
 {% block title %}Schedule - BearStatus{% endblock %}
 {% block head %}
     {{ super() }}
+    <script src="view/javascript/schedule.js"></script>
+    <link href="view/stylesheets/schedule.css" rel="stylesheet">
 {% endblock %}
 {% block content %}
     <div class="container">
@@ -11,10 +13,11 @@
       </div>
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
-          <table class="table table-hover" id="schedule"> 
-            <thead><tr><th>Block</th><th>Start</th><th>End</th></tr></thead>
+          <div id="schedule-container">
             {% if schedule == [] %}
-              <tr><td>No School</td><td></td><td></td></tr>
+              <div class="schedule-event" data-start-time="0" data-end-time="100">
+                <div class="schedule-event-content">No School</div>
+              </div>
             {% else %}
               {% for event in schedule %}
               <div class="schedule-event" data-start-time="{{event.sTimeMinutes()}}" data-end-time="{{event.eTimeMinutes()}}">
@@ -27,6 +30,7 @@
           </div>
         </div>
       </div>
+      </div>
       <div class="row">
         <div id="center">
           <form action="/schedule" method="get">
@@ -35,7 +39,7 @@
             <button type="submit" class="btn btn-primary">View</button> </p>
           </form>
           <form action="/splitlunch" method="get" target="_blank">
-                  <button type="submit" class="btn btn-primary btn-sm">Split Lunch Schedule</button>
+            <button type="submit" class="btn btn-primary btn-sm">Split Lunch Schedule</button>
           </form>
         </div>
       </div>
