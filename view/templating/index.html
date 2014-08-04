@@ -25,9 +25,8 @@
     <div class="container">
       <div class="row">
         <div id="content">
-          <div class="starter-template" id="welcome-message">
-            <h1 class="logo" style="font-size: 54px;">BearStatus</h1>
-              <h2>Quick Info</h2>
+          <div id="text">
+            <h1 class="logo" style="font-size: 48px;">BearStatus</h1>
               <br/>
               {% if block.name %}
                 <p> <u style= "font-size: 22px;">Now:</u> </p> <p style= "font-size: 18px;">{{block.name}}</p>
@@ -43,10 +42,6 @@
               {% if block.name is undefined and next_block.name is undefined %}
                 <p> <u style= "font-size: 22px;">Now:</u></p> <p style= "font-size: 18px;">No School</p>
               {% endif %}
-              <br/>
-              <br/>
-              <br/>
-              <br/>
             </p>
           </div>
         </div>
