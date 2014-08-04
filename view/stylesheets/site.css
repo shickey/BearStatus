@@ -22,3 +22,10 @@ footer {
 #center {
   text-align: center;
 }
+
+.navbar-brand {
+  float: left;
+  padding: 8px 15px 8px 15px;
+  font-size: 18px;
+  line-height: 32px;
+}
