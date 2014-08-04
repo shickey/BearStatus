@@ -16,28 +16,28 @@
             {% if schedule == [] %}
               <tr><td>No School</td><td></td><td></td></tr>
             {% else %}
-              {% for i in schedule %}
-                <tr {% if is_today and i.isnow() %}class="success"{% endif %}><td>{{i.name}}</td><td>{{i.formsTime()}}</td><td>{{i.formeTime()}}</td></tr>
+              {% for event in schedule %}
+              <div class="schedule-event" data-start-time="{{event.sTimeMinutes()}}" data-end-time="{{event.eTimeMinutes()}}">
+                <div class="schedule-event-content {% if is_today and event.isnow() %}now{% endif%}">
+                  <div class="schedule-event-content-text"><h4>{{event.name}} <small>{{event.formsTime()}} to {{event.formeTime()}}</small></h4></div>
+                </div>
+              </div>
               {% endfor %}
             {% endif %}
-            <div class="row">
-              <div class="col-md-3 col-md-offset-9">
-                <form action="/splitlunch" method="get" target="_blank">
-                  <button type="submit" class="btn btn-primary">Split Lunch Schedule</button>
-                </form>
-                <br />
-                <br />
-              </div>
-            </div>
-          </table>
+          </div>
         </div>
       </div>
-      <div id="center">
-        <form action="/schedule" method="get">
-          <br />
-          <p class="lead">View another date: <input type="text" id="datepicker" placeholder={{short_date}} name="date">
-          <button type="submit" class="btn btn-primary">View</button> </p>
-        </form>
+      <div class="row">
+        <div id="center">
+          <form action="/schedule" method="get">
+            <br />
+            <p class="lead">View another date: <input type="text" id="datepicker" placeholder={{short_date}} name="date">
+            <button type="submit" class="btn btn-primary">View</button> </p>
+          </form>
+          <form action="/splitlunch" method="get" target="_blank">
+                  <button type="submit" class="btn btn-primary btn-sm">Split Lunch Schedule</button>
+          </form>
+        </div>
       </div>
     </div><!-- /.container -->
 {% endblock %}

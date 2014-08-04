@@ -7,7 +7,16 @@
   max-width: 400px;
   width: 93%;
   height: fit-content;
-  background-color: #c7bebe;
-  border: 2px solid #c7bebe;
-  border-radius: 10px;
+  background-color: #eaeaea;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+}
+
+#text {
+  padding: 20px 30px 35px 30px;
+}
+
+.container {
+  margin-bottom: 10px;
 }
