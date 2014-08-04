@@ -20,40 +20,26 @@
               </div>
             {% else %}
               {% for event in schedule %}
-<!--               <div class="schedule-event" data-start-time="{{event.sTimeMinutes()}}" data-end-time="{{event.eTimeMinutes()}}">
-                <div class="schedule-event-content {% if is_today and event.isnow() %}now{% endif%}">{{event.name}}</div>
-              </div> -->
-              <div class="schedule-event {% if is_today and event.isnow() %}now{% endif%}" data-start-time="{{event.sTimeMinutes()}}" data-end-time="{{event.eTimeMinutes()}}">
-                <div class="schedule-event-content">
-                  <div class="schedule-event-content-content"><h4>{{event.name}} <small>{{event.formsTime()}} to {{event.formeTime()}}</small></h4></div>
+              <div class="schedule-event" data-start-time="{{event.sTimeMinutes()}}" data-end-time="{{event.eTimeMinutes()}}">
+                <div class="schedule-event-content {% if is_today and event.isnow() %}now{% endif%}">
+                  <div class="schedule-event-content-text"><h4>{{event.name}} <small>{{event.formsTime()}} to {{event.formeTime()}}</small></h4></div>
                 </div>
               </div>
-<!--               <div class="schedule-event panel {% if is_today and event.isnow() %}panel-primary{% else %}panel-default{% endif %}" data-start-time="{{event.sTimeMinutes()}}" data-end-time="{{event.eTimeMinutes()}}">
-                <div class="panel-heading">
-                  <h4 class="panel-title">{{event.name}}</h4>
-                </div>                
-                <div class="panel-body">
-                  {{event.formsTime()}} to {{event.formeTime()}}
-                </div>
-              </div> -->
               {% endfor %}
             {% endif %}
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-3 col-md-offset-1">
-          <form action="/splitlunch" method="get" target="_blank">
-            <input type="submit" class="btn btn-primary btn-sm" value="Split Lunch Schedule">
-          </form>
-        </div>
-      </div>
-      <div class="row">
         <div id="center">
+        <!-- LOOK OUT FOR A MERGE CONFLICT WITH THESE BUTTONS -->
           <form action="/schedule" method="get">
             <br />
             <p class="lead">View another date: <input type="text" id="datepicker" placeholder={{short_date}} name="date">
             <input type="submit" class="btn btn-primary" value="View"> </p>
+          </form>
+          <form action="/splitlunch" method="get" target="_blank">
+            <input type="submit" class="btn btn-primary btn-sm" value="Split Lunch Schedule">
           </form>
         </div>
       </div>

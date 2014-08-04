@@ -1,52 +1,27 @@
 #schedule-container {
   position: relative;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .schedule-event {
   position: absolute;
   padding: 1px;
-/*  margin-bottom: 0px;
-  min-height: 5px;*/
 }
 
 .schedule-event-content {
-/*  display: flex;
-  justify-content:center;
-  align-content:center;
-  flex-direction:column;*/
-  text-align: center;
-  border-radius: 5px;
-  border: 2px solid #999;
   height: 100%;
   background-color: #ddd;
   
-  /* Internet Explorer 10 */
-  display:-ms-flexbox;
-  -ms-flex-pack:center;
-  -ms-flex-align:center;
-  
-  /* Firefox */
-  display:-moz-box;
-  -moz-box-pack:center;
-  -moz-box-align:center;
-
-  /* Safari, Opera, and Chrome */
-  display:-webkit-box;
-  -webkit-box-pack:center;
-  -webkit-box-align:center;
-
-  /* W3C */
-  display:box;
-  box-pack:center;
-  box-align:center;
-  
-
 }
 
-.schedule-event-content h4 {
-  padding: 0 0 0 0;
-  margin: 0 0 0 0;
+
+.schedule-event-content-text {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
 }
 
 .schedule-event-content.now {
