@@ -16,7 +16,9 @@
           <div id="schedule-container">
             {% if schedule == [] %}
               <div class="schedule-event" data-start-time="0" data-end-time="100">
-                <div class="schedule-event-content">No School</div>
+                <div class="schedule-event-content">
+                  <div class="schedule-event-content-text"><h4>No School</h4></div>
+                </div>
               </div>
             {% else %}
               {% for event in schedule %}
