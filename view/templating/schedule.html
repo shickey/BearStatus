@@ -23,7 +23,7 @@
             {% else %}
               {% for event in schedule %}
                 <div class="schedule-event" data-start-time="{{event.sTimeMinutes()}}" data-end-time="{{event.eTimeMinutes()}}">
-                  <div class="schedule-event-content {% if now %}now{% endif%}">
+                  <div class="schedule-event-content {% if is_today and event.isnow() %}now{% endif%}">
                     <div class="schedule-event-content-text"><h4>{{event.name}} <small>{{event.formsTime()}} to {{event.formeTime()}}</small></h4></div>
                   </div>
                 </div>
