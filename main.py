@@ -71,6 +71,20 @@ class Schedule_Handler(webapp2.RequestHandler):
             schedule = model.getToday()
             date = model.getTime()
             display_date = "Today"
+
+            # set some variables necessary for auto refresh
+            block = controller.current_block(schedule)
+            the_next_block = controller.next_block(schedule)
+
+            # make a time to put into the auto refresh javascript function
+            if block:
+                blockeTime = controller.testeblock(block)
+                refresh_time = block.eTime.strftime("%H,%M,01")
+            elif the_next_block:
+                next_blocksTime = controller.testsblock(the_next_block)
+                refresh_time = the_next_block.sTime.strftime("%H,%M,01")
+            else:
+                refresh_time = None
         else:
             date = parse(date)
             schedule = model.getSchedule(date)
@@ -90,7 +104,8 @@ class Schedule_Handler(webapp2.RequestHandler):
             'schedule': schedule,
             'splitlunch': splitlunch,
             'short_date': short_date,
-            'isadmin': isadmin
+            'isadmin': isadmin,
+            'refresh_time': refresh_time,
         }
 
         template = jinja_environment.get_template('schedule.html')
@@ -185,6 +200,6 @@ app = webapp2.WSGIApplication([
     ('/specificday', Schedule_Handler),
     ('/summer', SummerHandler),
     # ('/debug', DebugHandler)
-], debug=False)
+], debug=True)
 
 
