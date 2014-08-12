@@ -24,6 +24,7 @@
   width: 100%;
   top: 50%;
   transform: translateY(-50%);
+  -webkit-transform: translateY(-50%); /*needed for Safari*/
   text-align: center;
 }
 
