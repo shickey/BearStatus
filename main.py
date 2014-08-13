@@ -89,6 +89,7 @@ class Schedule_Handler(webapp2.RequestHandler):
             date = parse(date)
             schedule = model.getSchedule(date)
             display_date = model.formatDate(date)
+            refresh_time = None
         
         short_date = date.strftime("%x")            # short date to display in form at bottom
            
