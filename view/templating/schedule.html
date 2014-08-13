@@ -33,17 +33,23 @@
           </div>
         </div>
       </div>
-      </div>
-      <div class="row">
-        <div id="center">
-          <form action="/schedule" method="get">
-            <br />
-            <p class="lead">View another date: <input type="text" id="datepicker" placeholder={{short_date}} name="date">
-            <button type="submit" class="btn btn-primary">View</button> </p>
-          </form>
-          <form action="/splitlunch" method="get" target="_blank">
-            <button type="submit" class="btn btn-primary btn-sm">Split Lunch Schedule</button>
-          </form>
+      <div id="center"> 
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4 col-xs-10 col-xs-offset-1" id="pickdate">
+            <form action="/schedule" method="get">
+              <div class="input-group" id="viewdate">
+                <input type="text" class="form-control" placeholder="View another date" id="datepicker" name="date">
+                <span class="input-group-btn">
+                  <button class="btn btn-primary" type="submit">View</button>
+                </span>
+              </div><!-- /input-group -->
+            </form>
+          </div>
+          <div>
+            <form action="/splitlunch" method="get" target="_blank">
+              <button type="submit" id="lunchbtn" class="btn btn-primary btn-sm">Split Lunch Schedule</button>
+            </form>
+          </div>
         </div>
       </div>
     </div><!-- /.container -->
