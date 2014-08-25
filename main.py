@@ -91,7 +91,7 @@ class Schedule_Handler(webapp2.RequestHandler):
             display_date = model.formatDate(date)
             refresh_time = None
         
-        short_date = date.strftime("%x")            # short date to display in form at bottom
+        short_date = date.strftime("%a %m/%d")            # short date to display in header on mobile
            
         # admin check for navbar
         isadmin = users.is_current_user_admin()

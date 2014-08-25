@@ -212,7 +212,7 @@ treeroot:
         day: 3
     3-A:
         key_name: 3-020
-        name: Advisory/Grade Meeting
+        name: Advisory
         shour: 9
         smin: 40
         ehour: 10
