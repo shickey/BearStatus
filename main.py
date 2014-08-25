@@ -71,6 +71,7 @@ class Schedule_Handler(webapp2.RequestHandler):
             schedule = model.getToday()
             date = model.getTime()
             display_date = "Today"
+            short_date = "Today"
 
             # set some variables necessary for auto refresh
             block = controller.current_block(schedule)
@@ -90,8 +91,8 @@ class Schedule_Handler(webapp2.RequestHandler):
             schedule = model.getSchedule(date)
             display_date = model.formatDate(date)
             refresh_time = None
+            short_date = date.strftime("%a %m/%d")            # short date to display in header on mobile
         
-        short_date = date.strftime("%a %m/%d")            # short date to display in header on mobile
            
         # admin check for navbar
         isadmin = users.is_current_user_admin()
