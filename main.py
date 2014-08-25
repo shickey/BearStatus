@@ -90,8 +90,8 @@ class Schedule_Handler(webapp2.RequestHandler):
             date = parse(date)
             schedule = model.getSchedule(date)
             display_date = model.formatDate(date)
-            refresh_time = None
             short_date = date.strftime("%a %m/%d")            # short date to display in header on mobile
+            refresh_time = None
         
            
         # admin check for navbar

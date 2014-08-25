@@ -55,18 +55,64 @@ $(function() {
 
 function layoutEvents(events) {
   var offset = $(events)[0].startTime;
+  var all_offset = offset;
+  var left_offset = 0;
+  var right_offset = 0;
+  var mq = window.matchMedia( "(max-width: 768px)" );    // see if on xs screen (mobile)
   $(events).each(function(index, e) {
     var o = e.obj;
+    var height = e.endTime - e.startTime;
     o.css('left', e.left);
     o.css('width', e.width);
-    o.css('top', (e.startTime - offset));
-    
-    var height = e.endTime - e.startTime;
-    if (height < 30) {
-      offset -= 30 - height;
-      height = 30;
+
+    if (e.width == "100%") {
+      o.css('top', (e.startTime - offset));
+      all_offset = offset;
+
+      // make sure blocks are at least 30px tall
+      if (height < 30) {
+        offset -= 30 - height;
+        height = 30;
+      };
+    }
+
+    // if there are two collumns, the offsets for each collumn have to be calculated separately
+    else if (e.width == "50%") {
+
+      // left collumn
+      if (e.left == "0%") {
+        o.css('top', (e.startTime - all_offset - left_offset));
+        // if on mobile, lunch blocks should be at least 45px tall
+        if (mq.matches && height < 45) {
+          left_offset -= 45 - height;
+          height = 45;
+        }
+        // make sure blocks are at least 30px tall, even if on desktop
+        else if (height < 30) {
+          left_offset -= 30 - height;
+          height = 30;
+        };
+      };
+
+      // right collumn
+      if (e.left == "50%") {
+        o.css('top', (e.startTime - all_offset - right_offset));
+        // if on mobile, lunch blocks should be at least 45px tall
+        if (mq.matches && height < 45) {
+          right_offset -= 45 - height;
+          height = 45;
+        }
+        // make sure blocks are at least 30px tall, even if on desktop
+        else if (height < 30) {
+          right_offset -= 30 - height;
+          height = 30;
+        };
+      };
+
+    offset = all_offset + Math.min(left_offset, right_offset);  // determine which collumn is taller for all blocks below
+
     };
-    // height *= 1.5
+
     o.css('height', height);
   });
   // Set height of container element
