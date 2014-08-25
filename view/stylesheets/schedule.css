@@ -1,0 +1,60 @@
+#schedule-container {
+  position: relative;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.schedule-event {
+  position: absolute;
+  padding: 1px;
+}
+
+.schedule-event-content {
+  height: 100%;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  border: 2px solid #ddd;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+
+.schedule-event-content-text {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%); /*needed for Safari*/
+  text-align: center;
+  padding: 0 8px 0 2px;
+}
+
+.schedule-event-content.now {
+  background-color: #dff0d8;
+  border: 2px solid #d6e9c6;
+}
+
+.panel {
+  padding-top: 0px;
+}
+
+.panel-title {
+  height: 15px;
+  padding-top: 0px;
+  padding-bottom: 3px;
+/*  font-size: 14px;
+  font-variant: "Medium"*/
+}
+
+.panel-body {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.container {
+  padding-bottom: 10px;
+}
+
+#pickdate {
+  padding-bottom: 10px;
+}

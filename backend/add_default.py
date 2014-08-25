@@ -23,7 +23,8 @@ def start():
             eTime = datetime.time(doc['treeroot'][x]['ehour'], doc['treeroot'][x]['emin'])
             
             # Store the instance of Entry with the inputed data into entries
-            entries = entry.Entry(name = doc['treeroot'][x]['name'],
+            entries = entry.Entry(key_name=doc['treeroot'][x]['key_name'],
+                                  name = doc['treeroot'][x]['name'],
                                   sTime = sTime,
                                   eTime = eTime,
                                   day = doc['treeroot'][x]['day'])

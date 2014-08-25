@@ -3,50 +3,74 @@
 {% block title %}Schedule - BearStatus{% endblock %}
 {% block head %}
     {{ super() }}
+    <link href="view/stylesheets/schedule.css" rel="stylesheet">
+    <script src="view/javascript/schedule.js"></script>
 {% endblock %}
 {% block content %}
     <div class="container">
       <div class="starter-template">
-        <h1>Schedule <small>{{display_date}}</small></h1>
+        <h1>Schedule <small class="hidden-xs">{{display_date}}</small><small class="visible-xs-inline">{{short_date}}</small></h1>
       </div>
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
-          <table class="table table-hover" id="schedule"> 
-            <thead><tr><th>Block</th><th>Start</th><th>End</th></tr></thead>
+          <div id="schedule-container">
             {% if schedule == [] %}
-              <tr><td>No School</td><td></td><td></td></tr>
+              <div class="schedule-event" data-start-time="0" data-end-time="100">
+                <div class="schedule-event-content">
+                  <div class="schedule-event-content-text"><h4>No School</h4></div>
+                </div>
+              </div>
             {% else %}
-              {% for i in schedule %}
-                <tr {% if is_today and i.isnow() %}class="success"{% endif %}><td>{{i.name}}</td><td>{{i.formsTime()}}</td><td>{{i.formeTime()}}</td></tr>
+              {% for event in schedule %}
+                <div class="schedule-event" data-start-time="{{event.sTimeMinutes()}}" data-end-time="{{event.eTimeMinutes()}}">
+                  <div class="schedule-event-content {% if is_today and event.isnow() %}now{% endif%}">
+                    <div class="schedule-event-content-text"><h4>{{event.name}} <small>{{event.formsTime()}} to {{event.formeTime()}}</small></h4></div>
+                  </div>
+                </div>
+                {% set now = false %}
               {% endfor %}
             {% endif %}
-            <div class="row">
-              <div class="col-md-3 col-md-offset-9">
-                <form action="/splitlunch" method="get" target="_blank">
-                  <button type="submit" class="btn btn-primary">Split Lunch Schedule</button>
-                </form>
-                <br />
-                <br />
-              </div>
-            </div>
-          </table>
+          </div>
         </div>
       </div>
-      <div id="center">
-        <form action="/schedule" method="get">
-          <br />
-          <p class="lead">View another date: <input type="text" id="datepicker" placeholder={{short_date}} name="date">
-          <button type="submit" class="btn btn-primary">View</button> </p>
-        </form>
+      <div id="center"> 
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4 col-xs-10 col-xs-offset-1" id="pickdate">
+            <form action="/schedule" method="get">
+              <div class="input-group" id="viewdate">
+                <input type="text" class="form-control" placeholder="View another date" id="datepicker" name="date">
+                <span class="input-group-btn">
+                  <button class="btn btn-primary" type="submit">View</button>
+                </span>
+              </div><!-- /input-group -->
+            </form>
+          </div>
+          <div>
+            <form action="/splitlunch" method="get" target="_blank">
+              <button type="submit" id="lunchbtn" class="btn btn-primary btn-sm">Split Lunch Schedule</button>
+            </form>
+          </div>
+        </div>
       </div>
     </div><!-- /.container -->
 {% endblock %}
 {% block pageend %}
-  {{ super() }}
+  
+    {{ super() }}    
+
+    {% if refresh_time %}
+      <!-- Auto refresh -->
+      <script>
+          // run refresh function every 10 seconds which will reload page if appropriate
+          setInterval(function(){refreshAt({{refresh_time}})}, 20000);
+      </script>
+    {% endif %}
+
     <!-- jQuery custom stylesheets for the datepicker -->
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
     
     <!--Local datepicker js-->
     <script src="view/javascript/dates.js"></script>
+
 {% endblock %}
