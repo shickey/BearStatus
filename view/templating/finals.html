@@ -3,62 +3,64 @@
 {% block title %}Semester Exams - BearStatus{{title}} {% endblock %}
 {% block head %}
     {{ super() }}
+    <link href="view/stylesheets/finals.css" rel="stylesheet">
 {% endblock %}
 {% block content %}
   <div class="container">
       <div id="content" class="col-xs-12 col-md-10 col-md-offset-1">
-      <h1>First Semester Assesments</h1><br>
-      <h3>Penultimate Week</h3><br>
-      <table class="table">
+      <h1>Special Schedules<small> Dec. 8 to Dec. 19</small></h1><br>
+      <h3>
+        Penultimate Week
+        <button type="button" class="btn btn-default moreinfo hidden-xs" data-toggle="collapse" data-target="#penultimateinfo" aria-expanded="false" aria-controls="penultimateinfo">
+          More Information</button>
+        <button type="button" class="btn btn-default moreinfo visible-xs-inline" data-toggle="collapse" data-target="#penultimateinfo" aria-expanded="false" aria-controls="penultimateinfo">
+          More Info</button>
+      </h3><br>
+      <div class="table-responsive"><table class="table table-bordered">
         <thead>
         <tr>
-          <th><!-- <a href="/schedule?date=2014-12-08"> -->Monday 12/08    <!-- </a> --></th>
-          <th><!-- <a href="/schedule?date=2014-12-09"> -->Tuesday 12/09   <!-- </a> --></th>
-          <th><!-- <a href="/schedule?date=2014-12-10"> -->Wednesday 12/10 <!-- </a> --></th>
-          <th><!-- <a href="/schedule?date=2014-12-11"> -->Thursday 12/11  <!-- </a> --></th>
-          <th><!-- <a href="/schedule?date=2014-12-12"> -->Friday 12/12    <!-- </a> --></th>
+          <th><a class="datelink" href="/schedule?date=2014-12-08">Monday 12/08    </a></th>
+          <th><a class="datelink" href="/schedule?date=2014-12-09">Tuesday 12/09   </a></th>
+          <th><a class="datelink" href="/schedule?date=2014-12-10">Wednesday 12/10 </a></th>
+          <th><a class="datelink" href="/schedule?date=2014-12-11">Thursday 12/11  </a></th>
+          <th><a class="datelink" href="/schedule?date=2014-12-12">Friday 12/12    </a></th>
         </tr>
         </thead>
         <tr>
-          <td>Thursday Schedule</td>
-          <td>Tuesday Schedule</td>
-          <td>Wednesday Schedule</td>
-          <td>Monday Schedule</td>
-          <td>Friday Schedule</td>
+          <td><a class="datelink" href="/schedule?date=2014-12-08">Thursday Schedule  </a></td>
+          <td><a class="datelink" href="/schedule?date=2014-12-09">Tuesday Schedule   </a></td>
+          <td><a class="datelink" href="/schedule?date=2014-12-10">Wednesday Schedule </a></td>
+          <td><a class="datelink" href="/schedule?date=2014-12-11">Monday Schedule    </a></td>
+          <td><a class="datelink" href="/schedule?date=2014-12-12">Friday Schedule    </a></td>
         </tr>
-      </table>
-      <div class="panel" role="tablist" aria-multiselectable="true">
-          <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingOne">
-              <h4 class="panel-title">
-                <a class="collapsed" data-toggle="collapse" data-pxarent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                  Penultimate Week Information
-                </a>
-              </h4>
-            </div>
-            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-              <div class="panel-body">
-                <ul>
-                <li>The last day a unit test/project/paper can be given/due is Wednesday of this week.</li>
-                <li>The two-test/assessment maximum per day applies to any unit test/project/paper.</li>
-                <li>End of semester presentations may begin on the last day of penultimate week.</li>
-                <li>Beginning on Wednesday 12/10, homework will only be assigned if it is specifically related to the last activity of the semester (end of semester assessment/project/paper, reflective activity, etc.).</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+      </table></div>
+
+
+
+      <div id="penultimateinfo" class="collapse">
+        <ul>
+          <li>The last day a unit test/project/paper can be given/due is Wednesday of this week.</li>
+          <li>The two-test/assessment maximum per day applies to any unit test/project/paper.</li>
+          <li>End of semester presentations may begin on the last day of penultimate week.</li>
+          <li>Beginning on Wednesday 12/10, homework will only be assigned if it is specifically related to the last activity of the semester (end of semester assessment/project/paper, reflective activity, etc.).</li>
+        </ul>
       </div>
+      <br>
+      <h3>Finals Week
+          <button type="button" class="btn btn-default moreinfo hidden-xs" data-toggle="collapse" data-target="#finalsinfo" aria-expanded="false" aria-controls="finalsinfo">
+          More Information</button>
+          <button type="button" class="btn btn-default moreinfo visible-xs-inline" data-toggle="collapse" data-target="#finalsinfo" aria-expanded="false" aria-controls="finalsinfo">
+          More Info</button>
+      </h3><br>
 
-      <h3>Finals Week</h3><br>
-
-      <table class="table">
+      <div class="table-responsive"><table class="table table-bordered">
         <thead><tr id="date">
           <th></th>
-          <th><!-- <a href="/schedule?date=2014-12-15"> -->  Monday 12/15     <!-- </a> --></th>
-          <th><!-- <a href="/schedule?date=2014-12-16"> -->  Tuesday 12/16    <!-- </a> --></th>
-          <th><!-- <a href="/schedule?date=2014-12-17"> -->  Wednesday 12/17  <!-- </a> --></th>
-          <th><!-- <a href="/schedule?date=2014-12-18"> -->  Thursday 12/18   <!-- </a> --></th>
-          <th><!-- <a href="/schedule?date=2014-12-10"> -->  Friday 12/19     <!-- </a> --></th>
+          <th><a class="datelink" href="/schedule?date=2014-12-15">  Monday 12/15     </a></th>
+          <th><a class="datelink" href="/schedule?date=2014-12-16">  Tuesday 12/16    </a></th>
+          <th><a class="datelink" href="/schedule?date=2014-12-17">  Wednesday 12/17  </a></th>
+          <th><a class="datelink" href="/schedule?date=2014-12-18">  Thursday 12/18   </a></th>
+          <th><a class="datelink" href="/schedule?date=2014-12-10">  Friday 12/19     </a></th>
         </tr></thead>
         <tr id="morning">
           <td><strong>8:00–11:30</strong></td>
@@ -76,31 +78,18 @@
           <td>Block 4</td>
           <td>Block 7</td>
         </tr>
-      </table>
+      </table></div>
 
-      <div class="panel" role="tablist" aria-multiselectable="true">
-        <div class="panel panel-default">
-          <div class="panel-heading" role="tab" id="headingOne">
-            <h4 class="panel-title">
-              <a class="collapsed" data-toggle="collapse" data-pxarent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseOne">
-                Finals Week Information
-              </a>
-            </h4>
-          </div>
-          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-            <div class="panel-body">
-              <ul>
-                <li>Every class will meet once during Final Week. Classes using a common exam block (AP English 11, US History, Math or Science) will not meet during the regularly scheduled block time for their class. All other classes, (with the exception of those classes whose end of semester  assessment is a concert/performance) will meet during the regularly scheduled block for a test/exam/ reflective/presentational activitity planned for that time.  Students may not reschedule one of these blocks to an alternate time.</li>
-                <li>Teachers will select only one type of assessment for the final week:  an end of semester project project or an exam. No class will  give both a semester exam and have an end of semester project due within the last two weeks of the semester.</li>
-                <li>The starting time in AM/PM allows for extended time students to eat, and there is also the possibility of a snow day provision built into the 2-hour lunch.</li>
-                <li>Homeroom does not meet during the final week.  Students report directly to exams.</li>
-                <li>Students who only have a morning exam on a given day, may leave school afterwards.  Students who only have an afternoon exam on a given day, need only to come to school for the afternoon exam period.  However, students in grades 9-11 scheduled for two exams on any day may not leave campus in between their exams.</li> 
-                <li>Any student who is ill during any scheduled assessment needs to contact his/her dean before school begins that morning.</li>
 
-              </ul>
-            </div>
-          </div>
-        </div>
+      <div id="finalsinfo" class="collapse">
+          <ul>
+            <li>Every class will meet once during Final Week. Classes using a common exam block (AP English 11, US History, Math or Science) will not meet during the regularly scheduled block time for their class. All other classes, (with the exception of those classes whose end of semester  assessment is a concert/performance) will meet during the regularly scheduled block for a test/exam/ reflective/presentational activitity planned for that time.  Students may not reschedule one of these blocks to an alternate time.</li>
+            <li>Teachers will select only one type of assessment for the final week:  an end of semester project project or an exam. No class will  give both a semester exam and have an end of semester project due within the last two weeks of the semester.</li>
+            <li>The starting time in AM/PM allows for extended time students to eat, and there is also the possibility of a snow day provision built into the 2-hour lunch.</li>
+            <li>Homeroom does not meet during the final week.  Students report directly to exams.</li>
+            <li>Students who only have a morning exam on a given day, may leave school afterwards.  Students who only have an afternoon exam on a given day, need only to come to school for the afternoon exam period.  However, students in grades 9-11 scheduled for two exams on any day may not leave campus in between their exams.</li> 
+            <li>Any student who is ill during any scheduled assessment needs to contact his/her dean before school begins that morning.</li>
+          </ul>
       </div>
 
       <br/>
