@@ -76,25 +76,28 @@ Talk to Ben Weinshel or Mr. Hickey about possible development opportunities!
             {# Set the pages to go in the navbar #}
             {% if isadmin %}{# Show the admin page in the navbar if admin is logged in #}
               {% set navigation_bar = [
-                  ('/', 'index', 'Home'),
-                  ('/schedule', 'schedule', 'Schedule'),
-                  ('/finals', 'finals', 'Semester Exams'),
-                  ('/about', 'about', 'About'),
-                  ('/admin', 'admin', 'Admin')
+                  ('/', 'index', 'Home', 'notnew'),
+                  ('/schedule', 'schedule', 'Schedule', 'notnew'),
+                  ('/finals', 'finals', 'Semester Exams', 'new'),
+                  ('/about', 'about', 'About', 'notnew'),
+                  ('/admin', 'admin', 'Admin', 'notnew')
               ] -%}
             {% else %}
               {% set navigation_bar = [
-                  ('/', 'index', 'Home'),
-                  ('/schedule', 'schedule', 'Schedule'),
-                  ('/finals', 'finals', 'Semester Exams'),
-                  ('/about', 'about', 'About')
+                  ('/', 'index', 'Home', 'notnew'),
+                  ('/schedule', 'schedule', 'Schedule', 'notnew'),
+                  ('/finals', 'finals', 'Semester Exams ', 'new'),
+                  ('/about', 'about', 'About', 'notnew')
               ] -%}
             {% endif %}
             
             {# Use the variables set above to generate the navbar #}
-            {% for href, id, caption in navigation_bar %}
-              <li{% if id == active_page %} class="active"{% endif
-              %}><a href="{{ href|e }}">{{ caption|e }}</a></li>
+            {% for href, id, caption, isnew in navigation_bar %}
+              <li
+              {% if id == active_page %} class="active"{% endif %}>
+              <a href="{{ href|e }}">{{ caption|e }}
+              {% if isnew == 'new' %}<span class="label label-default">New!</span>{% endif %}
+              </a>
             {% endfor %}
 
           </ul>
