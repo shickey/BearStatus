@@ -76,18 +76,18 @@ Talk to Ben Weinshel or Mr. Hickey about possible development opportunities!
             {# Set the pages to go in the navbar #}
             {% if isadmin %}{# Show the admin page in the navbar if admin is logged in #}
               {% set navigation_bar = [
-                  ('/', 'index', 'Home', 'none'),
-                  ('/schedule', 'schedule', 'Schedule', 'none'),
+                  ('/', 'index', 'Home', none),
+                  ('/schedule', 'schedule', 'Schedule', none),
                   ('/finals', 'finals', 'Semester Exams', 'New!'),
-                  ('/about', 'about', 'About', 'none'),
-                  ('/admin', 'admin', 'Admin', 'none')
+                  ('/about', 'about', 'About', none),
+                  ('/admin', 'admin', 'Admin', none)
               ] -%}
             {% else %}
               {% set navigation_bar = [
-                  ('/', 'index', 'Home', 'none'),
-                  ('/schedule', 'schedule', 'Schedule', 'none'),
+                  ('/', 'index', 'Home', none),
+                  ('/schedule', 'schedule', 'Schedule', none),
                   ('/finals', 'finals', 'Semester Exams ', 'New!'),
-                  ('/about', 'about', 'About', 'none')
+                  ('/about', 'about', 'About', none)
               ] -%}
             {% endif %}
             
@@ -96,7 +96,7 @@ Talk to Ben Weinshel or Mr. Hickey about possible development opportunities!
               <li
               {% if id == active_page %} class="active"{% endif %}>
               <a href="{{ href|e }}">{{ caption|e }}
-              {% if label != 'none' %}<span class="label label-default">{{ label|e }}</span>{% endif %}
+              {% if label %}<span class="label label-default">{{ label|e }}</span>{% endif %}
               </a>
             {% endfor %}
 
