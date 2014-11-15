@@ -5,3 +5,8 @@
 .datelink{
   color: black;
 }
+
+th{
+/*  font-weight: normal;
+*/  text-decoration: underline;
+}
