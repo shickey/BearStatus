@@ -14,3 +14,7 @@ function refreshAt(hours, minutes, seconds) {
         }
     }
 }
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})

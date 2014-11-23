@@ -7,6 +7,10 @@
 
     <link href="view/stylesheets/schedule.css" rel="stylesheet">
     <script src="view/javascript/schedule.js"></script>
+
+    <!-- jQuery UI -->
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+
 {% endblock %}
 {% block content %}
     <div class="container">
@@ -26,7 +30,13 @@
               {% for event in schedule %}
                 <div class="schedule-event" data-start-time="{{event.sTimeMinutes()}}" data-end-time="{{event.eTimeMinutes()}}">
                   <div class="schedule-event-content {% if is_today and event.isnow() %}now{% endif%}">
-                    <div class="schedule-event-content-text"><h4>{{event.name}} <small>{{event.formsTime()}} to {{event.formeTime()}}</small></h4></div>
+
+                    {% if event.tooltip and event.tooltip != "" %}
+                      <div class="schedule-event-content-text"><h4><a href="#" data-toggle="tooltip" title="{{event.tooltip}}">{{event.name}}</a> <small>{{event.formsTime()}} to {{event.formeTime()}}</small></h4></div>
+                    {% else %}
+                      <div class="schedule-event-content-text"><h4>{{event.name}} <small>{{event.formsTime()}} to {{event.formeTime()}}</small></h4></div>
+                    {% endif %}
+
                   </div>
                 </div>
                 {% set now = false %}
@@ -70,7 +80,6 @@
 
     <!-- jQuery custom stylesheets for the datepicker -->
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css" />
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
     
     <!--Local datepicker js-->
     <script src="view/javascript/dates.js"></script>
