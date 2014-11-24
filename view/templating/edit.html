@@ -18,6 +18,7 @@
         <td><h5>Block</h5></td>
         <td><h5>Start Time</h5></td>
         <td><h5>End Time</h5></td>
+        <td><h5>Tooltip (opt.)</h5></td>
       </tr>
     </thead>
     <form class="form-horizontal" role="form" method="post">
@@ -27,6 +28,7 @@
           <td><input type="text" class="form control" placeholder="Block Name" name="name{{i}}"></td>
           <td><input type="time" class="form control" placeholder="Start Time" name="start{{i}}"></td> 
           <td><input type="time" class="form control" placeholder="End Time" name="end{{i}}"></td>
+          <td><input type="text" class="form control" placeholder="Tooltip" name="tooltip{{i}}"></td>
         </tr>
         {% endfor %}
         <div class="row">

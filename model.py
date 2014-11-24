@@ -171,7 +171,7 @@ def getTime():
 
 
 
-def createBlock(name, date, sTime, eTime):
+def createBlock(name, date, sTime, eTime, tooltip):
     """
     *NOTE*
         PLEASE RUN THE deleteSchedule FUNCTION BEFORE THIS TO AVOID DUPLICATE ENTRIES
@@ -181,6 +181,8 @@ def createBlock(name, date, sTime, eTime):
         date:   Date of the block (Date Object)
         sTime:  Start time of the block (Time Object)
         sTime:  End time of the block (Time Object)
+        tooltip: Optional tooltip to display on hover
+
 
     Returns:
         None
@@ -191,7 +193,8 @@ def createBlock(name, date, sTime, eTime):
     cblock = backend.custom_entry.CustomEntry(name = name,
                                              sTime = sTime,
                                              eTime = eTime,
-                                             date = date)
+                                             date = date,
+                                             tooltip = tooltip)
     cblock.put()
 
 

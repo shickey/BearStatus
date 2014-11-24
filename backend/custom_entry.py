@@ -9,6 +9,7 @@ class CustomEntry(db.Model):
     sTime = db.TimeProperty()
     eTime = db.TimeProperty()
     date = db.DateProperty()
+    tooltip = db.StringProperty(indexed=False)
 
     def formsTime(i):
         return i.sTime.strftime("%I:%M %p")
