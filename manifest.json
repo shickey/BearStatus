@@ -7,23 +7,29 @@
       "type": "image/png",
     },
     {
+      "src": "/view/images/icon36.png",
+      "sizes": "36x36",
+      "type": "image/png",
+      "density": "0.75"
+    },
+    {
       "src": "/view/images/icon48.png",
       "sizes": "48x48",
       "type": "image/png",
       "density": "1.0"
     },
     {
-        "src": "/view/images/icon72.png",
-        "sizes": "72x72",
-        "type": "image/png",
-        "density": "1.5"
-      },
-      {
-        "src": "/view/images/icon96.png",
-        "sizes": "96x96",
-        "type": "image/png",
-        "density": "2.0"
-      },
+      "src": "/view/images/icon72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "density": "1.5"
+    },
+    {
+      "src": "/view/images/icon96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "density": "2.0"
+    },
     {
       "src": "/view/images/icon144.png",
       "sizes": "144x144",
