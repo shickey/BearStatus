@@ -5,7 +5,7 @@
   text-align: center;
   max-width: 400px;
   width: 93%;
-  /*margin-top: 3%;*/
+  margin-top: 3%;
 }
 
 #content {
@@ -18,6 +18,10 @@
 
 #text {
   padding: 20px 30px 35px 30px;
+}
+
+#alert{
+  padding-top: 20px;
 }
 
 .container {
