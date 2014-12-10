@@ -1,11 +1,14 @@
-#content {
+#info-area{
   position: inherit;
-  margin-top: 3%;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   max-width: 400px;
   width: 93%;
+  /*margin-top: 3%;*/
+}
+
+#content {
   height: fit-content;
   background-color: #eaeaea;
   border-radius: 8px;

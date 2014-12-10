@@ -17,38 +17,58 @@
 {% block content %}
     <div class="container">
       <div class="row">
-        <div id="content">
-          <div id="text">
-            <h1 class="logo" style="font-size: 48px;">BearStatus</h1>
-              <br/>
-              {% if block.name %}
-                <p> <u style= "font-size: 22px;">Now:</u> </p>
-                {% if block.tooltip and block.tooltip != "" %}
-                  <p style= "font-size: 18px;"><a href="#" data-toggle="tooltip" data-placement="right" title="{{block.tooltip}}">{{block.name}}</a></p>
-                {% else %}
-                  <p style= "font-size: 18px;">{{block.name}}</p>
-                {% endif %}
-                Start: {{blocksTime}}
-                <br> End: {{blockeTime}}<br>
-              <br>
-              {% endif %}
-              {% if next_block.name %}
-                <p> <u style= "font-size: 22px;">Next:</u> </p>
-                  {% if next_block.tooltip and next_block.tooltip != "" %}
-                    <p style= "font-size: 18px;"><a href="#" data-toggle="tooltip" title="{{next_block.tooltip}}">{{next_block.name}}</a></p>
-                  {% else %}
-                    <p style= "font-size: 18px;">{{next_block.name}}</p>
-                  {% endif %}
-                Start: {{next_blocksTime}}
-                <br> End: {{next_blockeTime}}
-                {% endif %}
-              {% if block.name is undefined and next_block.name is undefined %}
-                <p> <u style= "font-size: 22px;">Now:</u></p> <p style= "font-size: 18px;">No School</p>
-              {% endif %}
-            </p>
+        <div id="info-area">
+
+          <!-- Alert Banner -->
+          <div class="alert alert-info alert-dismissible fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert">
+              <span aria-hidden="true">&times;</span>
+              <span class="sr-only">Close</span>
+            </button>
+            Want to help build BearStatus? Come to the library during TASC today!
           </div>
-        </div>
-      </div>
+
+          <div id="content">
+            <div id="text">
+              <h1 class="logo" style="font-size: 48px;">BearStatus</h1>
+                <br/>
+
+                <!-- Current Block -->
+                {% if block.name %}
+                  <p> <u style= "font-size: 22px;">Now:</u> </p>
+                  {% if block.tooltip and block.tooltip != "" %}
+                    <p style= "font-size: 18px;"><a href="#" data-toggle="tooltip" data-placement="right" title="{{block.tooltip}}">{{block.name}}</a></p>
+                  {% else %}
+                    <p style= "font-size: 18px;">{{block.name}}</p>
+                  {% endif %}
+                  Start: {{blocksTime}}
+                  <br> End: {{blockeTime}}<br>
+                <br>
+                {% endif %}
+
+                <!-- Next Block -->
+                {% if next_block.name %}
+                  <p> <u style= "font-size: 22px;">Next:</u> </p>
+                    {% if next_block.tooltip and next_block.tooltip != "" %}
+                      <p style= "font-size: 18px;"><a href="#" data-toggle="tooltip" title="{{next_block.tooltip}}">{{next_block.name}}</a></p>
+                    {% else %}
+                      <p style= "font-size: 18px;">{{next_block.name}}</p>
+                    {% endif %}
+                  Start: {{next_blocksTime}}
+                  <br> End: {{next_blockeTime}}
+                  {% endif %}
+
+                <!-- If no current or next, show "No School" -->
+                {% if block.name is undefined and next_block.name is undefined %}
+                  <p> <u style= "font-size: 22px;">Now:</u></p> <p style= "font-size: 18px;">No School</p>
+                {% endif %}
+
+              </p>
+
+            </div><!-- /.text -->
+          </div><!-- /.content -->
+        </div><!-- /.info-area -->
+      </div><!-- /.row -->
     </div><!-- /.container -->
 {% endblock %}
 {% block pageend %}
