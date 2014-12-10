@@ -1,5 +1,5 @@
 application: bear-status
-version: 172
+version: 173
 runtime: python27
 api_version: 1
 threadsafe: true
@@ -16,6 +16,9 @@ handlers:
   static_dir: view/javascript
 - url: /view/images/
   static_dir: view/images
+- url: /static/
+  static_dir: static
+
 
 # set up the edit page to require admin access
 - url: /date.*
