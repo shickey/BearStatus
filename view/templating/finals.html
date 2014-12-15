@@ -9,13 +9,18 @@
   <div class="container">
       <div id="content" class="col-xs-12 col-md-10 col-md-offset-1">
       <h1>End of Semester Schedules</h1><br>
-      <h3>
-        Penultimate Week<small class="hidden-xs"> Dec. 8 to Dec. 12</small>
+        <h1><small>Penultimate Week</small>
+        <!-- <small class="hidden-xs"> Dec. 8 to Dec. 12</small> -->
         <button type="button" class="btn btn-default moreinfo hidden-xs" data-toggle="collapse" data-target="#penultimateinfo" aria-expanded="false" aria-controls="penultimateinfo">
           More Information</button>
         <button type="button" class="btn btn-default moreinfo visible-xs-inline" data-toggle="collapse" data-target="#penultimateinfo" aria-expanded="false" aria-controls="penultimateinfo">
           More Info</button>
-      </h3><br>
+      </h1><br>
+
+      <!-- Content in this div collapses -->
+      <div id="penultimateinfo" class="collapse">
+
+      <!-- Schedule Table -->
       <div class="table-responsive"><table class="table table-bordered">
         <thead>
         <tr class="active">
@@ -35,9 +40,6 @@
         </tr>
       </table></div>
 
-
-
-      <div id="penultimateinfo" class="collapse">
         <ul>
           <li>The last day a unit test/project/paper can be given/due is Wednesday of this week.</li>
           <li>The two-test/assessment maximum per day applies to any unit test/project/paper.</li>
@@ -45,12 +47,25 @@
           <li>Beginning on Wednesday 12/10, homework will only be assigned if it is specifically related to the last activity of the semester (end of semester assessment/project/paper, reflective activity, etc.).</li>
         </ul>
       </div>
-      <br>
+
+      <!-- FINALS WEEK -->
       <h3>Finals Week<small class="hidden-xs"> Dec. 15 to Dec. 19</small>
-          <button type="button" class="btn btn-default moreinfo hidden-xs" data-toggle="collapse" data-target="#finalsinfo" aria-expanded="false" aria-controls="finalsinfo">
+
+      <span class="moreinfo">
+
+          <!-- Button for room asssignments -->
+          <a class="btn btn-primary hidden-xs" href="http://goo.gl/D7kVZP" role="button">Room Assignments</a>
+          <!-- Shortened button for mobile devices -->
+          <a class="btn btn-primary visible-xs-inline" href="http://goo.gl/D7kVZP" role="button">Rooms</a>
+
+
+          <!-- More info button to collapse mroe info -->
+          <button type="button" class="btn btn-default hidden-xs" data-toggle="collapse" data-target="#finalsinfo" aria-expanded="false" aria-controls="finalsinfo">
           More Information</button>
-          <button type="button" class="btn btn-default moreinfo visible-xs-inline" data-toggle="collapse" data-target="#finalsinfo" aria-expanded="false" aria-controls="finalsinfo">
-          More Info</button>
+
+
+      </span>
+
       </h3><br>
 
       <div class="table-responsive"><table class="table table-bordered">
@@ -79,6 +94,11 @@
           <td>Block 7</td>
         </tr>
       </table></div>
+
+      <!-- Shortened button for mobile devices -->
+      <button type="button" class="btn btn-default moreinfo visible-xs-inline" data-toggle="collapse" data-target="#finalsinfo" aria-expanded="false" aria-controls="finalsinfo">
+      More Info</button>
+      <br>
 
 
       <div id="finalsinfo" class="collapse">
