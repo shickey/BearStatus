@@ -1,5 +1,5 @@
 application: bear-status
-version: 175
+version: 175r2
 runtime: python27
 api_version: 1
 threadsafe: true
