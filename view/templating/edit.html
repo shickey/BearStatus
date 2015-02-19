@@ -7,7 +7,11 @@
 {% block content %}
 <div id="content">
   <div class="container">
-    <h1>Edit Schedules: {{edit_date}}
+  {% if is_special == True %}
+    <div class="alert alert-danger" role="alert">
+         <strong>WARNING:</strong> This day already has a special schedule stored. Doing anything on this page will overwrite any existing special schedule for {{edit_date}}</div>
+  {% endif %}
+    <h1>Edit Schedules <small>{{edit_date}}</small>
     </h1>
   </div>
 </div>
@@ -35,7 +39,7 @@
         </div>
         <div class="col-md-3 col-md-offset-9">
           <a class="btn btn-default" href="/admin" role="button">Cancel</a>
-          <button type="submit" class="btn btn-primary">Save</button>
+          <button type="submit" class="btn {% if is_special == True %}btn-danger{% else %}btn-primary{% endif %}">Save</button>
         </div>
       </tbody>
     </form>
