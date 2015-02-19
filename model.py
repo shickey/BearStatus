@@ -254,6 +254,34 @@ def getSchedule(date):
         return blocklist
 
 
+def isSpecialSchedule(date):
+    """
+    Args:
+        date:   Date of the requested schedule (Date Object)
+
+    Returns:
+        True or Fale
+
+    Description: This function is used to query the datastore to see if there is
+    a special schdedule. If there is a special schedule for that date, the
+    function will return True, else, False will be returned. 
+    """
+    cblocklist = []
+    blocklist = []
+    wday = date.isoweekday()
+    
+    q = backend.custom_entry.CustomEntry.all()
+    q.filter("date =", date).order("sTime")
+    
+    for block in q.run():
+        cblocklist.append(block)
+    
+    if len(cblocklist) > 0:
+        return True
+    
+    else:
+        return False
+
 
 def getToday():
     """

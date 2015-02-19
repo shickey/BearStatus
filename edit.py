@@ -45,6 +45,9 @@ class EditHandler(webapp2.RequestHandler):
         else:
             blocks = int(blocks)
             
+        # figure out if there is a special schdedule already to display warning
+        is_special = model.isSpecialSchedule(edit_date_date)
+
         # admin check for navbar
         isadmin = users.is_current_user_admin()
                 
@@ -53,6 +56,7 @@ class EditHandler(webapp2.RequestHandler):
             'edit_date': model.formatDate(edit_date_date),
             'blocks': blocks,
             'isadmin': isadmin,
+            'is_special': is_special
         }
         
         template = jinja_environment.get_template('edit.html')
