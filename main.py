@@ -108,6 +108,7 @@ class Schedule_Handler(webapp2.RequestHandler):
             'short_date': short_date,
             'isadmin': isadmin,
             'refresh_time': refresh_time,
+            'date': date,
         }
 
         template = jinja_environment.get_template('schedule.html')

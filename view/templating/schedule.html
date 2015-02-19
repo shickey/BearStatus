@@ -15,7 +15,14 @@
 {% block content %}
     <div class="container">
       <div class="starter-template">
-        <h1>Schedule <small class="hidden-xs">{{display_date}}</small><small class="visible-xs-inline">{{short_date}}</small></h1>
+        <h1>
+          Schedule 
+          <small class="hidden-xs">{{display_date}}</small>
+          <small class="visible-xs-inline">{{short_date}}</small>
+          {% if isadmin %}
+          <small><small><a href=/edit?date={{date}}> Edit</a></small></small>
+          {% endif %}
+        </h1>
       </div>
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
