@@ -1,10 +1,7 @@
-# assume admin login has already been handled
-
 import model
 import webapp2, jinja2, os, cgi
 from datetime import *
 from dateutil.parser import *
-from google.appengine.api import users
 
 jinja_environment = jinja2.Environment(autoescape=True,
     loader=jinja2.FileSystemLoader(os.path.join(os.path.dirname(__file__), 'api/json')))
