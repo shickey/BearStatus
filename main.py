@@ -128,18 +128,18 @@ class AboutHandler(webapp2.RequestHandler):
         self.response.out.write(template.render(template_values))
 
 # Request Handler for AP Exams page
-# class AP_Handler(webapp2.RequestHandler):
+class AP_Handler(webapp2.RequestHandler):
   
-#     def get(self):
+    def get(self):
+    
+        # admin check for navbar
+        isadmin = users.is_current_user_admin()
         
-#         # admin check for navbar
-#         isadmin = users.is_current_user_admin()
-        
-#         template_values = {    
-#             'isadmin': isadmin
-#         }
-#         template = jinja_environment.get_template('ap.html')
-#         self.response.out.write(template.render(template_values))
+        template_values = {    
+            'isadmin': isadmin
+        }
+        template = jinja_environment.get_template('ap.html')
+        self.response.out.write(template.render(template_values))
 
 class FinalsHandler(webapp2.RequestHandler):
   
@@ -211,7 +211,7 @@ app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/schedule', Schedule_Handler),
     ('/about', AboutHandler),
-    #('/ap', AP_Handler),
+    ('/ap', AP_Handler),
     ('/finals', FinalsHandler),
     ('/_ah/warmup', WarmupHandler),
     ('/splitlunch', LunchLinkHandler),

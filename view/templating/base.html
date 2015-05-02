@@ -99,13 +99,15 @@ Talk to Ben Weinshel or Mr. Hickey about possible development opportunities!
                   ('/', 'index', 'Home', none),
                   ('/schedule', 'schedule', 'Schedule', none),
                   ('/about', 'about', 'About', none),
+                  ('/ap', 'ap', 'AP Exams', 'New!'),
                   ('/admin', 'admin', 'Admin', none)
               ] -%}
             {% else %}
               {% set navigation_bar = [
                   ('/', 'index', 'Home', none),
                   ('/schedule', 'schedule', 'Schedule', none),
-                  ('/about', 'about', 'About', none)
+                  ('/about', 'about', 'About', none),
+                  ('/ap', 'ap', 'AP Exams', 'New!')
               ] -%}
             {% endif %}
             
