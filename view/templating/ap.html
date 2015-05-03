@@ -3,22 +3,86 @@
 {% block title %}AP Exams - BearStatus{{title}} {% endblock %}
 {% block head %}
     {{ super() }}
+    <script src="view/javascript/ap.js"></script>
 {% endblock %}
 {% block content %}
   <div class="container">
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
-              <h1>Week 1 <small>May 5-9</small></h1>
+              <h1>Week 1 <small>May 4-8</small></h1>
               <table class="table table-hover">
-                <thead><tr><th class="tableSubhed">Week 1 </th><th class="tableSubhed"><b>Morning 8 a.m.</b></th><th class="tableSubhed"><b>Afternoon 12 noon</b> </th>   </tr> </thead>  <tbody>   <tr>      <th>      <p>     Monday,<br />     May 5       </p>      </th>     <td>      <p>     Chemistry<br />     Environmental Science       </p>      </td>     <td>      <p>     Psychology      </p>      </td>   </tr>
-                <tr class="tableDark">      <th><p>Tuesday, May 6</p></th>     <td>      <p>     Computer Science A <br />     Spanish Language and Culture      </p>      </td>     <td>      <p>     Art History       </p>      </td>   </tr>
-                <tr>      <th>      <p>     Wednesday, May 7</p>      </th>     <td>      <p>     Calculus AB<br />     Calculus BC       </p>      </td>     <td>      <p>     Chinese Language and Culture      </p>      </td>   </tr>   <tr class="tableDark">      <th>      <p>     Thursday, May 8       </p>      </th>     <td>      <p>     English Literature and Composition      </p>      </td>     <td>      <p>     Japanese Language and Culture <br />      Latin       </p>      </td>   </tr>
-                <tr> <th rowspan="2"><p>Friday, May 9</p></th>     <td>      <p>     English Language and Composition      </p>      </td>     <td>      <p>     Statistics      </p>      </td>   </tr>
-                <tr>      <td colspan="2">      <p>     Studio Art&mdash;last day for Coordinators to submit digital portfolios (by 8 p.m. EDT) and to gather 2-D Design and Drawing students for physical portfolio assembly       </p>      <p>     Teachers should have forwarded students&#39; completed digital portfolios to Coordinators before this date.       </p>      </td></tr></tbody>
-              </table>
-              <h1>Week 2 <small>May 12-16</small></h2>
+                <thead>
+                  <th>Week 1</th>
+                  <th>Morning (8 a.m.)</th>
+                  <th>Afternoon (12:30 p.m.)</th>
+                </thead>
+                <tr>
+                  <td>Monday 5/4</td>
+                  <td>
+                    <a href="#" data-toggle="tooltip" data-placement="right" title="Gym/Weight Room">Chemistry</a><br>
+                    <a href="#" data-toggle="tooltip" data-placement="right" title="LL06, LL08">Environmental Science</a></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Tuesday 5/5</td>
+                  <td>
+                    <a href="#" data-toggle="tooltip" data-placement="right" title="Gym/Weight Room">Calculus AB</a><br>                    
+                    <a href="#" data-toggle="tooltip" data-placement="right" title="Gym/Weight Room">Calculus BC</a><br>                    
+                    </td>
+                  <td><a href="#" data-toggle="tooltip" data-placement="right" title="Gym">Chinese Language and Culture</a></td>
+                </tr>
+                <tr>
+                  <td>Wednesday 5/6</td>
+                  <td><a href="#" data-toggle="tooltip" data-placement="right" title="Gym/Weight Room">English Literature and Composition</a></td>
+                  <td><a href="#" data-toggle="tooltip" data-placement="right" title="LL08">Japanese Language and Culture</a><br>
+                  <a href="#" data-toggle="tooltip" data-placement="right" title="Gym/Weight Room">Physics 1</a></td>
+                </tr>
+                <tr>
+                  <td>Thursday 5/7</td>
+                  <td><a href="#" data-toggle="tooltip" data-placement="right" title="LL08">Computer Science</a><br>
+                  <a href="#" data-toggle="tooltip" data-placement="right" title="Gym/Weight Room">Spanish Language and Culture</a></td>
+                  <td><a href="#" data-toggle="tooltip" data-placement="right" title="Gym/Weight Room">Physics 2</a></td>
+                </tr>
+                <tr>
+                  <td>Friday 5/8</td>
+                  <td><a href="#" data-toggle="tooltip" data-placement="right" title="Gym/Weight Room">United States History</a></td>
+                  <td><a href="#" data-toggle="tooltip" data-placement="right" title="Gym/Weight Room">European History</a></td>
+                </tr>
+               </table>
+              <h1>Week 2 <small>May 11-15</small></h2>
               <table class="table table-hover">
-                <thead>   <tr>      <th class="tableSubhed">Week 2 </th><th class="tableSubhed">Morning 8 a.m. </th><th class="tableSubhed">Afternoon 12 noon </th><th class="tableSubhed">Afternoon 2 p.m. </th>   </tr> </thead>  <tbody>   <tr>      <th>      <p>     Monday, May 12      </p>      </th>     <td>      <p>     Biology <br />      Music Theory      </p>      </td>     <td>      <p>     Physics B <br />      Physics C: Mechanics      </p>      </td>     <td>      <p>     Physics C:<br />      Electricity and Magnetism       </p>      </td>   </tr>   <tr class="tableDark">      <th>      <p>     Tuesday,<br />      May 13      </p>      </th>     <td>      <p>     United States Government and Politics       </p>      </td>     <td>      <p>     French Language and Culture<br />     Human Geography     </p>      </td>     <td>&nbsp;</td>   </tr>   <tr>      <th>      <p>     Wednesday,<br />      May 14      </p>      </th>     <td>      <p>     German Language and Culture<br />     United States History       </p>      </td>     <td>      <p>     European History      </p>      </td>     <td>&nbsp;</td>   </tr>   <tr class="tableDark">      <th>      <p>     Thursday,<br />     May 15      </p>      </th>     <td>      <p>     Macroeconomics <br />     World History       </p>      </td>     <td>      <p>     Italian Language and Culture <br />     Microeconomics      </p>      </td>     <td>&nbsp;</td>   </tr>   <tr>      <th>      <p>     Friday,<br />     May 16      </p>      </th>     <td>      <p>     Comparative Government and Politics<br />     Spanish Literature and Culture      </p>      </td>     <td></td>     <td>&nbsp;</td>   </tr> </tbody>
+                <tr>
+                  <th>Week 2</th>
+                  <th>Morning (8 a.m.)</th>
+                  <th>Afternoon (12:30 p.m.)</th>
+                </tr>
+                <tr>
+                  <td>Monday 5/11</td>
+                  <td><a href="#" data-toggle="tooltip" data-placement="right" title="Gym/Weight Room">Biology</a><br>
+                  <a href="#" data-toggle="tooltip" data-placement="right" title="LL08">Music Theory</a></td>                                      
+                  <td><a href="#" data-toggle="tooltip" data-placement="right" title="Gym/Weight Room">Physics C</a></td>
+                </tr>
+                <tr>
+                  <td>Tuesday 5/12</td>
+                  <td><a href="#" data-toggle="tooltip" data-placement="right" title="Gym">U.S. Government and Politics</a></td>
+                  <td><a href="#" data-toggle="tooltip" data-placement="right" title="Gym">French Language and Culture</a></td>
+                </tr>
+                <tr>
+                  <td>Wednesday 5/13</td>
+                  <td><a href="#" data-toggle="tooltip" data-placement="right" title="Gym/Weight Room">English Literature and Composition</a></td>
+                  <td><a href="#" data-toggle="tooltip" data-placement="right" title="Gym">Statistics</a></td>
+                </tr>
+                <tr>
+                  <td>Thursday 5/14</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Friday 5/15</td>
+                  <td><a href="#" data-toggle="tooltip" data-placement="right" title="Gym">Human Geography</a><br>
+                  <a href="#" data-toggle="tooltip" data-placement="right" title="Weight Room">Microeconomics</a></td>
+                  <td><a href="#" data-toggle="tooltip" data-placement="right" title="Gym">Latin</a></td>
+                </tr>
               </table>
           </div>
         <br/>
